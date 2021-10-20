@@ -1,0 +1,22 @@
+type: theory
+files:
+- name: __init__.py
+  visible: false
+- name: iris.csv
+  visible: true
+- name: activation.py
+  visible: true
+- name: derivative.py
+  visible: false
+- name: evaluate.py
+  visible: false
+- name: network.py
+  visible: false
+- name: task.py
+  visible: false
+- name: final.py
+  visible: false
+- name: neuron-scheme.png
+  visible: false
+- name: neuralnet.png
+  visible: false

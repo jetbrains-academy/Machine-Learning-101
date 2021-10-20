@@ -1,0 +1,28 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: superman-batman.png
+  visible: true
+- name: tests/star.png
+  visible: false
+- name: tests/star.txt
+  visible: false
+- name: clustering.py
+  visible: false
+- name: distances.py
+  visible: false
+- name: plotting.py
+  visible: false
+- name: processing.py
+  visible: false
+- name: barchart.png
+  visible: false
+- name: superman-batman-after.png
+  visible: false

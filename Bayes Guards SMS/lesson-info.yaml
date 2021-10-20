@@ -1,0 +1,8 @@
+type: framework
+content:
+- Vectorize
+- Naive Bayes
+- Laplace Smoothing
+- Predict
+- Заключение
+is_template_based: false

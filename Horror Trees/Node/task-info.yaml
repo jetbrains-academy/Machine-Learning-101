@@ -1,0 +1,28 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: halloween.csv
+  visible: true
+- name: boo.jpg
+  visible: false
+- name: calculate_entropy.py
+  visible: false
+- name: divide.py
+  visible: false
+- name: tree.py
+  visible: false
+- name: halloween.py
+  visible: false
+- name: node.py
+  visible: true
+- name: example_tree.png
+  visible: false
+- name: RNA_tree.png
+  visible: false

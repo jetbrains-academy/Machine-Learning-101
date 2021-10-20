@@ -1,0 +1,24 @@
+type: theory
+files:
+- name: task.py
+  visible: true
+- name: __init__.py
+  visible: false
+- name: halloween.csv
+  visible: true
+- name: calculate_entropy.py
+  visible: true
+- name: divide.py
+  visible: true
+- name: tree.py
+  visible: true
+- name: halloween.py
+  visible: true
+- name: node.py
+  visible: true
+- name: RNA_tree.png
+  visible: false
+- name: boo.jpg
+  visible: false
+- name: example_tree.png
+  visible: false

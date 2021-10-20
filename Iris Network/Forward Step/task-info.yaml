@@ -1,0 +1,26 @@
+type: edu
+files:
+- name: tests/test_task.py
+  visible: false
+- name: __init__.py
+  visible: false
+- name: tests/__init__.py
+  visible: false
+- name: iris.csv
+  visible: true
+- name: neuralnet.png
+  visible: false
+- name: neuron-scheme.png
+  visible: false
+- name: activation.py
+  visible: true
+- name: derivative.py
+  visible: false
+- name: evaluate.py
+  visible: false
+- name: network.py
+  visible: true
+- name: task.py
+  visible: true
+- name: final.py
+  visible: false

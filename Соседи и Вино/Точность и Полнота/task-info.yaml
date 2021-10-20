@@ -1,0 +1,18 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+- name: wine.csv
+  visible: true
+- name: __init__.py
+  visible: false
+- name: tests/test_task.py
+  visible: false
+- name: distances.py
+  visible: true
+- name: metrics.py
+  visible: true
+- name: crossvalidation.py
+  visible: false
+- name: metric_classification.py
+  visible: true
