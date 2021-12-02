@@ -1,44 +1,44 @@
-Решающее дерево строится сверху вниз, начиная с корневого узла. Данные разбиваются на 
-подмножества, содержащие объекты со схожими признаками (гомогенные).
-Алгоритм использует [информационную энтропию](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%8D%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%8F) 
-(entropy) для определения гомогенности выборки.
+A decision tree is built from top to bottom starting from the root node. The data are divided into subsets
+containing similar characteristics (homogeneous subsets).
+The algorithm uses the concept of [entropy](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%8D%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%8F) 
+to determine the homogeneity of a sample.
 
-Энтропия может принимать значения большие или равные 0. Эта величина вычисляется по следующей формуле:
+The value of entropy may be greater than or equal to 0. This value is calculated by the following formula:
 
 
 $$H = - \sum\limits_{i=1}^{C} p_i \log_2 p_i$$
 
-где $p_i$ &mdash; частотная вероятность (доля) объекта или класса $i$ в нашей выборке, а $С$ - число классов.
+where $p_i$ is the possible outcome probability (proportion) of an object or a class $i$ in the sample and $С$ is the number of classes.
 
-Интересный пример применения информационной энтропии &mdash; в научных исследованиях для оценки биоразнообразия. 
-Используя формулу Шеннона (уравнение, приведенное выше), где $p_i$ будет пропорциональной численностью 
-$i$-го вида в сообществе из $С$ различных видов, можно рассчитать [индекс биоразнообразия Шеннона](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%8F).
+An interesting example of information entropy application may be found in biodiversity assessment scholarly research. 
+Using the Shannon formula (the above equation), where $p_i$ is the proportional abundance
+of the $i$-th species in a group of $С$ different species, we can calculate [Shannon's diversity index](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%8F).
 
 
 
-### Задание
+### Task
 
-В файле `calculate_entropy.py` реализуйте функцию `entropy`, вычисляющую энтропию 
-для некоторого подмножества объектов. На вход функция получает массив меток объектов `y`.
+In the file `calculate_entropy.py`, realize the function `entropy`, which calculates the entropy for a certain subset of objects. 
+The input of the function is an array of object labels `y`.
 
-Сначала функция должна рассчитать встречаемость каждого класса (метки) во 
-всем множестве. Здесь вам может пригодиться функция [numpy.unique](https://numpy.org/doc/stable/reference/generated/numpy.unique.html), которая может 
-возвращать отсортированные уникальные элементы множества и количество раз, когда каждый из 
-этих элементов встречается в исходном множестве. Затем следует рассчитать долю каждого 
-из классов во всем множестве, после чего можно использовать приведенную выше формулу 
-для расчета энтропии. 
+First, the function should calculate the occurrence of each class (label) in the whole subset.
+Here, you might want to use the [numpy.unique](https://numpy.org/doc/stable/reference/generated/numpy.unique.html) function, which 
+can return the sorted unique elements of a subset and the number of times each of these elements occurs in the original set.
+Then, you need to calculate the proportion of each class in the whole set and subsequently
+use the above formula to calculate the entropy.
 
-Для того чтобы посмотреть на результаты работы своего кода, вы можете добавить следующие
-строчки в `task.py`, после чего запустить его:
 
-1. Необходимые импорты:
+In order to see the results of your code, you can add the following lines to
+`task.py` and launch it:
+
+1. Required imports:
 ```python
         from calculate_entropy import entropy
         import pandas as pd
 ```
-2. Строчки для печати результатов вычисления энтропии датасета в блок `if __name__ == '__main__':`:
+2. Lines in the `if __name__ == '__main__':` block for printing the dataset entropy calculation results:
 ```python
         X, y, columns = read_data("halloween.csv")
         print(f'dataset entropy: {entropy(y)}\n')
 ```
-Блок `if __name__ == '__main__':` в файле должен идти **после** всех функций/переменных, которые он использует!
+In the file, the block `if __name__ == '__main__':` should be put **after** all the functions and variables it uses!

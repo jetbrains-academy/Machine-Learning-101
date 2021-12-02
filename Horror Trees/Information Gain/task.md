@@ -1,51 +1,51 @@
 ####Information Gain
-Количество получаемой информации ([Information Gain](https://en.wikipedia.org/wiki/Information_gain_in_decision_trees)) в теории информации &mdash; 
-это количество информации, полученной о случайной величине при наблюдении за другой 
-случайной величиной. Оно основано на уменьшении энтропии после разбиения выборки по 
-тому или иному признаку и позволяет оценить качество разбиения. Другими словами, 
-ожидаемый information gain &mdash; это изменение информационной энтропии H от предыдущего 
-состояния к состоянию, которое принимает некоторую информацию (условие) как заданную. 
-Построение решающих деревьев заключается в нахождении признака (то есть гомогенных ветвей), 
-дающего наибольшее количество информации.
+In information theory, [Information Gain](https://en.wikipedia.org/wiki/Information_gain_in_decision_trees) is
+the amount of information about a random value received while observing another random value. 
+It is based on the decrease of entropy after dividing a sample according to a certain characteristic, 
+and it allows assessing the division quality. In other words, 
+the expected information gain is the change of information entropy H from the previous state to a state
+that takes certain information (a condition) as given.
+To build a decision tree is to find a characteristic (i.e., the homogenous branches) that 
+provides the largest amount of information.
 
 $$IGain = H(parent_y) - H(children_{y|x}) $$
 
-Мы вычитаем энтропию `Y` при условии `X` из энтропии `Y` для вычисления уменьшения неопределенности
-`Y`, при условии наличия дополнительного знания `X` про `Y`.
+We subtract entropy `Y` for the condition `X` from entropy `Y` to calculate the indeterminacy decrease of
+`Y`, provided that there is some additional knowledge `X` about `Y`.
 
 
 
-### Задание
+### Task
 
-В том же файле `divide.py`, в методе `information_gain` класса `Predicate`: удалите оператор `pass`, 
-раскомментируйте все строки, содержащие `# TODO`, а также строку с `return`. 
+In the file `divide.py`, in the `information_gain` method of the `Predicate` class, delete the `pass` operator, 
+uncomment all lines with `# TODO` and the line with `return`. 
 
-Реализуйте метод `information_gain`, который 
-принимает выборку, разделяет ее на 2 независимые подвыборки и подсчитывает information gain.
-Для разбиения выборки этот метод должен использовать метод divide, написанный на предыдущем 
-шаге. 
+Realize the `information_gain` method, which 
+takes a sample, divides it into two independent sub-samples, and calculates the information gain.
+To divide the sample, use the divide method written
+in the previous step. 
 
 
 
 
 <div class="hint">
 
-Для подсчета information gain можно использовать приведенную выше формулу в таком виде:
+To calculate information gain, you can use the above formula in the following way:
 
 `gain = entropy(y) - p * entropy(y1) - (1 - p) * entropy(y2)`
 
-Где:
-- `y` – это все метки объектов (parent);
-- `y1` – один из двух получившихся после разбиения сетов меток (child);
-- `y2` – второй из двух получившихся после разбиения сетов меток (child);
-- `p` – доля объектов из первого дочернего сета среди всех объектов полного датасета (следовательно, `1 - p` – доля второго).
+where:
+- `y` is all object labels (parent);
+- `y1` is one of the two label sets (child) received after division;
+- `y2` is the second one of the two label sets (child) received after division;
+- `p` is the proportion of the objects of the first child set among all objects of the whole dataset (consequently, `1 - p` is the proportion of the second one).
 </div>
 
-Для того чтобы посмотреть на результаты работы кода, вы можете добавить
-следующую строку в блок `if __name__ == '__main__':` в `task.py` и запустить его:
+To see the results of your code, you can add the following line to the
+`if __name__ == '__main__':` block in `task.py` and launch it:
 
 ```python
     print(f'Information Gain: {predicate.information_gain(X, y)}\n')     
 ```
-Переменные, необходимые для корректной работы этого кода, вводились на предыдущих шагах; 
-если вы до сих пор не работали с `task.py`, то обратите на них внимание.
+Variables required for the correct work of this code were introduced in the previous steps; in case you haven't worked with 
+`task.py` yet, pay attention to them.

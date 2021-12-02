@@ -1,68 +1,66 @@
-В нашем случае переменная класса имеет только два возможных значения: 
-Spam или Ham. Конечно же бывают случаи, когда классификация является многомерной. 
-Поэтому необходимо найти переменную класса с максимальной вероятностью. Используя 
-приведенную ниже формулу алгоритма классификации, можно получить такой класс, исходя из 
-имеющихся предикторов.
+In our case, the class variable has only two possible values:
+Spam or Ham. Of course, there are cases when the classification is multi-dimensional. That's why we need to
+find the class variable with maximum precision. Using
+the below formula of a classification algorithm, we can get such a class according
+to the available predictors.
 
 $$y=\arg\max\limits_{y \in Y}  \prod  P(y) \times  P(x_j |y)$$
 
-$y$ — классы Spam или Ham;
+$y$ are Spam or Ham classes;
 
-$x_j$ — j-е слово в предложении.
+$x_j$ is the j-th word in a sentence.
 
 
-При достаточно большой длине сообщения придётся перемножать большое количество очень
-маленьких чисел, что может привести к ситуации, когда результат операции с
-плавающей запятой становится настолько близким к нулю, что порядок числа выходит за
-пределы разрядной сетки и компьютер не может представить его в памяти. Такая ситуация
-называется [исчезновением порядка](https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%87%D0%B5%D0%B7%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B0), а стандартный способ избежать его&nbsp;— применить
-логарифм к выражению, стоящему под $argmax$. Таким образом, формула для нашего алгоритма
-преобразуется в такой вид:
+In case the message is quite lengthy, we'll need to multiply a lot of very small numbers,
+which lead to a situation when the result of a floating point operation is so close to zero
+that the order of the number goes beyond the word length and the computer won't be able to
+present it in memory. Such a situation is referred to as
+[arithmetic underflow](https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%87%D0%B5%D0%B7%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B0), and the standard method of avoiding it to
+apply a logarithm to the expression under $argmax$. Thus, our algorithm formula
+becomes as follows:
 
 $$ \arg\max\limits_{y \in Y} [ \log(P(y)) + \sum\limits_{j=1}^{|V|} log(p(x_j |y))]$$
 
-## Задание
-В файле `bayes.py`  реализуйте метод `predict` класса `NaiveBayes`, принимающий 
-массив объектов `X` и возвращающий список соответствующих меток классов. Прежде 
-чем приступать, удалите оператор `pass` и раскомментируйте все строчки, которые 
-не являются пояснениями. 
+## Task
+In the `bayes.py` file, realize the `predict` method of the `NaiveBayes` class, which 
+takes an array of objects `X` and returns a list of corresponding class labels. Before doing it,
+delete the `pass`operator and uncomment all lines except comments.
 
-<div class="hint">Вы можете выделить сразу весь блок с комментариями и нажать Ctrl + / 
-(Windows, Linux) или ⌘ + / (MacOs), чтобы раскомментировать нужные строки. </div>
+<div class="hint">In order to uncomment the required lines, you can select the whole block with comments and press Ctrl + / 
+(Windows, Linux) or ⌘ + / (MacOs). </div>
 
-- Сначала каждое сообщение внутри массива превратить в вектор отдельных слов при 
-  помощи функции `split_by_words()`.
-- В каждом сообщении найти набор уникальных слов и создать вектор нулей такой же 
-  размерности.
-- Для каждого уникального слова из полученного списка найти соответствие в словаре, 
-  если оно находится&nbsp;— записать его индекс в вектор, созданный на предыдущем 
-  шаге, если нет&nbsp;— записать индекс, равный длине словаря. Все такие слова имеют 
-  одинаковую вероятность.
-- Рассчитать `log_likelihood`, применив функцию `np.log()` к срезу массива `likelihood`, 
-  полученного при помощи `index_array`&nbsp;— таким образом мы оставляем в массиве 
-  только вероятности тех слов, которые есть в нашем предложении. 
-- Используя приведенную выше формулу, рассчитать наиболее вероятный класс для этого 
-  сообщения.
-- Вернуть список наиболее вероятных классов для всех сообщений из входного массива.
+- First, you need to turn each message within the array into a vector of separate words with the
+  help of the `split_by_words()` function.
+- In each message, find a set of unique words and create a vector with zeros of
+  the same size.
+- For each unique word from the list, find a correspondence in the dictionary; if you find it,
+  write its index to the vector created in the previous step, if not – write an index
+  equal to the dictionary length. All such words have the same
+  probability.
+- Calculate `log_likelihood` by applying the `np.log()` function to the array slice `likelihood`
+  received with the help of `index_array`; thus, the array will contain the probabilities of only
+  those words that occur in our sentence. 
+- Use the above formula to calculate the most probable class for this message.
+- Return the list of most probable classes of all messages in the input array.
 
 
-Также реализуйте метод `score`, который прогоняет тестовую выборку через алгоритм, а затем сравнивает 
-полученные метки классов с реальными и возвращает долю верно классифицированных объектов.
+Then, realize the`score` method, which passes the testing sample through the algorithm, compares the received
+class labels with the real ons and returns the proportion of correctly classified objects.
 
 <div class="hint">
-Апостериорные вероятности для каждого класса рассчитываются как сумма логарифма 
-априорной вероятности и суммы логарифмов вероятностей для слов из <code>log_likelihood</code>, 
-сложенных вдоль 1й оси, то есть отдельно для каждого класса.
+Posterior probabilities for each class are calculated as the sum of the prior probability logarithm and the summarized logarithms of probabilities for the words from 
+<code>log_likelihood</code> 
+positioned along one axis, i.e., separately for each class.
 </div>
 
 <div class="hint">
-После нахождения апостериорных вероятностей для классов, нужно определить, какая 
-из них больше, и выбрать из <code>unique_classes</code> тот, который ей соответствует. Здесь 
-может пригодиться функция <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">numpy.argmax</a>.
+After finding the posterior probabilities for classes, you need to determine which 
+one is the largest among them and choose a class corresponding to it from <code>unique_classes</code>. Here, 
+you may use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">numpy.argmax</a> function.
 </div>
 
-Для того чтобы посмотреть на результаты работы своего кода, вы можете добавить следующие
-строчки в блок `if __name__ == '__main__':` в `task.py`, после чего запустить его:
+To see the results of your code, you can add the following
+lines to the `if __name__ == '__main__':` block in `task.py` and then launch it:
 
 ```python
 print(nb.predict(["This is not a spam"]))

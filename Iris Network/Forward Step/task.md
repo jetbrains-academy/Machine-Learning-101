@@ -1,52 +1,52 @@
-<h2>Обучение нейронной сети</h2>
+<h2>Training a neural network</h2>
 
-<p>Вспомним формулу для выходных данныx $\hat{y}$ простой 2-слойной нейронной сети:</p>
+<p>Let's remember the output data $\hat{y}$ formula for a simple 2-layer neural network:</p>
 
 $$\hat{y} = \sigma(W_2 \sigma(W_1x + b_1) + b_2$$
 
-<p>Веса $W$ и смещения $b$ – единственные параметры, влияющие на выходные данные $\hat{y}$. Правильные значения 
-весов и смещений определяют корректность результата. Процесс настройки весов и смещений – это и есть обучение нейронной сети.</p>
+<p>Weights $W$ and the bias $b$ are the only parameters affecting the output data $\hat{y}$. Rightly chosen values
+of weights and biases determine the correctness of the result. The process of adjusting weights and biases is, in fact, the process of training a neural network</p>
 
-<p>Каждая итерация обучающего процесса состоит из следующих шагов:</p>
+<p>Each iteration of the training process includes the following steps:</p>
 
 <ul>
-<li>Расчет предсказания для выходных данных – "упреждение" или же "прямой проход" (feedforward)</li>
-<li>Обновление весов и смещений – "обратное распространение ошибки" (backpropagation)</li>
+<li>Calculating the predicted output data – feedforward</li>
+<li>Updating weights and biases – backpropagation</li>
 </ul>
 
-<h3>Прямой проход</h3>
+<h3>Feedforward</h3>
 
-Прямой проход – это обычные вычисления от входного к выходному слою, и для простой 2-слойной нейронной сети выходные данные будут выглядеть так:
+Feedforward is a regular calculation from the input layer to the output layer; for a simple 2-layer neural network, the output data will be as follows:
 $$\hat{y} = \sigma(W_2 \sigma(W_1x + b_1) + b_2$$
 
-<h2>Данные</h2>
-Ирисы Фишера (ирисы Андерсона, the iris data) – наиболее распространенный датасет для тестирования алгоритмов машинного обучения. Данные содержат 4 признака:
+<h2>Data</h2>
+Fisher's irises (Anderson's irises, or the iris data) is the most common dataset used for testing machine learning algorithms. The data contain 4 characteristics:
 
 <ul>
-<li>длина наружной доли околоцветника (чашелистика)</li>
-<li>ширина наружной доли околоцветника (чашелистика)</li>
-<li>длина внутренней доли околоцветника (лепестка)</li>
-<li>ширина внутренней доли околоцветника (лепестка) для различных видов цветков ириса – щетинистого, виргинского и разноцветного. Для каждого вида представлено по 50 экземпляров.</li>
+<li>sepal length</li>
+<li>sepal width</li>
+<li>petal length</li>
+<li>petal width for various types of irises: setosa, versicolor, and virginica. Each type is represented by 50 flowers.</li>
 </ul>
 
-<p>Мы построим классификационную модель на основе этих данных, используя нейронную сеть. Для простоты мы будем использовать только 
-длину и ширину лепестков разноцветного и виргинского видов ириса.</p>
+<p>We will build a neural network-based classification model relying on these data. For convenience, we will use only the petal length and width
+of versicolor and virginica.</p>
 
-<h2>Задание</h2>
+<h2>Task</h2>
 
-<p>В файле <code>network.py</code> реализован класс <code>NN</code> – нейросеть с <code>input_size</code> входных нейронов, <code>hidden_size</code> скрытых нейронов 
-и <code>output_size</code> выходных нейронов. Атрибуты <code>w1</code> и <code>w2</code> – веса связей между входными и скрытыми нейронами и между скрытыми и выходными 
-нейронами соответственно. <code>input_size</code> будет зависеть от входных данных.</p>
+<p>In the <code>network.py</code> file, the <code>NN</code> is realized – a neural network with <code>input_size</code> of input neurons, <code>hidden_size</code> of hidden neurons, and 
+<code>output_size</code> of output neurons. Attributes <code>w1</code> and <code>w2</code> are the connection weights between the input and hidden neurons and between the hidden and output neurons
+respectively. <code>input_size</code> will depend on the input data.</p>
 
-<p>Реализуйте метод <code>feedforward</code>. Он должен перемножить матрицу весов <code>w1</code> и матрицу входных данных и применить к произведению 
-функцию активации. После этого метод должен перемножить матрицу полученных на предыдущем шаге данных и матрицу весов <code>w2</code>, 
-а также применить к произведению функцию активации и вернуть результат. Остальные методы класса будут реализованы на следующих шагах.</p>
+<p>Realize the <code>feedforward</code> method. It has to multiply the weights matrix <code>w1</code> by the matrix of the input data and then apply the activation function to the product. 
+Then, the method has to multiply the data matrix received in the previous step by the weights matrix  <code>w2</code>,
+apply the activation function to the product, and return the result. Other methods of the class will be realized in further steps.</p>
 
-<p>Для простоты мы предполагаем смещения равными 0.</p>
+<p>For convenience, we suggest that you choose the biases equal to 0.</p>
 
 <div class="hint">
-Для перемножения матриц предлагаем вам использовать функцию <a href=”https://numpy.org/doc/stable/reference/generated/numpy.dot.html”>numpy.dot</a>.</div>
+To multiply the matrices, you can use the <a href=”https://numpy.org/doc/stable/reference/generated/numpy.dot.html”>numpy.dot</a> function.</div>
 
-Вы можете запускать `task.py` в практических заданиях, чтобы посмотреть, как работает ваш код. В этом задании вы также сможете получить график, 
-иллюстрирующий разброс входных данных по выбранным признакам. Модифицировать `task.py` в этом задании не нужно.
+You can launch `task.py` in the tasks to check how your code works. In this task, you can also get a graph
+illustrating the data scattering according to the chosen characteristics. You don't need to modify `task.py` in this task.
 

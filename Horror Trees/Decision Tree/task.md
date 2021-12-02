@@ -1,49 +1,49 @@
 ### ID3
 
-Основной алгоритм построения решающих деревьев называется [ID3](https://ru.wikipedia.org/wiki/ID3_(%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC)). ID3 
-рекурсивно проходит по всем ветвям, не являющимся листьями, пока не классифицирует все данные.
+The basic algorithm for building decision trees is called [ID3](https://ru.wikipedia.org/wiki/ID3_(%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC)). ID3 
+recursively goes through all branches that are not leaves until it classifies all the data.
 
-1. Датасет разбивается по различным признакам. 
-   Для каждой из ветвей вычисляется энтропия. Полученные значения пропорционально складываются в полную энтропию разбиения. Она вычитается из энтропии до разбиения, что в результате дает количество полученной информации, то есть уменьшение энтропии.
+1. The dataset is divided according to different characteristics. 
+   For each branch, entropy is calculated. The received values are proportionally summarized as the total division entropy. After subtracting it from the entropy before the division, we get the information gain, i.e., the decrease of entropy.
     
-2. Признак с наибольшим количеством получаемой информации становится решающим узлом, и датасет делится на ветви в зависимости от того, обладают ли объекты данным признаком. Процесс повторяется для каждой ветви.
+2. The characteristic with the largest information gain becomes the decisive node, and the dataset is divided on the basis of objects' possessing or not possessing that characteristic. The process is repeated for each branch.
    
-3. Ветвь с энтропией 0 является листом.
- Ветвь с энтропией больше 0 требует дальнейшего деления.
+3. A branch with the 0 entropy is a leaf.
+ Branches with the entropy greater than 0 require further division.
 
 
 
-### Задание
+### Task
 
 
-В файле `tree.py` реализуйте рекурсивный алгоритм построения дерева решения в методе
-`build` класса `DecisionTree`. Вам потребуется реализовать два вспомогательных 
-метода &mdash; `build_subtree` и `get_best_predicate`.
-1. В методе `get_best_predicate` постройте все возможные предикаты для конкретного 
-   признака. Для этого нужно определить уникальные значения данного признака.
-2. Оцените прирост информации (information gain) всех возможных предикатов для всех признаков на основании энтропии (entropy).
-3. Выберите предикат, который обеспечивает наилучшее с точки зрения информативности 
-   разбиение. Метод `get_best_predicate` должен возвращать этот предикат в виде инстанса 
-   класса `Predicate`.
-4. В методе `build_sutree` разбейте выборку по выбранному предикату, используя 
-   метод `divide` класса `Predicate`, и рекурсивно постройте правое и левое поддеревья. Метод `build_sutree` 
-   возвращает инстанс класса `Node` в случае, если был найден лучший предикат. 
-   Если же нет, то метод возвращает наиболее часто встречающуюся метку класса.
-5. Метод `build` возвращает `self`.
+In the `tree.py` file, realize a recursive algorithm for building a decision tree in the
+`build` method of the `DecisionTree` class. You will need to realize two additional methods:
+`build_subtree` and `get_best_predicate`.
+1. In the `get_best_predicate` method, build all possible predicates for a specific characteristic.
+   To do that, you need to find the unique values of the given characteristic.
+2. Assess the information gain of all possible predicates for all characteristics on the basis of entropy.
+3. Choose the predicate that provides the best division in terms of information gain.
+   The `get_best_predicate` method should return this predicate as an instance of the
+   `Predicate` class.
+4. In the `build_sutree` method, divide the sample according to the chosen predicate using the
+   `divide` method of the `Predicate` class; recursively build the right and the left subtrees. The `build_sutree`
+   method returns an instance of the `Node` class in case the best predicate was found.
+   If not, the method returns the most frequently occurring class label.
+5. The `build` method returns `self`.
  
-На данном этапе не обращайте внимания на остальные методы класса &mdash; их нужно будет реализовать 
-в следующем задании. 
+At this stage, don't mind the rest of class methods – you will need to realize them
+in the next task. 
 
-Для того чтобы посмотреть на результаты работы кода, вы можете добавить
-следующие строки в `task.py` и запустить его:
-1. Необходимый импорт:
+To see the results of your code, add the following lines
+to `task.py` and launch it:
+1. Required import:
  ```python
 from tree import DecisionTree  
 ```
-2. Строки для вывода результата добавьте в блок `if __name__ == '__main__':`.
+2. Add the lines for result output to the `if __name__ == '__main__':` block.
 ```python
 tree = DecisionTree().build(X, y) 
 print(f'{tree}\n')
 ```
-Переменные, необходимые для корректной работы этого кода, вводились на предыдущих шагах;
-если вы до сих пор не работали с `task.py`, то обратите на них внимание.
+Variables required for the correct work of this code were introduced in the previous steps; in case you haven't worked with
+`task.py` yet, pay attention to them.

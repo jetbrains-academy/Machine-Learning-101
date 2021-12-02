@@ -1,9 +1,8 @@
-В данном уроке мы создадим наивный [байесовский классификатор](http://www.machinelearning.ru/wiki/index.php?title=%D0%9D%D0%B0%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B9%D0%B5%D1%81%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80) (Naive Bayes Classifier) для определения 
-спама в СМС сообщениях. Несмотря на большие успехи машинного обучения в последние годы, наивный 
-байесовский алгоритм остается не только одним из простейших, но и одним из самых быстрых, точных 
-и надежных. Он успешно используется для многих целей (рекомендательные системы,
-классификация данных в режиме реального времени и т.д.), но особенно хорошо работает с задачами 
-обработки естественного языка.
+In this lesson, we will develop a naive [Bayes classifier](http://www.machinelearning.ru/wiki/index.php?title=%D0%9D%D0%B0%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B9%D0%B5%D1%81%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80) to detect
+spam in SMS messages. Despite the huge success of machine learning over the recent years, the naive Bayes algorithm
+remains not only one of the simplest but also one of the fastest, most precise and reliable algorithms.
+It is successfully used for numerous purposes (recommendation systems, real-time data classification, etc.),
+but it is exceptionally good in tasks involving natural language processing.
 
 <style>
 img {
@@ -14,81 +13,81 @@ img {
 </style>
 ![bayes](Thomas_Bayes.png)
 
-Наивный байесовский классификатор основан на [теореме Байеса](https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%B0). Теорема Байеса&nbsp;— это 
-математическая формула, используемая для вычисления условных вероятностей.
+The naive Bayes classifier is based on [Bayes' theorem](https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%B0). Bayes' theorem
+is a mathematical formula used for conditional probability calculation.
 
-**Условная (апостериорная) вероятность**&nbsp;— это вероятность наступления одного события при у
-словии, что другое событие (по предположению, допущению, подтвержденному или неподтвержденному 
-доказательством утверждению) уже произошло.
+**Conditional (posterior) probability** is the probability of an event provided that
+another event has already occurred (by conjecture, assumption, or an assertion – 
+whether confirmed or unconfirmed).
 
-Формула для определения условной вероятности:
+Here is the formula for calculating conditional probability:
 
 $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
 
-Она показывает, как часто происходит событие $A$ при наступлении события $B$. При этом мы должны знать:
-- Как часто происходит событие $B$ при наступлении события $A$, что обозначается в формуле как $P(B|A)$.
-- Безусловную (априорную) вероятность события A, обозначаемую в формуле как $P(A)$.
-- Безусловную вероятность события B. В формуле она обозначается как $P(B)$.
+It shows how often an event $A$ occurs in case of an event $B$. We need to know the following:
+- How often the event $B$ occurs in case of the occurrence of the event $A$, which the formula indicates as $P(B|A)$.
+- The unconditional (prior) probability of the event $A$, which the formula indicates as $P(A)$.
+- The unconditional probability of the event $B$, which the formula indicates as $P(B)$.
 
-Можно сказать, что теорема Байеса&nbsp;— это способ определения вероятности, исходя из знания других вероятностей.
+One might say that Bayes' theorem is a way to calculate probability on the basis of our knowledge of other probabilities.
 
-<div class="hint"><b>Парадокс Теоремы Байеса</b>. Пусть существует заболевание с частотой распространения 
-среди населения 0,001 и метод диагностического обследования (тест), который с вероятностью 0,9 
-выявляет больного, но при этом имеет вероятность 0,01 ложноположительного результата&nbsp;— ошибочного 
-выявления заболевания у здорового человека. Нужно найти вероятность того, что человек на самом деле 
-здоров, если тест показал, что он болен. По теореме Байеса получается, что эта вероятность 91.7%, то есть 
-большинство людей, у которых тест показал результат «болен», на самом деле здоровы. Причина этого в том, 
-что по условию задачи вероятность ложноположительного результата хоть и мала, но на порядок больше доли 
-больных в обследуемой группе людей. Расчеты и более подробное объяснение можно найти <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%B0#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_4_%E2%80%94_%D0%BF%D0%B0%D1%80%D0%B0%D0%B4%D0%BE%D0%BA%D1%81_%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D1%8B_%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%B0">здесь</a>. </div>
+<div class="hint"><b>The paradox of Bayes' theorem</b>. Let's assume there is a disease with
+the occurrence among the population equalling 0,001 and a diagnostic method (test) that reveals a sick person with the probability of 0,9
+but also has the 0,01 probability of a false positive result – an erroneous diagnosis of the disease in a healthy person.
+We need to calculate the probability of a person being healthy when
+the test identified them as sick. According to Bayes' theorem, this probability is 91.7%, that is 
+the majority of people diagnosed as "sick" are in fact healthy. The reason is that, according to the task condition, 
+the probability of a false positive result, even if small, is by an order of magnitude larger than the proportion of
+sick people in the sample group. You can find the calculations and a detailed explanation <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%B0#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_4_%E2%80%94_%D0%BF%D0%B0%D1%80%D0%B0%D0%B4%D0%BE%D0%BA%D1%81_%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D1%8B_%D0%91%D0%B0%D0%B9%D0%B5%D1%81%D0%B0">here</a>. </div>
 
-**Наивный классификатор**&nbsp;— вероятностная модель. Он вычисляет вероятность каждого из классов для 
-данного текста и возвращает наиболее вероятный.
+The **naive classifier** is a probability model. It calculates the probability for each text class
+and returns the more probable one.
 
-Нашей задачей будет вычислить вероятности того, что конкретное предложение это "Spam" или "Ham", а затем 
-выбрать наиболее вероятный вариант.
+Our task will be to calculate the probability of a given sentence being "Spam" or "Ham" and then 
+choose the more probable variant.
 
-$P(Spam|sentence)$&nbsp;— вероятность того, что предложение это “Spam” при условии конкретного предложения, 
-то есть учитывая набор слов в этом предложении.
+$P(Spam|sentence)$ is the probability that a sentence is “Spam”, taking into account
+the set of words in a specific sentence.
 
 
-### Задание
+### Task
 
-В файле "Spam.txt" находится датасет, содержащий размеченные сообщения. Первое слово каждой 
-строки&nbsp;— это идентификатор класса “Spam” или “Ham”, далее через табуляцию следует само сообщение.
+In the "Spam.txt" file, you will find a dataset containing marked sentences. The first word in each line 
+is an identifier of the “Spam” or “Ham” class; then, after a tabulation, follows the body of the message.
 
-Прежде чем строить классификатор, нужно привести данные в удобный для классификации формат. Для этого 
-воспользуемся стандартной моделью для текстов под названием [Bag of words](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%88%D0%BE%D0%BA_%D1%81%D0%BB%D0%BE%D0%B2). Она позволяет вычислить 
-количество вхождений каждого слова в документе, независимо от порядка слов и построения предложений.
+Before building a classifier, we need to present the data in a format convenient for classifying. To do that,
+we will use a standard text-processing model named [Bag of words](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%88%D0%BE%D0%BA_%D1%81%D0%BB%D0%BE%D0%B2). It allows calculating 
+the number of occurrences for each word in a document, regardless of word order and syntactic structures.
 
-В файле `vectorize.py` уже реализована функция `split_by_words()`, которая принимает на вход вектор строк 
-и возвращает вектор из списков отдельных слов, которые были в каждой строке. Она использует следующие функции:
+In the `vectorize.py` file, we have realized a function `split_by_words()`, which takes a vector of text lines and returns a vector of word lists for each line.
+It utilizes the following functions:
 
-- [numpy.char.lower](https://numpy.org/doc/stable/reference/generated/numpy.char.lower.html) — возвращает массив элементов, преобразованных в нижний регистр.
-- [numpy.char.translate](https://numpy.org/doc/stable/reference/generated/numpy.char.translate.html#numpy-char-translate) — позволяет преобразовать строку, применяя к каждому символу заданное преобразование.
-- [numpy.char.split](https://numpy.org/devdocs/reference/generated/numpy.char.split.html#numpy-char-split) — для каждого элемента в массиве (строки) возвращает список слов.
-- [str.maketrans](https://docs.python.org/3/library/stdtypes.html#str.maketrans) — возвращает таблицу перевода символов (translation table). Использует три 
-  аргумента&nbsp;— x, y, z&nbsp;— где ‘x’ и ‘y’&nbsp;— строки одинаковой длины и символы в ‘x’ заменяются 
-  на символы ‘y’. Аргумент ‘z’&nbsp;—  строка (в нашем случае, string.punctuation), все символы из которой 
-  заменяются на `None`. Это позволяет избавиться от знаков препинания.
+- [numpy.char.lower](https://numpy.org/doc/stable/reference/generated/numpy.char.lower.html) – it returns a list of elements transformed into lowercase.
+- [numpy.char.translate](https://numpy.org/doc/stable/reference/generated/numpy.char.translate.html#numpy-char-translate) — it allows transforming a text line by applying a certain transformation to each character.
+- [numpy.char.split](https://numpy.org/devdocs/reference/generated/numpy.char.split.html#numpy-char-split) — it returns a list of words for each array element (lines).
+- [str.maketrans](https://docs.python.org/3/library/stdtypes.html#str.maketrans) — returns a character translation table. It uses three
+  arguments: x, y, and z, where ‘x’ and ‘y’ are text lines of the same length and the characters in ‘x’ are
+  substituted by those from ‘y’. The ‘z’ argument is a line (in our case, string.punctuation), all characters of which
+  are substituted by `None`. It helps to get rid of punctuation.
 
-В этом же файле реализуйте функцию `vectorize`. Она должна:
-1) Найти число сообщений на входе.
-2) Получить из них вектор списков отдельных слов, используя функцию `split_by_words()`.
-3) Получить из него одномерный массив уникальных слов.
-4) Создать словарь, в котором каждому уникальному слову будет соответствовать индекс.
-5) Cоздать матрицу, размера (N, M), где M&nbsp;— размер словаря. В каждой строке матрицы на j-й позиции 
-   находится число x, которое означает, что j-е слово встретилось в i-м сообщении x раз.
-6) Вернуть словарь и матрицу.
+In the same file, realize the`vectorize` function. It should do the following:
+1) Find the number of messages in the input.
+2) Get a vector of separate word lists from them using the `split_by_words()` function.
+3) Get a one-dimensional array of unique words from it.
+4) Build a dictionary, where each unique word will be assigned an index.
+5) Create a matrix of the order (N, M), where M is the dictionary size. The j-th element of each matrix line
+   is a number x, which indicates that the j-th word occurred x times in the i-th message.
+6) Return the dictionary and the matrix.
 
 <div class="hint">
-В данном задании могут быть полезны следующие функции:
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html?highlight=unique#numpy.unique">numpy.unique</a>&nbsp;— c этой функцией мы уже неоднократно сталкивались в предыдущих уроках.
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.hstack.html">numpy.hstack</a>&nbsp;— производит конкатенацию массивов по второй оси, за исключением одномерных массивов, 
-где конкатенация происходит по первой оси.
+In this task, you might want to use the following functions:
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html?highlight=unique#numpy.unique">numpy.unique</a>&nbsp;— we've come across this function on several occasions in the previous lessons.
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.hstack.html">numpy.hstack</a>&nbsp;— it concatenates arrays along the second axis, except for one-dimensional arrays, which
+are concatenated along the first axis.
 </div>
 
-Чтобы посмотреть, как работает ваш код, вы можете запускать `task.py`. В этом задании модифицировать этот файл не нужно.
+To see how your code works, you can launch `task.py`. You don't need to modify this file in the current task.
 
-> <i>Этот курс сейчас в альфа-версии. Пожалуйста, помогите нам его улучшить. Для этого вы можете ответить
-> на вопросы к каждому из заданий данного урока в опроснике по <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3V5XUAMjCyU4uOuri9WKBEXpVsRfzCfMfVtnS8AzjqdXqFw/viewform?usp=sf_link">ссылке</a>.
-> Cпасибо :) </i>
+> <i>This course is currently in the Alpha version. You can help us improve it by answering questions after each task in the following
+> <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3V5XUAMjCyU4uOuri9WKBEXpVsRfzCfMfVtnS8AzjqdXqFw/viewform?usp=sf_link">form</a>.
+> Thanks :) </i>

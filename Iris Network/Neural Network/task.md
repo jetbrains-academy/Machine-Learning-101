@@ -1,34 +1,34 @@
 <html>
 
-<h2>Нейронная сеть</h2>
+<h2>Neural network</h2>
 
-<p>Нейронная сеть – это совокупность нейронов, соединенных вместе. На самом деле нейросеть – тоже функция, как и единичный нейрон, но часто очень сложная и многопараметрическая. </p>
-<p>Нейронные сети состоят из следующих частей:</p>
+<p>A neural network is a group of interconnected neurons. Actually, a neural network is also a function, like a separate neuron, but often a very complex and multi-parameter one. </p>
+<p>Neural networks consist of the following parts:</p>
 
 <ul>
-<li>Слой входных нейронов (input layer)</li>
-<li>Произвольное количество скрытых нейронов (hidden layers)</li>
-<li>Слой выходных нейронов (output layer)</li>
-<li>Набор весов и смещений между слоями, $W$</li>
-<li>Выбор функции активации для каждого из скрытых слоев $\sigma$</li>
+<li>The input layer</li>
+<li>An arbitrary number of hidden neurons (hidden layers)</li>
+<li>The output layer</li>
+<li>A set of weights and biases between the layers, $W$</li>
+<li>The choice of an activation function for each hidden layer, $\sigma$</li>
 </ul>
 
-<p>Вес &mdash; единственный параметр связи между двумя нейронами. Благодаря весам, входная информация изменяется, когда передается от одного нейрона к другому.</p>
+<p>Weight is the only connection parameter between two neurons. Due to weights, the input information changes while passing from one neuron to another.</p>
 
-<p>Исторически при инициализации весов использовались небольшие случайные числа (в этой задаче тоже будет так), но в последнее время были разработаны 
-эвристики, принимающие во внимание такую информацию, как тип используемой функции активации и количество входов в узел: такие более адаптированные 
-подходы позволяют увеличить эффективность обучения нейронных сетей.</p>
+<p>Historically, small random numbers were used in weight initialization (that's what we will use in the current task, too). However, recently, heuristics
+have been developed such that they take into account information like the chosen type of the activation function and the number of node inputs.
+Such adaptive approaches allow increasing the efficiency of training neural networks.</p>
 
-<p>Ниже представлена 2-слойная нейронная сеть. При подсчете количества слоев слой входных нейронов не учитывается.</p>
+<p>Below, you can see a 2-layer neural network. The input layer is not considered when we count the number of layers.</p>
 
 <figure>
   <img src="neuralnet.png" alt="NeuralNet" style="width:100%">
 </figure>
 
-<p>При первом запуске нейросети ответ будет далек от правильного, поскольку сеть не обучена. Чтобы улучшить результат
-(то есть то, насколько результат классификации тестовой выборки соответствует реальным классам, к
-которым относятся объекты в ней), необходимо произвести обучение. 
-О том, как это происходит, мы расскажем в следующих шагах этого урока.</p>
+<p>When we launch the neural network for the very first time, the response will be far from correct because the network hasn't been trained yet. To improve the result
+(i.e., the extent to which the classification result of the training sample matches the real classes its objects belong to),
+we need to train the network.
+In the next chapters of the lesson, we will discuss how it happens.</p>
 
 
 

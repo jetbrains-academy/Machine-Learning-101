@@ -1,65 +1,65 @@
-Теперь нам необходимо преобразовать формулу вычисляемой вероятности так, чтобы ее можно 
-было рассчитать, используя частоту встречаемости слов. Для этого можно использовать 
-некоторые базовые свойства вероятностей. Вспомним формулу расчета вероятности события 
-$A$ при условии наступлении события $B$:
+Now we need to modify the probability formula so that we could use it with word occurrence.
+To do that, we can utilize certain basic probability features. Let's remember the formula
+of calculating the probability of event $A$ occurring in case event $B$ has already occurred:
+
 
 $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
 
-В нашем случае нужно рассчитать вероятность того, что при данном наборе слов в сообщении, это сообщение&nbsp;— спам, 
-то есть $P(Spam|sentence)$. Так, с помощью теоремы Байеса мы получаем:
+In our case, we need to calculate the probability of a message being spam in case of the occurrence of a certain set of words in it, i.e.,
+$P(Spam|sentence)$. Thus, with Bayes' theorem, we get the following:
 
 $$P(Spam|sentence) = \frac{P(sentence|Spam) \times P(Spam)}{P(sentence)}$$
 
-В нашем классификаторе мы лишь пытаемся определить наиболее вероятный класс, так что мы 
-можем пренебречь знаменателем, который будет одинаковым для обоих классов, и сравнить 
-только числители:
+In our classifier, we are only trying to find the most probable class, so we can ignore
+the denominator, which will be the same for both classes, and compare only the numerators:
+
 
 $$P(sentence|spam) \times P(spam)$$
 
-и
+and
 
 $$P(sentence|ham) \times P(ham)$$
 
-**Наивный байесовский классификатор**&nbsp;— это алгоритм для задач двухклассовой и мультиклассовой
-классификации. Он называется наивным, потому что вычисления вероятностей для каждого класса 
-упрощены, чтобы сделать их вычисление более удобным. Предполагается, что наличие какого-либо 
-из признаков не связано с наличием остальных. Это очень сильное допущение, которое едва ли 
-будет выполняться в реальных данных, т.е. маловероятно, что признаки не взаимодействуют. Тем не 
-менее, этот подход зачастую удивительно хорошо работает даже на данных, где это предположение не 
-выполняется.
+The **naive Bayes classifier** is an algorithm for solving tasks of two-class or multi-class classification.
+It is called "naive" because probability calculations for each class are simplified 
+for convenience. It is assumed that the presence of a certain characteristic is not connected with the
+presence of others. It is a very strong assumption, which is hardly applicable to
+real data: it is unlikely that the characteristics are not interconnected. Still, this approach
+works surprisingly well even with the data that do not meet this
+condition.
 
-В нашем случае описанное выше допущение означает, что вероятность встретить некоторое слово 
-в сообщении не зависит от наличия других слов в этом сообщении.
+In our case, the above assumption means that the probability of some word occurring in a message
+does not depend on the occurrence of other words in that message.
 
 $$P(\text{Who let the dogs out}) = P(\text{Who}) \times P(\text{let}) \times P(\text{the}) \times P(\text{dogs}) \times P(\text{out})$$
 
 
-### Задание
+### Task
 
-В файле `bayes.py` pеализуйте метод `fit` класса `NaiveBayes`, который по переданной выборке 
-вычисляет и сохраняет в виде атрибутов класса следующие параметры, которые понадобятся на этапе 
-классификации:
-- `classes_prior`&nbsp;— оценка априорной вероятности классов в виде numpy вектора длины 2 
-(количество классов). Вычисляется как доля каждого класса во всей выборке:
+In the `bayes.py` file, realize the method `fit` of the `NaiveBayes` class,
+which calculates and saves as class attributes the parameters of the sample we will need
+at the classification stage:
+- `classes_prior`&nbsp;— it is the assessment of the prior probability of classes presented as a numpy вектора of length 2 
+(the number of classes). It is calculated as the proportion of each class in the whole sample:
   $$P (\text{spam}) = \frac{N_{spam}}{N_{documents}}$$
 
-- `classes_words_count`&nbsp;— суммарное количество слов для сообщений каждого класса в 
-  виде вектора длины 2. Для расчета используйте матрицу X (полученную через `vectorize(X)`) 
-  и маску `y_i_mask`. Пригодится функция [numpy.sum](https://numpy.org/doc/stable/reference/generated/numpy.sum.html).
-- `likelihood`&nbsp;— относительные частоты слов для каждого класса в виде вектора numpy 
-  размерности (2, M), где M&nbsp;— размер словаря. Для расчета частоты встречаемости каждого 
-  слова в каждом из классов сначала нужно рассчитать, сколько всего раз данное слово встретилось 
-  во всех сообщениях этого класса, используя матрицу X (полученную через `vectorize(X)`) и 
-  маску `y_i_mask`, а затем разделить каждый элемент на общее число слов в сообщениях класса 
+- `classes_words_count`&nbsp;— it is the total number of words for messages of each class
+  presented as a vector of length 2. To calculate it, use the matrix X (received through `vectorize(X)`) 
+  and the mask `y_i_mask`. You will need the [numpy.sum](https://numpy.org/doc/stable/reference/generated/numpy.sum.html) function.
+- `likelihood`&nbsp;— these are relative occurrences of words for each class presented as a numpy vector
+  of the order (2, M), where M is the size of the dictionary. To calculate the occurrence of each
+  word in each class, we first need to calculate the occurrence of each word in all messages of the class
+  with the X matrix (received through `vectorize(X)`) and the 
+  `y_i_mask` mask, and then divide each element by the total number of words in the messages of the class 
   (`classes_words_count`).
   
 <div class="hint">
-Функция numpy.sum позволяет суммировать как абсолютно все элементы массива, так и только лишь 
-элементы вдоль выбранной оси. По умолчанию <code>axis=None</code>, то есть суммируются все элементы массива.</div>
+The numpy.sum function allows summarizing both all the array elements and
+the elements along the chosen axis. By default, <code>axis=None</code>, that is all the elements of an array are summarized.</div>
 
-Чтобы посмотреть, как работает ваш код, вы можете запускать `task.py`.
-В этом задании добавьте следующие строки в блок `if __name__ == '__main__':`, прежде чем
-запускать код:
+To see how your code works, you can launch `task.py`.
+In this task, add the following lines to the `if __name__ == '__main__':` block before launching
+your code:
 ```python
 nb = NaiveBayes()
 nb.fit(X_train, y_train)
@@ -67,7 +67,7 @@ print('Total number of words in each class: ', nb.classes_words_count)
 print('Class prior probabilities: ', nb.classes_prior)
 print('Relative word frequencies for each class: ', nb.likelihood)
 ```
-Кроме того, импортируйте модуль с необходимым классом в `task.py`:
+Besides, you need to import the module with the required class to `task.py`:
 ```python
 from bayes import NaiveBayes
 ```

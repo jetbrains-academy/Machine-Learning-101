@@ -12,10 +12,10 @@ vendor:
 programming_language: Python
 environment: unittest
 content:
-- О курсе
-- Зачем изучать машинное обучение
-- Соседи и Вино
-- Comic-Con и k-средних
+- About
+- Why study machine learning
+- Neighbors and wine
+- Comic-Con and k-means
 - Horror Trees
 - Bayes Guards SMS
 - Iris Network

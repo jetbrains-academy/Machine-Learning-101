@@ -1,25 +1,25 @@
-**Обучение нейросети** &mdash; нахождение правильного набора весов и смещений для того, чтобы сеть решала поставленную проблему. 
-Процесс настройки нейросети состоит из последовательного выполнения `forward` и `backward` шагов для более точной настройки весов классификатора.
+**Training a neural network** means finding the right combination of weights and biases for solving the required problem. 
+The process of setting up a neural network involves successive implementation of the `forward` and `backward` steps for fine-tuning classifier weights.
 
-<h2>Задание</h2>
-В файле `network.py` реализуйте метод `train` класса `NN`. Помимо данных, он принимает на вход параметр `n_iter`, который задает 
-необходимое количество итераций. Метод должен вызывать два других (реализованных ранее) метода в нужном порядке. Он ничего не возвращает.
+<h2>Task</h2>
+In the `network.py` file, realize the `train` method of the `NN` class. Besides data, it takes the `n_iter` parameter, which sets
+the necessary number of iterations. The method should call two other (previously realized) methods in the right order. It does not return anything.
 
-Дополните реализацию методом `predict`, который прогоняет все объекты из переданной матрицы `X` через обученную нейросеть.
+Augment the realisation by the `predict` method, which passes all objects from the `X` matrix through the trained neural network.
 
-Прежде чем приступать, удалите оператор `pass` и раскомментируйте все строки, не являющиеся пояснениями к заданию.
+Before you start, delete the `pass` operator and uncomment all lines that are not task commentaries.
 
-<div class="hint"> Метод <code>predict</code> &mdash; часть интерфейса программы, которая предполагается в нейронной сети, поэтому мы реализуем его, 
-несмотря на то что в нем будет просто вызываться метод <code>feedforward</code>. Это удачное стечение обстоятельств, в другом случае там могло 
-бы быть что-то иное.</div>
+<div class="hint"> The <code>predict</code> method is a part of the interface of a program the neural network is expected to include, so we will realize it 
+despite the fact that it just calls the <code>feedforward</code> method. It's a lucky coincidence – in other cases, there might be
+something else.</div>
 
-Для того чтобы посмотреть на результаты работы кода на следующем шаге, добавьте строки в блок `if __name__ == '__main__':` в task.py:
+To see the results of your code in this step, add the following lines to the `if __name__ == '__main__':` block in task.py:
 
 ```python
 nn.train(X_train, y_train)
 print(f'w1 after training: \n{nn.w1} \nw2 after training:\n{nn.w2}')
 ```
-Этот код позволит вам увидеть, как изменятся веса после обучения.
+This code will allow you to see the weigh changes after the training.
 
  
 
