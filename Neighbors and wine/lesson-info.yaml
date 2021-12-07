@@ -1,0 +1,8 @@
+type: framework
+content:
+- Sample division
+- k-nearest neighbors
+- Precision and recall
+- Leave-one-out
+- Conclusion
+is_template_based: false

@@ -1,65 +1,65 @@
-<h2>Численная оценка качества алгоритма</h2>
+<h2>Numerical assessment of algorithm quality</h2>
 
-В простейшем случае метрикой качества может быть доля объектов, по которым классификатор принял правильное решение.
+In the simplest case, a quality metric might be the proportion of the correctly classified objects.
 $$Accuracy=\frac{P}{N}$$
 
-где $P$ – количество объектов, по которым было принято правильное решение, а
-$N$ – размер тестовой выборки. 
+where $P$ is the number of correctly classified objects, and 
+$N$ is the testing sample size. 
 
-Эта метрика проста и хороша, но у нее есть одна особенность: всем объектам присваивается одинаковый вес, что может 
-быть некорректно в случае распределения, смещенного в сторону одного или нескольких классов в обучающей выборке. 
-В таком случае у классификатора больше информации про эти классы, и в их рамках он будет принимать более правильные 
-решения. Это может привести к тому, что при общей accuracy в 90% в рамках каких-то из представленных классов алгоритм 
-будет работать очень плохо, с точностью ниже 50%. Возможный вариант решения этой проблемы – другой подход к оценке качества.
+This metric is simple and good, but it has a peculiarity: all objects are assigned the same weight, which might be incorrect
+in the case of imbalanced distribution of classes in the training sample. In such a case, the classifier will have more information 
+about certain classes, and within those classes it will make better decisions. As a result, even if the overall accuracy is 90%, 
+with regard to some classes the algorithm will work poorly, with the accuracy lower than 50%.
+Such problems may be avoided if we choose a different approach towards quality assessment.
 
 <div class="hint">
 <b>Precision and Recall</b>
-<p>Точность (precision) и полнота (recall), с которыми мы уже знакомились в предыдущих уроках, используются при оценке 
-большей части алгоритмов извлечения информации. Они могут применяться как сами по себе, так и в качестве базиса для производных 
-метрик, таких как F-мера или R-Precision. Напомним, что точность (в пределах класса) – это доля реально принадлежащих данному 
-классу объектов среди всех объектов, которые алгоритм отнес к этому классу. Полнота – это доля обнаруженных классификатором 
-объектов, принадлежащих какому-либо классу, среди всех объектов этого класса в тестовой выборке.</p>
+<p>Precision and recall, which we have already encountered in previous lessons, are used in the assessment of most information retrieval algorithms.
+They may be used both independently and as a basis for complex metrics, such as
+F-measure or R-Precision. Just to remind you: precision (within a class) is the proportion of objects really belonging to that class 
+among all objects assigned to that class by the algorithm. Recall is the proportion of objects belonging to a class and identified by the classifier among
+all objects of that class in the testing sample.</p>
 </div>
 
 <div class="hint">
 <b>Confusion Matrix</b>
-<p>На практике значения точности и полноты удобнее рассчитывать с использованием матрицы неточностей (<i>confusion matrix</i>). 
-В случаях, когда количество классов относительно невелико (не более 100-150), это  позволяет довольно наглядно представить 
-результаты работы алгоритма.</p>
-<p>Матрица неточностей – это матрица размером N х N, где N — число классов. Столбцы этой матрицы – реальность, а строки – 
-решения классификатора. Когда классифицируется объект из тестовой выборки, то увеличивается число, стоящее на пересечении 
-строки класса, который вернул алгоритм, и столбца класса, к которому в действительности относится объект. Соответственно, 
-если классификатор верно определяет большинство объектов, то диагональные элементы матрицы будут явно выражены.</p>
+<p>In practice, precision and recall values are conveniently calculated with the help of the confusion matrix.
+When the number of classes is relatively small (not more than 100-150), it allows visualize
+the results of the algorithm's work..</p>
+<p>Confusion matrix is a matrix of order N х N, where N is the number of classes. Matrix columns represent the reality, and matrix rows
+– the classifier's decisions. When an object from the testing sample is classified, the number at the intersection of the class row returned by the algorithm and the
+class column the object really belongs to, increases. Consequently,
+if the classifier identifies most objects correctly, the diagonal elements of the matrix will be articulately expressed.</p>
 </div>
 
 <div class="hint">
-<b>F-мера</b>
-<p>Чем выше точность и полнота, тем лучше. Однако в жизни чаще всего максимальная точность и полнота не могут быть достигнуты 
-одновременно. Поэтому было бы хорошо иметь метрику, которая объединяет в себе точность и полноту алгоритма. Именно такой метрикой 
-является F-мера, представляющая собой гармоническое среднее между точностью и полнотой. Она стремится к нулю, если точность или 
-полнота стремится к нулю.</p>
+<b>F-measure</b>
+<p>The higher the precision and recall are, the better. However, in practice, maximum precision and maximum recall cannot be achieved
+simultaneously. That's why it would be good to have a metric which combines the algorithm's precision and recall. That's exactly what the
+F-measure is: it's a harmonic mean between precision and recall. It tends to zero if the precision or the recall
+tend to zero.</p>
 $$F = 2\frac{Precision * Recall}{Precision + Recall}$$
 </div>
 
-<h2>Задание</h2>
+<h2>Task</h2>
 
-В этом задании мы оцениваем качество классификации простым подсчетом отношения правильно классифицированных объектов 
-к общему количеству объектов в выборке.
+In this task, we assess the classification quality by mere calculation of the proportion of correctly classified objects among all
+objects in the sample.
 
-В файле `evaluate.py` реализуйте функцию `accuracy`, которая прогоняет тестовую выборку через алгоритм, а затем сравнивает полученные 
-метки классов с реальными и возвращает долю верно классифицированных объектов.
+In the `evaluate.py` file, realize the `accuracy` function, which passes the testing sample through the algorithm, compares 
+the received class labels with the real ones, and returns the proportion of correctly classified objets.
 
-Для того чтобы посмотреть на результаты работы кода, вы можете добавить следующие строки в блок `if __name__ == '__main__':` в `task.py` и запустить его:
+To see the results of your code's work, you can add the following lines to the `if __name__ == '__main__':` в `task.py` block and launch it:
 
 ```python
 print("Accuracy:")
 print(accuracy(nn, X_test, y_test))
 ```
-Переменные, необходимые для корректной работы этого кода, вводились на предыдущих шагах; если вы до сих пор не работали с `task.py`, то обратите на них внимание:
+Variables required for the correct work of this code were introduced in previous steps; if you haven't worked with `task.py` yet, pay attention to them:
 ```python
 X, y = read_data('iris.csv')
 trainX, trainY, testX, testY = train_test_split(X, y, 0.7)
 nn = NN(len(X[0]), 5, 1)
 nn.train(trainX, trainY)
 ```
-Попробуйте запустить код в `task.py` несколько раз, чтобы увидеть, как `accuracy` меняется при каждом запуске.
+Try launching the code in `task.py` several times to see how `accuracy` changes at each launch.

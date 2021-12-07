@@ -1,88 +1,88 @@
-**Ошибка** — величина, отражающая расхождение между ожидаемым и полученным ответами, и она должна идти на спад с каждой итерацией. 
-Если этого не происходит, значит алгоритм работает неверно. Ошибку можно вычислить разными путями; примеры методов подсчета ошибки: 
+An **error** is a value reflecting the discrepancy between the expected and received answers; it has to decrease with each iteration.
+If it is not happening, the algorithm works improperly. We can calculate the error in several ways, for example, using such methods as
 [Sum of Squared Errors](https://en.wikipedia.org/wiki/Residual_sum_of_squares#:~:text=In%20statistics%2C%20the%20residual%20sum,actual%20empirical%20values%20of%20data).&text=A%20small%20RSS%20indicates%20a,the%20model%20to%20the%20data.) 
-(SSE), [Mean Squared Error](https://en.wikipedia.org/wiki/Mean_squared_error) (MSE), [Root MSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation). 
+(SSE), [Mean Squared Error](https://en.wikipedia.org/wiki/Mean_squared_error) (MSE), or [Root MSE](https://en.wikipedia.org/wiki/Root-mean-square_deviation). 
 
-Так как при инициализации мы задаем случайный набор весов и результат работы НС едва ли будет лучше, чем случайный, нам 
-необходимо изменить веса так, чтобы НС выдавала верный результат (то есть чтобы выходные данные классификации совпали с известными нам 
-метками классов). В нашем случае верным результатом будет предсказание вида ириса по длине и ширине лепестков, которое совпадет со
-значением, записанным для данного объекта в колонке "species". Необходимое изменение весов достигается с помощью обратного распространения ошибки (backward propagation).
+As we use a random set of weights and biases at initialization and the result of the network's work will be all but random, we need to change the weights so that the network outputs the correct result (i.e.,
+the output data of the classification should match the class labels known to us).
+In our case, the correct result will mean the prediction of the iris type according to petal length and width that will match
+the value indicated in the column "species" for that object. The necessary weight change is achieved by backward propagation.
 
-<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8#:~:text=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%20%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20(%D0%B0%D0%BD%D0%B3%D0%BB,%D0%B1%D1%8B%D0%BB%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%20%D0%B2%201974%20%D0%B3.">Алгоритм обратного распространения ошибки</a> — 
-популярный алгоритм обучения нейронных сетей прямого распространения. Он относится к методам обучения с учителем, и поэтому необходимо, 
-чтобы в обучающих примерах были заданы целевые значения (например, у нас известно, какие ирисы имеют какие характеристики).
+<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8#:~:text=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%20%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20(%D0%B0%D0%BD%D0%B3%D0%BB,%D0%B1%D1%8B%D0%BB%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%20%D0%B2%201974%20%D0%B3.">The backpropagation algorithm</a> is 
+a popular feedforward neural network training algorithm. It belongs to the supervised teaching type, so we need to indicate target values in the training examples
+(thus, we know the characteristics of the types of irises).
 
-Обратное распространение ошибки работает с использованием функции потерь, показывающей, насколько далеко сеть была от верного результата.
+Backpropagation uses the loss function, which shows how far the network is from the correct answer.
 
-<h2>Потери</h2>
+<h2>Losses</h2>
 
-Для вычисления функции потерь мы будем использовать суммарную квадратичную ошибку (SSE):
+To calculate the loss function, we will use the sum of squared estimate of errors (SSE):
 
 $$Loss(y, \hat{y}) = \sum\limits_{i=1}^{n} (y_i - \hat{y}_i) ^ 2$$
 
-где $\hat{y}$ – предсказанные выходные данные;
+where $\hat{y}$ is the predicted output data;
 
-$y$ – реальные выходные данные.
+$y$ is the real output data.
 
-Сумма квадратов ошибок (Sum of Squared Errors, SSE) – сумма разностей между каждым спрогнозированным значением и реальными данными. 
-Разность возведена в квадрат, чтобы оперировать ее абсолютным значением. Это значение – мера неточности работы нашаей нейросеть, и его нужно минимизировать.
+The Sum of Squared Errors (SSE) is the sum of differences between each predicted value and the real value.
+The difference is squared so that we can use its absolute value. This value is the measure of our neural network's inaccuracy, and it should be minimized.
 
-Задача обучения – найти такой набор весов и смещений, который наилучшим образом минимизирует функцию потерь. Для того чтобы узнать, на сколько и в 
-каком направлении нужно изменить веса и смещения, необходимо знать зависимость производной функции потерь от них.
+The task of training is to find such a combination of weights and biases that will best minimize the loss function. To find out how much and in what direction
+weights and biases should be changed, we need to know the dependence of the derivative of the loss function on them.
 
-<div class="hint">Стоит отметить, что задача нахождения глобального минимума этой функции, как правило, очень сложна, и мы, 
-скорее всего, получим какой-то из локальных минимумов, который может быть лучше или хуже, но в каком именно из них мы окажемся – 
-зависит от изначального случайного набора весов и смещений.</div>
+<div class="hint">It's necessary to note that the task of finding the global minimum of this function is usually very complex and
+most probably, we will get one of the local minimums, which may be better or worse; however, which minimum exactly we will find
+depends on the initial random combination of weights and biases.</div>
 
-В разделе Градиентный спуск (<a href="https://en.wikipedia.org/wiki/Gradient_descent#:~:text=Gradient%20descent%20is%20a%20first,the%20direction%20of%20steepest%20descent.">Gradient Descent</a>) 
-предыдущего урока рассказывалось, что производная (или же <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82">градиент</a>) показывает наклон 
-графика функции. Если известна производная функции потерь, то мы знаем, в каком направлении уменьшается ее значение, и можем обновлять веса 
-и смещения, увеличивая или уменьшая их в зависимости от этого значения.
+In the <a href="https://en.wikipedia.org/wiki/Gradient_descent#:~:text=Gradient%20descent%20is%20a%20first,the%20direction%20of%20steepest%20descent.">Gradient Descent</a> 
+chapter of the previous lesson, we said that the derivative (or <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82">gradient</a>) shows the obliquity 
+of the function graph. If we know the derivative of the loss function, we know the direction in which its value declines and thus, can update the weights
+and biases increasing or decreasing them according to this value.
 
-Тем не менее, невозможно просто вычислить зависимость производной функции потерь от весов и смещений, так как уравнение функции не содержит в себе 
-ни весов, ни смещений. Для подобных вычислений необходимо определить некое связующее правило.
+Yet, it's impossible to just calculate the dependence of the derivative of the loss function on weights and losses because the function equation contains neither weights nor biases.
+Such calculations would require defining some connecting rule.
 $$\frac {\partial Loss(y, \hat{y})}{\partial W} = \frac { \partial Loss(y, \hat{y} ) } {\partial \hat{y}} \frac { \partial \hat{y} } {\partial z} \frac { \partial z } {\partial W} $$
 $$= 2 (y - \hat{y} ) * z (1- z) * x$$
 где $z = Wx + b$
 
-Вот так можно вычислить прирост весов, то есть значения, которые будут добавлены к весам нейронов выходного ($\delta_{o}$) и скрытого слоя ($\delta_{h}$):
+Here is the calculation of weights gain, i.e., the values that will be added to the weights of neurons of the output ($\delta_{o}$) and hidden layers ($\delta_{h}$):
 
 
 $$\delta_o=(OUT_{real} - OUT_{actual}) * f_a'(OUT_{real})$$   
 $$\delta_h=f_a'(OUT_h) * (w_i * \delta_i)$$
 
-Обновление же весов происходит по следующей формуле:
+Weight update occurs according to the following formula:
 
 $$weight = weight + learning\\_rate * error * input$$
 
-где $weight$ это вес; $learning\\_rate$ – “скорость обучения” – <a href="https://en.wikipedia.org/wiki/Learning_rate">параметр</a> настройки сети, который необходимо указать; $error$ – ошибка, 
-вычисленная для нейрона на предыдущем шаге; $input$ – значение входных данных, на которых была получена эта ошибка.  
+where $weight$ is the weight; $learning\\_rate$ is the learning rate, that is a network settings <a href="https://en.wikipedia.org/wiki/Learning_rate">parameter</a> we need to indicate; $error$ is the error calculated for the neuron
+in the previous step; and $input$ is the value of the input data which produced the error.
 
-<div class="hint">В машинном обучении и статистике скорость обучения – это параметр настройки в алгоритме оптимизации, 
-который определяет размер шага на каждой итерации при приближении к минимуму функции потерь.</div>
+<div class="hint">Learning rate in machine learning and in statistics is a settings parameter of the optimization algorithm 
+that determines the который определяет the step size at each iteration while approaching the minimum of the loss function.</div>
 
 
-<h2>Задание</h2>
-В файле `network.py` реализуйте метод `backward` класса `NN`, который производит следующие операции:
+<h2>Task</h2>
+In the `network.py` file, realize the method `backward` of the `NN` class, which performs the following operations:
 
 <ul>
-<li>Посчитать ошибку для выходного слоя (<code>delta_l2</code>) как разницу между результатами работы сети (<code>output</code>) и реальными метками классов (<code>y</code>) и умножить поэлементно на производную функции активации по output (формула для $\delta_{o}$).</li>
-<li>Посчитать ошибку для скрытого слоя (<code>delta_l1</code>) как произведение матриц ошибки выходного слоя и весов <code>w2</code>, умноженное поэлементно на производную функции активации по выходным данным скрытого слоя (<code>layer1</code>) (формула $\delta_{h}$).</li>
-<li>Скорректировать весовые коэффициенты выходного слоя (<code>w2</code>), вычислив векторное произведение скрытого слоя (<code>layer1</code>) и ошибки выходного слоя (<code>delta_l2</code>), умноженное поэлементно на learning rate (формула 3).</li>
-<li>Скорректировать весовые коэффициенты скрытого слоя (<code>w1</code>), вычислив векторное произведение входного слоя (<code>X</code>) и ошибки скрытого слоя (<code>delta_l1</code>), умноженное поэлементно на learning rate (формула 3).</li>
+<li>Calculate the error for the output layer (<code>delta_l2</code>) as the difference between the network results (<code>output</code>) and the real class labels (<code>y</code>) and multiply elementwise by the derivative of the activation function for output ($\delta_{o}$ formula).</li>
+<li>Calculate the error for the hidden layer (<code>delta_l1</code>) as the product of input layer error matrices and the weights <code>w2</code> multiplied elementwise by the derivative of the activation function for the output data of the hidden layer (<code>layer1</code>) ($\delta_{h}$ formula).</li>
+<li>Adjust the weight coefficients of the output layer (<code>w2</code>) by calculating the vector product of the hidden layer (<code>layer1</code>) and the output layer error (<code>delta_l2</code>) multiplied elementwise by the learning rate (formula 3).</li>
+<li>Adjust the weight coefficients of the hidden layer (<code>w1</code>) by calculating the vector product of the input layer (<code>X</code>) and the hidden layer error (<code>delta_l1</code>), multiplied elementwise by the learning rate (formula 3).</li>
 </ul>
 
-Прежде чем приступать, удалите оператор `pass` и раскомментируйте все строки, не являющиеся пояснениями к заданию.
-Производная функции активации реализована в модуле `derivative.py`.
+Before you start, delete the `pass` operator and uncomment all lines that are not task commentaries.
+The derivative of the activation function is realized in the `derivative.py` module.
 
-<div class="hint">При умножении матриц какие-то из них будет нужно транспонировать!</div>
+<div class="hint">When multiplying matrices, you will need to transpose some of them!</div>
 
 
-Для того чтобы посмотреть на результаты работы кода, вы можете добавить следующие строки в блок `if __name__ == '__main__':` в `task.py` и запустить его:
+To see the results of your code's work, you can add the following lines to the `if __name__ == '__main__':` в `task.py` block and launch it:
 
 ```python
 print(f'w1 before backward propagation: \n{nn.w1} \nw2 before backward propagation:\n{nn.w2}')
 nn.backward(X_train, y_train, output)
 print(f'w1 after backward propagation: \n{nn.w1} \nw2 after backward propagation:\n{nn.w2}')
 ```
-Этот код позволит вам увидеть, как изменятся веса после обратного распространения ошибки.
+This code will allow you to see the weigh changes after backpropagation.

@@ -1,53 +1,52 @@
-Одна из проблем с наивным подходом заключается в следующем: если какое-то слово не встречалось 
-в тренировочной выборке класса Spam, то его вероятность:
+One of the problems with the naive approach is the following: if a word has not occurred in the training sample of the 
+Spam class, its probability is:
 $$P(word|Spam)=0$$
 
-Это называется проблемой нулевой частоты. Она приведет к тому, что сообщение с этим словом 
-нельзя будет классифицировать, так как оно будет иметь нулевую вероятность во всех классах. 
-Ликвидировать эту проблему путем анализа большего количества документов не получится, так 
-как составить обучающую выборку, содержащую все возможные слова, включая синонимы, неологизмы, 
-опечатки и т.д, невозможно.
+It's called the problem of zero occurrences. It leads to the impossibility of classifying a message
+with this word, as it will have a zero probability in all classes. The problem may not be handled by means
+of analyzing a large number of documents because it's impossible to make a training sample that will include 
+all possible words, including synonyms, neologisms, typos, etc.
 
-Одним из часто используемых решений является [аддитивное сглаживание](https://en.wikipedia.org/wiki/Laplace_smoothing), или же сглаживание 
-Лапласа&nbsp;— техника, позволяющая сгладить категориальные данные (т.е. качественно 
-характеризующие исследуемый процесс или объект, не имеющие количественного выражения). При 
-наблюдаемом ${\textstyle \textstyle {\mathbf {x} \ =\ \left\langle x_{1},\,x_{2},\,\ldots ,\,x_{d}\right\rangle }}$ 
-из мультиномиального распределения с ${\textstyle \textstyle {N}}$ 
-испытаний, “сглаженный” вариант данных дает нам оценку:
+One of common solutions is [adaptive smoothing](https://en.wikipedia.org/wiki/Laplace_smoothing), or Laplace smoothing –
+a technique that allows smoothing categorical data (i.e., data qualitatively characterizing the researched process or object
+that cannot be represented quantitatively).
+Given the observed ${\textstyle \textstyle {\mathbf {x} \ =\ \left\langle x_{1},\,x_{2},\,\ldots ,\,x_{d}\right\rangle }}$ 
+from a multi-nominal distribution in ${\textstyle \textstyle {N}}$ 
+tests, the “smoothed” data variant will provide the following assessment:
 
 
 $$\hat{\theta_i}={\frac{x_i + \alpha}{N+\alpha d}}\qquad (i=1, \ldots , d),$$
 
 
-где $α > 0$ — параметр сглаживания. $α = 0$ соответствует отсутствию сглаживания.
+where $α > 0$ is the smoothing parameter, and $α = 0$ corresponds to the absence of smoothing.
 
-По сути, при $α = 1$ мы делаем вид, будто встречали каждое слово на один раз больше, то есть 
-прибавляем единицу к частоте каждого слова. Таким образом, слова, которые не попались на этапе 
-обучения модели, получают маленькую, но все же не нулевую вероятность. В противовес этому мы 
-добавим количество возможных слов к знаменателю, чтобы результат деления никогда не превышал единицы:
+Essentially, if $α = 1$, we pretend that each word has occurred one time more often, i.e.,
+we add 1 to each word's occurrence. Thus, the words that did not occur at the training stage of the model get a small
+but not zero probability. To balance it, we increase
+the number of possible words in the denominator so that the division result doesn't exceed 1:
 
 $$P(w_i|c)={\frac{W_{ic}+1}{\sum_{i'\in|V|}{(W_{i'c}+1)}}}={\frac{W_{ic}+1}{|V|+\sum_{i'\in|V|}{W_{i'c}}}}$$
 
-где: 
+where: 
 
-$P(w_i|c)$ — вероятность слова в классе;
+$P(w_i|c)$ is the probability of a word's occurrence in a class;
 
-$W_{ic}$ — сколько раз $i$-ое слово встречается в сообщениях класса $c$;
+$W_{ic}$ the number of occurrences of the $i$-th word in the messages of the class $c$;
 
-$V$ — список всех уникальных слов.
+$V$ is the list of all unique words.
 
 
-### Задание
-Обновите свою имплементацию метода `fit` так, чтобы использовать сглаживание Лапласа.
-В коде уже реализован параметр `alpha`.
-
-<div class="hint">
-Вам нужно поменять начальную имплементацию атрибута <code>likelihood</code>, а также расчет 
-значения знаменателя. </div>
+### Task
+Update the implementation of the `fit` method so that it uses Laplace smoothing.
+The `alpha` parameter is already realized in the code.
 
 <div class="hint">
-Массив <code>likelihood</code> изначально должен быть заполнен не нулями, а $\alpha=1$. </div>
+You need to change the initial implementation of the <code>likelihood</code> attribute, as well as the calculation
+of the denominator value. </div>
 
-Чтобы посмотреть, как работает ваш код, вы можете запускать `task.py`.
-В этом задании модифицировать `task.py` не нужно. Обратите внимание, как изменились значения 
-вероятностей по сравнению с предыдущим шагом.
+<div class="hint">
+Initially, the <code>likelihood</code> array must be filled not with zeros but with $\alpha=1$. </div>
+
+To see how your code works, you can launch `task.py`.
+In this task, you don't need to modify `task.py`. Mind the change of probability values compared to the previous 
+step.

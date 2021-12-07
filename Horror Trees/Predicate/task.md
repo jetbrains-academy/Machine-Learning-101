@@ -1,47 +1,47 @@
 ### Predicate
 
 
-Для построения дерева решений нам потребуется на каждом шаге разделять выборку, 
-находящуюся в узле дерева, на 2 независимых подвыборки и подсчитывать энтропию 
-каждой. Для удобства мы создадим отдельный класс `Predicate` в файле `divide.py`, хранящий в себе значение 
-признака и порогового значения, по которому происходит разделение.
+To build a decision tree, in each step, we will need to divide the sample from a tree node
+into two independent sub-samples and calculate the entropy of each of them. 
+For convenience, we will create a separate class `Predicate` in the `divide.py`; it will keep the values
+of the characteristic and the threshold value used in division.
 
 
 
-### Задание
+### Task
 
-Реализуйте метод `divide`, позволяющий разбить выборку на 2 независимых 
-подвыборки по какому-либо признаку. Функция должна принимать на вход сам 
-датасет (`X`) и метки класса (`y`). Обратите внимание, что в датасете присутствуют 
-признаки двух типов – номинальные и количественные. Сначала метод должен проверить, 
-является ли признак количественным, и в таком случае пороговое условие должно 
-представлять собой неравенство. Для номинальных признаков количество предикатов 
-равно количеству уникальных значений признака, поэтому пороговое условие, по 
-которому происходит разделение выборки, является проверкой признака на равенство. 
-Метод должен возвращать разделенные по данному признаку датасет и метки класса.
+Realize the method `divide`, which allows dividing the sample into two independent
+sub-samples according to a certain characteristic. The function should take a dataset 
+(`X`) and class labels (`y`). Mind that the dataset contains two types of characteristics –
+nominal and quantitative ones. First, the method needs to check if the characteristic is 
+quantitative, and if yes, the threshold condition should be an inequality. For nominal characteristics,
+the number of predicates equals the number of unique characteristic values, so the threshold condition for
+sample division is an equality check for the characteristic. The method should return a dataset and class
+labels divided according to this characteristic. 
+
 
 <div class="hint">
 
-Создайте массив-фильтр `mask`, сравнивая элементы в нужной колонке с 
-пороговым условием, и используйте его для того, чтобы разделить выборку. </div>
+Create a filter array `mask` by comparing the elements in the required column with the threshold condition
+and use it to divide the sample. </div>
 
 <div class="hint">
 
-Чтобы получить вторую часть выборки, которая не прошла по 
-пороговому условию, можно применить [побитовое отрицание](https://numpy.org/doc/stable/reference/generated/numpy.invert.html) к созданному 
-массиву для фильтрации данных. Оператор `~` может быть использован вместо np.invert для краткости при работе с ndarrays.</div>
+To get the second part of the sample, the one that did not pass the threshold condition, 
+you can apply [bit-wise inversion](https://numpy.org/doc/stable/reference/generated/numpy.invert.html) to the created array
+for data filtering. When working with arrays, the `~` operator may be used instead of np.invert for the sake of brevity.</div>
 
-На этом этапе не обращайте внимание на другой метод класса, его нужно будет
-реализовать в следующем задании.
+At this stage, do not mind the other method of the class – you will need to
+realize it in the next task.
 
-Для того чтобы посмотреть на результаты работы кода, вы можете добавить
-следующие строки в `task.py` и запустить его:
-1. Необходимые импорты:
+In order to see the results of your code, you can add
+the following lines to `task.py` and launch it:
+1. Required imports:
  ```python
         import numpy as np
         from divide import Predicate
 ```
-2. Игрушечный датасет для проверки работы метода `divide` и вывод результата добавьте в блок `if __name__ == '__main__':`.
+2. A mockup dataset for checking the work of the `divide` method and outputting the results should be added to the block `if __name__ == '__main__':`.
 ```python
         predicate = Predicate(3, 'clear')           
         X = np.array([[1, 1, 1, 'clear'],
