@@ -6,9 +6,9 @@ For clarity, we will build a histogram with bars of equal height, the area of ea
 
 
 ### Task
-Realize the function `centroid_histogram(labels)` to build a histogram displaying the number of pixels assigned to each cluster. The function should return a vector whose $i$-th place indicates the number of pixels assigned to a cluster with the index `i`. You can find the function template in the `plotting.py` file.
+Implement the function `centroid_histogram(labels)` to build a histogram displaying the number of pixels assigned to each cluster. The function should return a vector whose $i$-th place indicates the number of pixels assigned to a cluster with the index `i`. You can find the function template in the `plotting.py` file.
 
-You also need to complete the `plot_colors(hist, centroids)` function in the same file. It takes the number of points assigned to clusters as well as their centroids and displays a histogram with bars proportional to the number of each color points in the image. 
+You also need to complete the `plot_colors(hist, centroids)` function in the same file. It takes the number of points assigned to clusters as well as their centroids and displays a histogram with bars proportional to the number of points of each color in the image. 
 
 A histogram example:
 ![Histogram](barchart.png)
