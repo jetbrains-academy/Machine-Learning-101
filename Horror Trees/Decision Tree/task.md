@@ -40,7 +40,7 @@ to `task.py` and run it:
  ```python
 from tree import DecisionTree  
 ```
-2. Add the lines for result output to the `if __name__ == '__main__':` block.
+2. Add the lines for result output to the `main` block.
 ```python
 tree = DecisionTree().build(X, y) 
 print(f'{tree}\n')

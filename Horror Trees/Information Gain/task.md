@@ -43,7 +43,7 @@ where:
 </div>
 
 To see the results of your code, you can add the following line to the
-`if __name__ == '__main__':` block in `task.py` and run it:
+`main` block in `task.py` and run it:
 
 ```python
     print(f'Information Gain: {predicate.information_gain(X, y)}\n')     

@@ -49,7 +49,7 @@ objects in the sample.
 In the `evaluate.py` file, implement the `accuracy` function, which passes the testing sample through the algorithm, compares 
 the received class labels with the real ones, and returns the proportion of correctly classified objets.
 
-To see the results of your code's work, you can add the following lines to the `if __name__ == '__main__':` в `task.py` block and run it:
+To see the results of your code's work, you can add the following lines to the `main` block in `task.py` block and run it:
 
 ```python
 print("Accuracy:")

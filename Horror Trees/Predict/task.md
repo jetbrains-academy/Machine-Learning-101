@@ -20,7 +20,7 @@ In `classify_subtree`, you need to:
 <div class="hint">Follow the instructions in the code comments! :)</div>
 
 To see the results of your code, add the following lines
-to the `if __name__ == '__main__':` block in `task.py` and run it:
+to the `main` block in `task.py` and run it:
 ```python
 print(f'Class prediction for object X[0]: {tree.predict(X[0])}\n')
 ```

@@ -41,7 +41,7 @@ the following lines to `task.py` and run it:
         import numpy as np
         from divide import Predicate
 ```
-2. A mockup dataset for checking the work of the `divide` method and outputting the results should be added to the block `if __name__ == '__main__':`.
+2. A mockup dataset for checking the work of the `divide` method and outputting the results should be added to the block `main`.
 ```python
         predicate = Predicate(3, 'clear')           
         X = np.array([[1, 1, 1, 'clear'],

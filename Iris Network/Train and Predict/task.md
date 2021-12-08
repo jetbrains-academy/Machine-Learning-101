@@ -13,7 +13,7 @@ Before you start, delete the `pass` operator and uncomment all lines that are no
 despite the fact that it just calls the <code>feedforward</code> method. It's a lucky coincidence – in other cases, there might be
 something else.</div>
 
-To see the results of your code in this step, add the following lines to the `if __name__ == '__main__':` block in task.py:
+To see the results of your code in this step, add the following lines to the `main` block in `task.py`:
 
 ```python
 nn.train(X_train, y_train)

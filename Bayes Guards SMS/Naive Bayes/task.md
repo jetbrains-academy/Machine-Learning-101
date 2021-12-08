@@ -59,7 +59,7 @@ The `numpy.sum` function allows summarizing both all the array elements and
 the elements along the chosen axis. By default, `axis=None`, that is all the elements of an array are summarized.</div>
 
 To see how your code works, you can run `task.py`.
-In this task, add the following lines to the `if __name__ == '__main__':` block before running
+In this task, add the following lines to the `main` block before running
 your code:
 ```python
 nb = NaiveBayes()

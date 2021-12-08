@@ -60,7 +60,7 @@ you may use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.
 </div>
 
 To see the results of your code, you can add the following
-lines to the `if __name__ == '__main__':` block in `task.py` and then run it:
+lines to the `main` block in `task.py` and then run it:
 
 ```python
 print(nb.predict(["This is not a spam"]))

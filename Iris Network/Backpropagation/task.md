@@ -67,7 +67,7 @@ In the `network.py` file, implement the method `backward` of the `NN` class, whi
 
 <ul>
 <li>Calculate the error for the output layer (<code>delta_l2</code>) as the difference between the network results (<code>output</code>) and the real class labels (<code>y</code>) multiplied elementwise by the derivative of the activation function for output ($\delta_{o}$ formula).</li>
-<li>Calculate the error for the hidden layer (<code>delta_l1</code>) as the product of input layer error matrices and the weights <code>w2</code> multiplied elementwise by the derivative of the activation function wrt the output data of the hidden layer (<code>layer1</code>) ($\delta_{h}$ formula).</li>
+<li>Calculate the error for the hidden layer (<code>delta_l1</code>) as the product of input layer error matrices and the weights <code>w2</code> multiplied elementwise by the derivative of the activation function WRT the output data of the hidden layer (<code>layer1</code>) ($\delta_{h}$ formula).</li>
 <li>Adjust the weight coefficients of the output layer (<code>w2</code>) by calculating the vector product of the hidden layer (<code>layer1</code>) and the output layer error (<code>delta_l2</code>) multiplied elementwise by the learning rate (formula 3).</li>
 <li>Adjust the weight coefficients of the hidden layer (<code>w1</code>) by calculating the vector product of the input layer (<code>X</code>) and the hidden layer error (<code>delta_l1</code>), multiplied elementwise by the learning rate (formula 3).</li>
 </ul>
@@ -78,7 +78,7 @@ The derivative of the activation function is implemented in the `derivative.py` 
 <div class="hint">When multiplying matrices, you will need to transpose some of them!</div>
 
 
-To see the results of your code's work, you can add the following lines to the `if __name__ == '__main__':` в `task.py` block and run it:
+To see the results of your code's work, you can add the following lines to the `main` block in `task.py` and run it:
 
 ```python
 print(f'w1 before backward propagation: \n{nn.w1} \nw2 before backward propagation:\n{nn.w2}')

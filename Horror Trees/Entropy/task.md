@@ -8,7 +8,7 @@ The value of entropy may be greater than or equal to 0. This value is calculated
 
 $$H = - \sum\limits_{i=1}^{C} p_i \log_2 p_i$$
 
-where $p_i$ is the possible outcome probability (proportion) of an object or a class $i$ in the sample, and $С$ is the number of classes.
+where $p_i$ is the possible outcome probability (proportion) of an object or a class $i$ in the sample and $С$ is the number of classes.
 
 An interesting example of information entropy application may be found in research involving biodiversity assessment.
 Using the Shannon formula (the above equation), where $p_i$ is the proportional abundance
@@ -36,7 +36,7 @@ In order to see the results of your code, you can add the following lines to
         from calculate_entropy import entropy
         import pandas as pd
 ```
-2. Lines in the `if __name__ == '__main__':` block for printing the dataset entropy calculation results:
+2. Lines in the `main` block for printing the dataset entropy calculation results:
 ```python
         X, y, columns = read_data("halloween.csv")
         print(f'dataset entropy: {entropy(y)}\n')
