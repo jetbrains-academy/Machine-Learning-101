@@ -3,14 +3,14 @@
 
 To build a decision tree, in each step, we will need to divide the sample from a tree node
 into two independent sub-samples and calculate the entropy of each of them. 
-For convenience, we will create a separate class `Predicate` in the `divide.py`; it will keep the values
+For convenience, we will create a separate class `Predicate` in the `divide.py`; it will store the values
 of the characteristic and the threshold value used in division.
 
 
 
 ### Task
 
-Realize the method `divide`, which allows dividing the sample into two independent
+Implement the method `divide`, which allows dividing the sample into two independent
 sub-samples according to a certain characteristic. The function should take a dataset 
 (`X`) and class labels (`y`). Mind that the dataset contains two types of characteristics –
 nominal and quantitative ones. First, the method needs to check if the characteristic is 
@@ -32,10 +32,10 @@ you can apply [bit-wise inversion](https://numpy.org/doc/stable/reference/genera
 for data filtering. When working with arrays, the `~` operator may be used instead of np.invert for the sake of brevity.</div>
 
 At this stage, do not mind the other method of the class – you will need to
-realize it in the next task.
+implement it in the next task.
 
 In order to see the results of your code, you can add
-the following lines to `task.py` and launch it:
+the following lines to `task.py` and run it:
 1. Required imports:
  ```python
         import numpy as np

@@ -1,6 +1,6 @@
 ### ID3
 
-The basic algorithm for building decision trees is called [ID3](https://ru.wikipedia.org/wiki/ID3_(%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC)). ID3 
+The basic algorithm for building decision trees is called [ID3](https://en.wikipedia.org/wiki/ID3_algorithm). ID3 
 recursively goes through all branches that are not leaves until it classifies all the data.
 
 1. The dataset is divided according to different characteristics. 
@@ -8,16 +8,16 @@ recursively goes through all branches that are not leaves until it classifies al
     
 2. The characteristic with the largest information gain becomes the decisive node, and the dataset is divided on the basis of objects' possessing or not possessing that characteristic. The process is repeated for each branch.
    
-3. A branch with the 0 entropy is a leaf.
- Branches with the entropy greater than 0 require further division.
+3. A branch with the `0` entropy is a leaf.
+ Branches with the entropy greater than `0` require further division.
 
 
 
 ### Task
 
 
-In the `tree.py` file, realize a recursive algorithm for building a decision tree in the
-`build` method of the `DecisionTree` class. You will need to realize two additional methods:
+In the `tree.py` file, implement a recursive algorithm for building a decision tree in the
+`build` method of the `DecisionTree` class. You will need to implement two additional methods:
 `build_subtree` and `get_best_predicate`.
 1. In the `get_best_predicate` method, build all possible predicates for a specific characteristic.
    To do that, you need to find the unique values of the given characteristic.
@@ -31,11 +31,11 @@ In the `tree.py` file, realize a recursive algorithm for building a decision tre
    If not, the method returns the most frequently occurring class label.
 5. The `build` method returns `self`.
  
-At this stage, don't mind the rest of class methods – you will need to realize them
+At this stage, don't mind the rest of class methods – you will need to implement them
 in the next task. 
 
 To see the results of your code, add the following lines
-to `task.py` and launch it:
+to `task.py` and run it:
 1. Required import:
  ```python
 from tree import DecisionTree  

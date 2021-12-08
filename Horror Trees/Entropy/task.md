@@ -1,6 +1,6 @@
 A decision tree is built from top to bottom starting from the root node. The data are divided into subsets
 containing similar characteristics (homogeneous subsets).
-The algorithm uses the concept of [entropy](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%8D%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%8F) 
+The algorithm uses the concept of [entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) 
 to determine the homogeneity of a sample.
 
 The value of entropy may be greater than or equal to 0. This value is calculated by the following formula:
@@ -8,17 +8,17 @@ The value of entropy may be greater than or equal to 0. This value is calculated
 
 $$H = - \sum\limits_{i=1}^{C} p_i \log_2 p_i$$
 
-where $p_i$ is the possible outcome probability (proportion) of an object or a class $i$ in the sample and $С$ is the number of classes.
+where $p_i$ is the possible outcome probability (proportion) of an object or a class $i$ in the sample, and $С$ is the number of classes.
 
-An interesting example of information entropy application may be found in biodiversity assessment scholarly research. 
+An interesting example of information entropy application may be found in research involving biodiversity assessment.
 Using the Shannon formula (the above equation), where $p_i$ is the proportional abundance
-of the $i$-th species in a group of $С$ different species, we can calculate [Shannon's diversity index](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%B0_%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D1%8F).
+of the $i$-th species in a group of $С$ different species, we can calculate [Shannon's diversity index](https://en.wikipedia.org/wiki/Diversity_index).
 
 
 
 ### Task
 
-In the file `calculate_entropy.py`, realize the function `entropy`, which calculates the entropy for a certain subset of objects. 
+In the file `calculate_entropy.py`, implement the function `entropy`, which calculates the entropy for a certain subset of objects. 
 The input of the function is an array of object labels `y`.
 
 First, the function should calculate the occurrence of each class (label) in the whole subset.
@@ -29,7 +29,7 @@ use the above formula to calculate the entropy.
 
 
 In order to see the results of your code, you can add the following lines to
-`task.py` and launch it:
+`task.py` and run it:
 
 1. Required imports:
 ```python

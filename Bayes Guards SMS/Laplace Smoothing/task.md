@@ -1,5 +1,5 @@
 One of the problems with the naive approach is the following: if a word has not occurred in the training sample of the 
-Spam class, its probability is:
+`Spam` class, its probability is:
 $$P(word|Spam)=0$$
 
 It's called the problem of zero occurrences. It leads to the impossibility of classifying a message
@@ -11,7 +11,7 @@ One of common solutions is [adaptive smoothing](https://en.wikipedia.org/wiki/La
 a technique that allows smoothing categorical data (i.e., data qualitatively characterizing the researched process or object
 that cannot be represented quantitatively).
 Given the observed ${\textstyle \textstyle {\mathbf {x} \ =\ \left\langle x_{1},\,x_{2},\,\ldots ,\,x_{d}\right\rangle }}$ 
-from a multi-nominal distribution in ${\textstyle \textstyle {N}}$ 
+from a multi-nominal distribution with ${\textstyle \textstyle {N}}$ 
 tests, the “smoothed” data variant will provide the following assessment:
 
 
@@ -38,7 +38,7 @@ $V$ is the list of all unique words.
 
 ### Task
 Update the implementation of the `fit` method so that it uses Laplace smoothing.
-The `alpha` parameter is already realized in the code.
+The `alpha` parameter is already initialized in the code.
 
 <div class="hint">
 You need to change the initial implementation of the <code>likelihood</code> attribute, as well as the calculation
@@ -47,6 +47,6 @@ of the denominator value. </div>
 <div class="hint">
 Initially, the <code>likelihood</code> array must be filled not with zeros but with $\alpha=1$. </div>
 
-To see how your code works, you can launch `task.py`.
+To see how your code works, you can run `task.py`.
 In this task, you don't need to modify `task.py`. Mind the change of probability values compared to the previous 
 step.
