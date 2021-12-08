@@ -22,7 +22,7 @@ files:
   visible: false
 - name: node.py
   visible: true
-- name: example_tree.png
-  visible: false
 - name: RNA_tree.png
+  visible: false
+- name: example_tree.png
   visible: false
