@@ -2,7 +2,7 @@
 <h4><i>What knowledge might be of help in this lesson:</h4>
 
 <ul>
-  <li>linear algebra, and, in particular, matrix operations</li>
+  <li>Linear algebra, and, in particular, matrix operations</li>
   <li>Differential calculus</li>
   <li>Vector analysis</li></i>
 </ul>
@@ -12,11 +12,11 @@ types of irises.</p>
 
 <h2>Neural networks and neurons</h2>
 
-<p>A <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B5%D1%82%D1%8C">neural network</a> (or artificial neural network, ANN) is a mathematical model built according to
+<p>A <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">neural network</a> (or artificial neural network, ANN) is a mathematical model built according to
 the organization and functioning principles of biological neural networks – neuron cell networks in live organisms. This concept
 was first introduced in the mid-twentieth century in brain research and in attempts to model brain processes.</p>
 
-<p>We will consider an example of the most basic type of neural networks – the <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B5%D1%82%D1%8C_%D1%81_%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B9_%D1%81%D0%B2%D1%8F%D0%B7%D1%8C%D1%8E">feedforward neural network</a> (FNN),
+<p>We will consider an example of the most basic type of neural networks – the <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feedforward neural network</a> (FNN),
 where all connections strictly follow one direction from the input nodes
 to the output nodes.</p>
 
@@ -33,7 +33,7 @@ networks are the following:</p>
 
 <h3>Neuron</h3>
 
-<p>The structural unit of neural networks is the <a href="https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD">neuron</a>. It is a function that receives input data,
+<p>The structural unit of neural networks is the <a href="https://en.wikipedia.org/wiki/Artificial_neuron">neuron</a>. It is a function that receives input data,
 mathematically transforms them, and outputs a numerical result. There are three main types of neurons:
 input, hidden, and output. If a neural network contains a large number of neurons, the concept of
 a layer is introduced: the input layer (it receives information), hidden layers
@@ -60,11 +60,11 @@ larger than 10, we add a bias of -10.</div>
 <p>As we will need to work with diverse input data of different scale, it is necessary to rescale values to a known simple and strict range.
 This process is called **normalization**, and it is very common in neural networks.
 After summing up the input data and adding the bias, the neuron applies the
-<a href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8">activation function</a> $\sigma$ to the received value. The activation function “compresses” (standardizes) the numerical series into an interval
+<a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a> $\sigma$ to the received value. The activation function "compresses"(standardizes) the numerical series into an interval
 from 0 to 1 or from -1 to 1. A logistic sigmoid provides values in the range of [0,1], while, for example,
 tanh – in the range of [-1,1].</p>
 
-<p>In the classical case, the logistic <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%B3%D0%BC%D0%BE%D0%B8%D0%B4%D0%B0">sigmoid</a> is used as an activating function. 
+<p>In the classical case, the logistic <a href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid</a> is used as an activation function. 
 It gained popularity due to historical reasons. In today's ANN, such a sigmoid is rarely used, as it turned out that
 this function negatively affects neural network training. Here are examples of activation functions:</p>
 
@@ -77,13 +77,13 @@ this function negatively affects neural network training. Here are examples of a
     $$f(x) = max(0,x)$$</li></i>
 </ul>
 
-<div class="hint">Logistic sigmoid may result in the neural network getting stuck in the process of training because for large negative input values, it
+<div class="hint">Logistic sigmoid may result in the neural network getting stuck in the process of training because of large negative input values, it
 outputs values close to zero. Due to that,
 weights will be updated rather slowly. Conversely, the output of the tanh function lies within the range [-1, 1], and 
 large negative input values will produce negative output values; only input values close to zero will
 produce output values close to zero. This makes the network less inclined to getting stuck during the training process.
-Besides, sigmoids can trigger the vanishing gradient problem. Rectifiers, such as ReLU, are less subject to the <a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">vanishing gradient problem
-</a>; they are simpler in terms of calculations and in practice, allow faster convergence
+Besides, sigmoids can trigger the <a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">vanishing gradient problem</a>. 
+Rectifiers, such as ReLU, are less subject to the vanishing gradient problem; they are simpler in terms of calculations and in practice, allow faster convergence
 than sigmoid functions (<a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">source</a>). </div>
 
 <p>Here is the formula of a neuron's output data:</p>
@@ -128,10 +128,6 @@ b_{n}
 </p>
 
 <h2>Task</h2>
-In the <code>activation.py</code> file, use the above formula to realize the logistic activation function <code>sigmoid()</code>.
+In the <code>activation.py</code> file, use the above formula to implement the logistic activation function <code>sigmoid()</code>.
 
 </html>
-
-> <i>This course is currently in the Alpha version. You can help us improve it by answering questions after each task in the following
-> <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7uQK8wSbhRUnReXtUeMKE0eRy6JjlutTH7iEbKzwKL1VV5g/viewform?usp=sf_link">form</a>.
-> Thanks! :) </i>
