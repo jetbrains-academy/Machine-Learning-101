@@ -10,5 +10,5 @@ The course describes step-by-step problem solutions with a variety of approaches
  * Python basics – you can learn it in [JetBrains Academy](https://hyperskill.org/onboarding/?track=python) or take the course [Introduction to Python](https://stepik.org/course/238/promo).
  * Linear algebra basics. In the course, you will encounter formulas like this: 
  $$ {\mu_{c} = \frac{\sum\limits_{j=1,\dots, n} [c_i = c] x_i^j}{\sum\limits_{c_i = c} 1} } $$
- In case of any difficulties, we recommend that you study the respective topics. For example, you can look for information in a course of the [Computer Science center](https://stepik.org/course/91/promo).
+ In case of any difficulties, we recommend that you study the respective topics.
  

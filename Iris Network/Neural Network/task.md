@@ -25,7 +25,7 @@ Such adaptive approaches allow increasing the efficiency of training neural netw
   <img src="neuralnet.png" alt="NeuralNet" style="width:100%">
 </figure>
 
-<p>When we launch the neural network for the very first time, the response will be far from correct because the network hasn't been trained yet. To improve the result
+<p>When we run the neural network for the very first time, the response will be far from correct because the network hasn't been trained yet. To improve the result
 (i.e., the extent to which the classification result of the training sample matches the real classes its objects belong to),
 we need to train the network.
 In the next chapters of the lesson, we will discuss how it happens.</p>

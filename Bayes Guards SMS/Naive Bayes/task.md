@@ -36,29 +36,30 @@ $$P(\text{Who let the dogs out}) = P(\text{Who}) \times P(\text{let}) \times P(\
 
 ### Task
 
-In the `bayes.py` file, realize the method `fit` of the `NaiveBayes` class,
+In the `bayes.py` file, implement the method `fit` of the `NaiveBayes` class,
 which calculates and saves as class attributes the parameters of the sample we will need
 at the classification stage:
-- `classes_prior`&nbsp;— it is the assessment of the prior probability of classes presented as a numpy вектора of length 2 
+- `classes_prior`&nbsp;— it is the assessment of the prior probability of classes presented as a NumPy vector of length 2 
 (the number of classes). It is calculated as the proportion of each class in the whole sample:
   $$P (\text{spam}) = \frac{N_{spam}}{N_{documents}}$$
 
 - `classes_words_count`&nbsp;— it is the total number of words for messages of each class
-  presented as a vector of length 2. To calculate it, use the matrix X (received through `vectorize(X)`) 
+  presented as a vector of length 2. To calculate it, use the matrix `X` (received through `vectorize(X)`) 
   and the mask `y_i_mask`. You will need the [numpy.sum](https://numpy.org/doc/stable/reference/generated/numpy.sum.html) function.
-- `likelihood`&nbsp;— these are relative occurrences of words for each class presented as a numpy vector
-  of the order (2, M), where M is the size of the dictionary. To calculate the occurrence of each
+- `likelihood`&nbsp;— these are relative occurrences of words for each class presented as a NumPy array
+  of the shape `(2, M)`, where `M` is the size of the dictionary. To calculate the occurrence of each
   word in each class, we first need to calculate the occurrence of each word in all messages of the class
-  with the X matrix (received through `vectorize(X)`) and the 
+  with the `X` matrix (received through `vectorize(X)`) and the 
   `y_i_mask` mask, and then divide each element by the total number of words in the messages of the class 
   (`classes_words_count`).
   
 <div class="hint">
-The numpy.sum function allows summarizing both all the array elements and
-the elements along the chosen axis. By default, <code>axis=None</code>, that is all the elements of an array are summarized.</div>
 
-To see how your code works, you can launch `task.py`.
-In this task, add the following lines to the `if __name__ == '__main__':` block before launching
+The `numpy.sum` function allows summarizing both all the array elements and
+the elements along the chosen axis. By default, `axis=None`, that is all the elements of an array are summarized.</div>
+
+To see how your code works, you can run `task.py`.
+In this task, add the following lines to the `main` block before running
 your code:
 ```python
 nb = NaiveBayes()

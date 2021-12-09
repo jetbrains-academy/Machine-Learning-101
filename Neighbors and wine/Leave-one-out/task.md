@@ -1,11 +1,11 @@
 ### Choosing K value
 
-When `k = 1`, the nearest neighbours algorithm won't be resistant to [noise outliers](http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_%D0%B1%D0%BB%D0%B8%D0%B6%D0%B0%D0%B9%D1%88%D0%B8%D1%85_%D1%81%D0%BE%D1%81%D0%B5%D0%B4%D0%B5%D0%B9#.D0.9E.D1.82.D1.81.D0.B5.D0.B2_.D1.88.D1.83.D0.BC.D0.B0_.28.D0.B2.D1.8B.D0.B1.D1.80.D0.BE.D1.81.D0.BE.D0.B2.29): it makes classification mistakes not only on the outlier objects
-but also on the near-by objects of other classes.
+When `k = 1`, the nearest neighbors algorithm won't be resistant to [noise outliers](https://en.wikipedia.org/wiki/Outlier): it makes classification mistakes not only on the outlier objects
+but also on the nearby objects of other classes.
 
-**Noise outliers** are extreme items in the sample, lying far beyond other observations. In our context, these are objects mistakenly assigned to a certain class. What accounts for noise outliers may be errors in the equipment work, human errors while data processing, unique characteristics of some wines, etc.
+**Noise outliers** are extreme values in the sample, lying far beyond other observations. In our context, these are objects mistakenly assigned to a certain class. What accounts for noise outliers may be errors in the equipment work, human errors while data processing, unique characteristics of some wines, etc.
 
-If `k` equals the size of the sample, the algorithm is excessively stable and degenerates into a constant. In such a case, the classification will depend not on the similarity of wines but on the number of certain wines in the sample. Thus, our sample in the **wine.csv** file contains 59 wines of the first class, 71 wine of the second class, and 48 wines of the third class. If we analyze the most frequently occurring class among 177 nearest neighbours, it will be class 2 for each of the wines.
+On the other hand, if `k` equals the size of the sample, the algorithm is excessively stable and degenerates into a constant. In such a case, the classification will depend not on the similarity of wines but on the number of certain wines in the sample. Thus, our sample in the **wine.csv** file contains 59 wines of the first class, 71 wine of the second class, and 48 wines of the third class. If we analyze the most frequently occurring class among 177 nearest neighbors, it will be class 2 for each of the wines.
 
 Consequently, extreme values of `k` need to be avoided.
 
@@ -19,28 +19,29 @@ for the current $k$ grows.
 $k$ with the minimum sum of errors is considered optimal, and we choose the smallest $k$ among all optimal values.
 
 <div class="hint">
-Let's remember the formula of identifying a class according to $k$ neighbours:
+Let's remember the formula of identifying a class according to $k$ neighbors:
 $$
 \rho(u,x_1)\leq\rho(u,x_2)\leq...\leq\rho(u,x_l)$$
-$x_i$ is the i-th neighbour of the object u
+$x_i$ is the $i$-th neighbor of the object $u$
 
-$y_i$ is the class of the i-th neighbour of the object u
+$y_i$ is the class of the $i$-th neighbor of the object $u$
 $$
 a(u, X^l) = \arg \max\limits_{y\in Y} \sum\limits_{y_i=y} w(i,u)
 $$
-$w(i,u) = [i\leq k]$ are the classes of the i nearest neighbours of u
+$w(i,u) = [i\leq k]$ are the classes of the $i$ nearest neighbors of $u$
+
 $a(u, X^l)$ is the prevalent class among them.
 </div>
 
-Having excluded one object from the sample and trained the algorithm on the rest of the objects, we can test the algorithm on the excluded object. The optimal `k` will be the smallest value that provides the maximum correctly identified in this test.
+Having excluded one object from the sample and trained the algorithm on the rest of the objects, we can test the algorithm on the excluded object. The optimal `k` will be the smallest value that provides the maximum number of classes correctly identified in this test.
 
 <div class="hint">
-If we don't exclude the classifiable object from the training sample, it will always be its own nearest neighbour, and the minimum value of the $LOO(k)$ function will be received with $k=1$. 
+If we don't exclude the classified object from the training sample, it will always be its own nearest neighbor, and the minimum value of the $LOO(k)$ function will be received with $k=1$. 
 </div>
 
 ### Task
 
-Realize a function for choosing the optimal `k` with [leave-one-out cross-validation](http://www.machinelearning.ru/wiki/index.php?title=%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%B7%D1%8F%D1%89%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C_.D0.BF.D0.BE_.D0.BE.D1.82.D0.B4.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.BC_.D0.BE.D0.B1.D1.8A.D0.B5.D0.BA.D1.82.D0.B0.D0.BC_.28leave-one-out_CV.29).
+Implement a function for choosing the optimal `k` with [leave-one-out cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)#Leave-one-out_cross-validation).
 The function needs to take the training sample and the distance function:
 
       def loocv(X_train, y_train, dist):
@@ -51,7 +52,7 @@ The function template is in the `crossvalidation.py` file.
 
 Assess the precision and recall of the classifier with the optimal `k` and any two distance functions.
 
-To do that, import `loocv`, `precision_recall`, `euclidian_dist` и `taxicab_dist` в `task.py` and combine all our functions in `main`:
+To do that, import `loocv`, `precision_recall`, `euclidian_dist` and `taxicab_dist` in `task.py` and combine all our functions in `main`:
 ```python
 if __name__ == '__main__':
     wines = np.genfromtxt('wine.csv', delimiter=',')

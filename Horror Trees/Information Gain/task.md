@@ -1,4 +1,5 @@
 ####Information Gain
+
 In information theory, [Information Gain](https://en.wikipedia.org/wiki/Information_gain_in_decision_trees) is
 the amount of information about a random value received while observing another random value. 
 It is based on the decrease of entropy after dividing a sample according to a certain characteristic, 
@@ -20,9 +21,9 @@ We subtract entropy `Y` for the condition `X` from entropy `Y` to calculate the 
 In the file `divide.py`, in the `information_gain` method of the `Predicate` class, delete the `pass` operator, 
 uncomment all lines with `# TODO` and the line with `return`. 
 
-Realize the `information_gain` method, which 
+Implement the `information_gain` method, which 
 takes a sample, divides it into two independent sub-samples, and calculates the information gain.
-To divide the sample, use the divide method written
+To divide the sample, use the `divide` method written
 in the previous step. 
 
 
@@ -42,7 +43,7 @@ where:
 </div>
 
 To see the results of your code, you can add the following line to the
-`if __name__ == '__main__':` block in `task.py` and launch it:
+`main` block in `task.py` and run it:
 
 ```python
     print(f'Information Gain: {predicate.information_gain(X, y)}\n')     
