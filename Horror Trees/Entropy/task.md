@@ -31,10 +31,9 @@ use the above formula to calculate the entropy.
 In order to see the results of your code, you can add the following lines to
 `task.py` and run it:
 
-1. Required imports:
+1. Required import:
 ```python
         from calculate_entropy import entropy
-        import pandas as pd
 ```
 2. Lines in the `main` block for printing the dataset entropy calculation results:
 ```python

@@ -5,7 +5,7 @@ from node import Node
 def read_data(path):
     data = pd.read_csv(path)
     y = data[['type']]
-    X = data.drop('type', 1)
+    X = data.drop(labels='type', axis=1)
     return X.to_numpy(), y, X.columns.values
 
 
