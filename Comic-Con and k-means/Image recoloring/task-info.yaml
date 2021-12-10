@@ -18,3 +18,5 @@ files:
   visible: true
 - name: plotting.py
   visible: true
+- name: barchart.png
+  visible: false
