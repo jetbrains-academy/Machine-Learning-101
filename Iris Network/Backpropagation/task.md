@@ -30,9 +30,11 @@ The difference is squared so that we can use its absolute value. This value is t
 The task of training is to find such a combination of weights and biases that will best minimize the loss function. To find out how much and in what direction
 weights and biases should be changed, we need to know the dependence of the derivative of the loss function on them.
 
-<div class="hint">It's necessary to note that the task of finding the global minimum of this function is usually very complex and
+<details>
+It's necessary to note that the task of finding the global minimum of this function is usually very complex and
 most probably, we will get one of the local minimums, which may be better or worse; however, which minimum exactly we will find
-depends on the initial random combination of weights and biases.</div>
+depends on the initial random combination of weights and biases.
+</details>
 
 In the <a href="https://en.wikipedia.org/wiki/Gradient_descent#:~:text=Gradient%20descent%20is%20a%20first,the%20direction%20of%20steepest%20descent.">Gradient Descent</a> 
 chapter of the previous lesson, we said that the derivative (or <a href="https://en.wikipedia.org/wiki/Gradient">gradient</a>) shows the slope 
@@ -58,9 +60,10 @@ $$weight = weight + learning\\_rate * error * input$$
 where $weight$ is the weight; $learning\\_rate$ is the learning rate, that is a network settings <a href="https://en.wikipedia.org/wiki/Learning_rate">parameter</a> we need to indicate; $error$ is the error calculated for the neuron
 in the previous step; and $input$ is the value of the input data which produced the error.
 
-<div class="hint">Learning rate in machine learning and in statistics is a settings parameter of the optimization algorithm 
-that determines the step size at each iteration while approaching the minimum of the loss function.</div>
-
+<details>
+Learning rate in machine learning and in statistics is a settings parameter of the optimization algorithm 
+that determines the step size at each iteration while approaching the minimum of the loss function.
+</details>
 
 <h2>Task</h2>
 In the `network.py` file, implement the method `backward` of the `NN` class, which performs the following operations:

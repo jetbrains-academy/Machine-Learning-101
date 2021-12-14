@@ -1,20 +1,18 @@
-The k-nearest neighbours method is based on the assumption that similar objects are always located close to each other. Here we're talking about tha "location" of features in the measured trait coordinate space: imagine coordinate axes with alcohol percentage, acidity, and color saturation values. We assume that the object being classified belongs to the same class as the training sample objects closest to it.
+The k-nearest neighbors method is based on the assumption that similar objects are always located close to each other. Here we're talking about tha "location" of features in the measured trait coordinate space: imagine coordinate axes with alcohol percentage, acidity, and color saturation values. We assume that the object being classified belongs to the same class as the training sample objects closest to it.
 
 The proximity of objects (or, rather, their **similarity**) is determined by a certain metric; hence, the algorithm is a [similarity-based](https://en.wikipedia.org/wiki/Similarity_learning) classifier.
 
 For example, the **zinfandel** and **primitivo** varieties of grapes used for wine making have a common ancestor and these wines, according to many metrics, belong to the same class. Consequently, wine produces often mark these varieties as interchangeable on wine package.
 
-<div class="hint">The assumption of similarity between such objects is called a <b>compactness hypothesis</b>. It says that similar objects more often belong to the same class than to different classes.</div>
+<details>The assumption of similarity between such objects is called a <b>compactness hypothesis</b>. It says that similar objects more often belong to the same class than to different classes.</details>
 
-
-\
-The k-nearest neighbours classifier does not imply a separate training procedure: we immediately proceed to classifying. Classifying an object involves the following steps:
+The k-nearest neighbors classifier does not imply a separate training procedure: we immediately proceed to classifying. Classifying an object involves the following steps:
 
 - Calculate the distance between the object and all other objects in the sample;
 - Sort all objects according to the distance $\rho$ from the classified object in ascending order (from least to greatest);
   $$
   \rho(u,x_1)\leq\rho(u,x_2)\leq...\leq\rho(u,x_l)$$
-  where $x_i$ is the $i$-th neighbour of the object $u$.
+  where $x_i$ is the $i$-th neighbor of the object $u$.
 - Select the first $K$ objects from the sorted list;
 - Return the most frequent class label among these $K$ objects. The label here is the class identifier (in our case, the wine variety identifier).
 
@@ -22,9 +20,9 @@ $$
 a(u, X^l) = \arg \max\limits_{y\in Y} \sum\limits_{y_i=y} w(i,u)
 $$
 where:
-$y_i$ is the class of the $i$-th neighbour of $u$,
+$y_i$ is the class of the $i$-th neighbor of $u$,
 
-$w(i,u) = [i\leq k]$ are the classes of $i$ nearest neighbours of $u$, 
+$w(i,u) = [i\leq k]$ are the classes of $i$ nearest neighbors of $u$, 
 
 $a(u,X^l)$ is the most frequent one among them.
 

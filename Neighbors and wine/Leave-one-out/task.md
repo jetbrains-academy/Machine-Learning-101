@@ -18,7 +18,7 @@ for the current $k$ grows.
 
 $k$ with the minimum sum of errors is considered optimal, and we choose the smallest $k$ among all optimal values.
 
-<div class="hint">
+<details>
 Let's remember the formula of identifying a class according to $k$ neighbors:
 $$
 \rho(u,x_1)\leq\rho(u,x_2)\leq...\leq\rho(u,x_l)$$
@@ -31,13 +31,13 @@ $$
 $w(i,u) = [i\leq k]$ are the classes of the $i$ nearest neighbors of $u$
 
 $a(u, X^l)$ is the prevalent class among them.
-</div>
+</details>
 
 Having excluded one object from the sample and trained the algorithm on the rest of the objects, we can test the algorithm on the excluded object. The optimal `k` will be the smallest value that provides the maximum number of classes correctly identified in this test.
 
-<div class="hint">
+<details>
 If we don't exclude the classified object from the training sample, it will always be its own nearest neighbor, and the minimum value of the $LOO(k)$ function will be received with $k=1$. 
-</div>
+</details>
 
 ### Task
 

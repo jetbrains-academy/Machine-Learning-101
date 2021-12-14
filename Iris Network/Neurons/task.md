@@ -53,9 +53,11 @@ and the result of calculations goes to the output.</p>
 is weighted. Weights can be both positive and negative, and they will be changed during the training process.
 For adjustment, bias $b$ may be added to the received output value.</p>
 
-<div class="hint">It may be necessary if we want a given neuron to be active at a lower or a higher value of the sum:
+<details>
+It may be necessary if we want a given neuron to be active at a lower or a higher value of the sum:
 for example, if we want the neuron to activate when the weighted sum is not just larger than 0 but
-larger than 10, we add a bias of -10.</div>
+larger than 10, we add a bias of -10.
+</details>
 
 <p>As we will need to work with diverse input data of different scale, it is necessary to rescale values to a known simple and strict range.
 This process is called **normalization**, and it is very common in neural networks.
@@ -77,14 +79,16 @@ this function negatively affects neural network training. Here are examples of a
     $$f(x) = max(0,x)$$</li></i>
 </ul>
 
-<div class="hint">Logistic sigmoid may result in the neural network getting stuck in the process of training because of large negative input values, it
+<details>
+Logistic sigmoid may result in the neural network getting stuck in the process of training because of large negative input values, it
 outputs values close to zero. Due to that,
 weights will be updated rather slowly. Conversely, the output of the tanh function lies within the range [-1, 1], and 
 large negative input values will produce negative output values; only input values close to zero will
 produce output values close to zero. This makes the network less inclined to getting stuck during the training process.
 Besides, sigmoids can trigger the <a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">vanishing gradient problem</a>. 
 Rectifiers, such as ReLU, are less subject to the vanishing gradient problem; they are simpler in terms of calculations and in practice, allow faster convergence
-than sigmoid functions (<a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">source</a>). </div>
+than sigmoid functions (<a href="http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf">source</a>).
+</details>
 
 <p>Here is the formula of a neuron's output data:</p>
 $$a = \sigma(\sum\limits_{j=1}^n w_j x^j + b)$$
