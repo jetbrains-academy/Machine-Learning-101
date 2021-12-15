@@ -12,17 +12,17 @@ about certain classes, and within those classes it will make better decisions. A
 with regard to some classes the algorithm will work poorly, with the accuracy lower than 50%.
 Such problems may be avoided if we choose a different approach towards quality assessment.
 
-<div class="hint">
-<b><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and Recall</a></b>
+<details>
+<summary><b><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and Recall</a></b></summary>
 <p>Precision and recall, which we have already encountered in previous lessons, are used in the assessment of most information retrieval algorithms.
 They may be used both independently and as a basis for complex metrics, such as
 F-score or R-Precision. Just to remind you: precision (within a class) is the proportion of objects really belonging to that class 
 among all objects assigned to that class by the algorithm. Recall is the proportion of objects belonging to a class and identified by the classifier among
 all objects of that class in the testing sample.</p>
-</div>
+</details>
 
-<div class="hint">
-<b><a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion Matrix</a></b>
+<details>
+<summary><b><a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion Matrix</a></b></summary>
 <p>In practice, precision and recall values are conveniently calculated with the help of the confusion matrix.
 When the number of classes is relatively small (not more than 100-150), it allows visualizing
 the results of the algorithm's work..</p>
@@ -30,16 +30,16 @@ the results of the algorithm's work..</p>
 – the classifier's decisions. When an object from the testing sample is classified, the number at the intersection of the class row returned by the algorithm and the
 class column the object really belongs to, increases. Consequently,
 if the classifier identifies most objects correctly, the diagonal elements of the matrix will be salient.</p>
-</div>
+</details>
 
-<div class="hint">
-<b><a href="https://en.wikipedia.org/wiki/F-score">F-score</a></b>
+<details>
+<summary><b><a href="https://en.wikipedia.org/wiki/F-score">F-score</a></b></summary>
 <p>The higher the precision and recall are, the better. However, in practice, maximum precision and maximum recall cannot be achieved
 simultaneously. That's why it would be good to have a metric which combines the algorithm's precision and recall. That's exactly what the
 F-score is: it's a harmonic mean between precision and recall. It tends to zero if the precision or the recall
 tend to zero.</p>
 $$F = 2\frac{Precision * Recall}{Precision + Recall}$$
-</div>
+</details>
 
 <h2>Task</h2>
 
