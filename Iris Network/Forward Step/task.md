@@ -48,7 +48,7 @@ apply the activation function to the product, and return the result. Other metho
 <p>For more simplicity, we assume the biases to be equal to 0.</p>
 
 <div class="hint">
-To multiply the matrices, you can use the <a href=”https://numpy.org/doc/stable/reference/generated/numpy.dot.html”>numpy.dot</a> function.</div>
+To multiply the matrices, you can use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">numpy.dot</a> function.</div>
 
 You can run `task.py` in the tasks to check how your code works. In this task, you can also get a graph
 illustrating the data scattering according to the chosen characteristics. You don't need to modify `task.py` in this task.
