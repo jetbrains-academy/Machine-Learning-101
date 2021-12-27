@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: crossvalidation.py
+  visible: true
 - name: task.py
   visible: true
 - name: wine.csv
@@ -11,8 +13,6 @@ files:
 - name: distances.py
   visible: true
 - name: metrics.py
-  visible: true
-- name: crossvalidation.py
   visible: true
 - name: metric_classification.py
   visible: true
