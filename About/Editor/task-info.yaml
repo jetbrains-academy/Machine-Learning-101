@@ -1,0 +1,10 @@
+type: theory
+files:
+- name: main.py
+  visible: true
+- name: __init__.py
+  visible: false
+- name: edu_context_menu_run.png
+  visible: false
+- name: edu_editor.png
+  visible: false
