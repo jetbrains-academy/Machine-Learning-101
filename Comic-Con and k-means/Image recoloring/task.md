@@ -7,6 +7,18 @@ Implement the `recolor(image, n_colors)` function, which takes an image as a num
 In order to save the image, we will first create a ```Pillow.Image``` object (we've already encountered it in the **Reading an image** task) with the help of the ```fromarray``` method, [which creates](https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.fromarray) an image from an array. Then, we will save the image using the ```image.save``` method.
 
 
+To see the results of your code, add the following lines in `task.py` and run it:
+1. Necessary import:
+ ```python
+from processing import process_image
+```
+2. Add the line for getting the result in the `main` block **instead** of those added in the previous step:
+```python
+process_image(image)
+```
+The image will show up in the list of task files on the left.
+
+
 <div class="column" style="float: left;width: 45%;padding: 5px;">
     <img src="superman-batman.png" alt="Original image" style="width:100%">
     <p style="text-align:center;">Original image</p>
