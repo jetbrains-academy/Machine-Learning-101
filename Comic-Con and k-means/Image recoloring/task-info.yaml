@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: processing.py
+  visible: true
 - name: task.py
   visible: true
 - name: __init__.py
@@ -10,8 +12,6 @@ files:
   visible: false
 - name: tests/test_task.py
   visible: false
-- name: processing.py
-  visible: true
 - name: clustering.py
   visible: true
 - name: distances.py
