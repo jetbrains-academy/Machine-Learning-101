@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: bayes.py
+  visible: true
 - name: task.py
   visible: true
 - name: __init__.py
@@ -8,8 +10,6 @@ files:
   visible: true
 - name: tests/test_task.py
   visible: false
-- name: bayes.py
-  visible: true
 - name: vectorize.py
   visible: true
 - name: Thomas_Bayes.png

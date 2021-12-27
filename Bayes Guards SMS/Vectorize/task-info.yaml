@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: vectorize.py
+  visible: true
 - name: task.py
   visible: true
 - name: tests/test_task.py
@@ -12,8 +14,6 @@ files:
   visible: true
 - name: bayes.py
   visible: false
-- name: vectorize.py
-  visible: true
 - name: Thomas_Bayes.png
   visible: false
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Bayes+Guards+SMS+/+Vectorize
