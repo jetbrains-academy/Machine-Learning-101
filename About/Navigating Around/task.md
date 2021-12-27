@@ -1,6 +1,6 @@
 ## EduTools plugin overview
 
-This lesson will help you take your first steps with the [EduTools plugin](https://www.jetbrains.com/help/education/educational-products.html) and use it to learn Python.
+This lesson will help you take your first steps with the [EduTools plugin](https://www.jetbrains.com/help/education/educational-products.html) and use it to learn ML.
 
 With the EduTools plugin, you can learn programming languages and tools by completing coding tasks and get instant feedback right inside the IDE.
 
