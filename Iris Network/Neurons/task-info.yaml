@@ -1,12 +1,12 @@
 type: edu
 files:
+- name: activation.py
+  visible: true
 - name: task.py
   visible: false
 - name: __init__.py
   visible: false
 - name: iris.csv
-  visible: true
-- name: activation.py
   visible: true
 - name: network.py
   visible: false

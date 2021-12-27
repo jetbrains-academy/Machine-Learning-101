@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: network.py
+  visible: true
 - name: tests/test_task.py
   visible: false
 - name: __init__.py
@@ -18,8 +20,6 @@ files:
   visible: false
 - name: evaluate.py
   visible: false
-- name: network.py
-  visible: true
 - name: task.py
   visible: true
 - name: final.py

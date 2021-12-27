@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: network.py
+  visible: true
 - name: task.py
   visible: true
 - name: __init__.py
@@ -14,8 +16,6 @@ files:
   visible: true
 - name: evaluate.py
   visible: false
-- name: network.py
-  visible: true
 - name: final.py
   visible: false
 - name: neuron-scheme.png
