@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: divide.py
+  visible: true
 - name: task.py
   visible: true
 - name: __init__.py
@@ -8,8 +10,6 @@ files:
   visible: true
 - name: tests/test_task.py
   visible: false
-- name: divide.py
-  visible: true
 - name: calculate_entropy.py
   visible: true
 - name: tree.py

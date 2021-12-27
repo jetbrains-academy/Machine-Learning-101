@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: tree.py
+  visible: true
 - name: task.py
   visible: true
 - name: __init__.py
@@ -11,8 +13,6 @@ files:
 - name: calculate_entropy.py
   visible: true
 - name: divide.py
-  visible: true
-- name: tree.py
   visible: true
 - name: halloween.py
   visible: false
