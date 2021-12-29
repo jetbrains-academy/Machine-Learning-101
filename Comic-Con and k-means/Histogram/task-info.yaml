@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: plotting.py
+  visible: true
 - name: task.py
   visible: true
 - name: __init__.py
@@ -10,8 +12,6 @@ files:
   visible: false
 - name: barchart.png
   visible: false
-- name: plotting.py
-  visible: true
 - name: distances.py
   visible: true
 - name: clustering.py

@@ -43,7 +43,7 @@ respectively. <code>input_size</code> will depend on the input data.</p>
 <p>Implement the <code>feedforward</code> method. It has to <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">multiply</a> 
 the weights matrix <code>w1</code> by the matrix of the input data and then apply the activation function to the matrix product. 
 Then, the method has to multiply the data matrix received in the previous step by the weights matrix <code>w2</code>,
-apply the activation function to the product, and return the result. Other methods of the class will be realized in further steps.</p>
+apply the activation function to the product, and return the result. Other methods of the class will be implemented in further steps.</p>
 
 <p>For more simplicity, we assume the biases to be equal to 0.</p>
 
@@ -51,5 +51,5 @@ apply the activation function to the product, and return the result. Other metho
 To multiply the matrices, you can use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.dot.html">numpy.dot</a> function.</div>
 
 You can run `task.py` in the tasks to check how your code works. In this task, you can also get a graph
-illustrating the data scattering according to the chosen characteristics. You don't need to modify `task.py` in this task.
+illustrating the distribution of the chosen characteristics in the data. You don't need to modify `task.py` in this task.
 

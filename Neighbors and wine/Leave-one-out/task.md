@@ -52,7 +52,7 @@ The function template is in the `crossvalidation.py` file.
 
 Assess the precision and recall of the classifier with the optimal `k` and any two distance functions.
 
-To do that, import `loocv`, `precision_recall`, `euclidian_dist` and `taxicab_dist` in `task.py` and combine all our functions in `main`:
+To do that, import `loocv`, `precision_recall`, `print_precision_recall`, `euclidian_dist` and `taxicab_dist` in `task.py` and combine all our functions in `main`:
 ```python
 if __name__ == '__main__':
     wines = np.genfromtxt('wine.csv', delimiter=',')

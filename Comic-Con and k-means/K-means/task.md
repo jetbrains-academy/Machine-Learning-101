@@ -44,3 +44,18 @@ The result of the function is a pair of vectors: the vector of size `n_samples`,
 You can find the function template in the `clustering.py` file. The function `init_clusters`, which creates the initial centroids for the given data set, is also there.
 
 While doing the task, you might need the [numpy.sum](https://numpy.org/doc/1.18/reference/generated/numpy.sum.html) function, which calculates the sum of array elements.
+
+To see the results of your code, add the following lines in `task.py` and run it:
+1. Necessary imports:
+ ```python
+from distances import euclidean_distance
+from clustering import k_means  
+```
+2. Add the lines for printing the results in the `main` block instead of `print(image)`:
+```python
+(centroids, labels) = k_means(image, 4, euclidean_distance)
+print("Cluster centers:")
+for label in labels:
+    print(label)
+```
+

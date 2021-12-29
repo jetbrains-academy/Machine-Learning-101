@@ -1,5 +1,7 @@
 type: edu
 files:
+- name: node.py
+  visible: true
 - name: task.py
   visible: true
 - name: tests/test_task.py
@@ -20,8 +22,6 @@ files:
   visible: false
 - name: halloween.py
   visible: false
-- name: node.py
-  visible: true
 - name: RNA_tree.png
   visible: false
 - name: example_tree.png
