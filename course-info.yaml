@@ -1,10 +1,9 @@
 type: marketplace
-title: Machine Learning 101
+title: Machine Learning 101 - English
 language: Russian
 summary: |-
-  <p>This is an introductory Machine Learning course in Russian. The course is currently in an early access state.</p>
-  <p>Курс Machine Learning 101 (Введение в машинное обучение) находится на стадии разработки. Представленные материалы будут в дальнейшем улучшены и дополнены. На данный момент доступно лишь 4 урока, остальные будут добавляться по мере готовности. Мы будем рады обратной связи, которая поможет курсу стать лучше!</p>
-  <p>Данный курс рассказывает о базовых понятиях и алгоритмах машинного обучения – от простейших классификаторов до нейронных сетей. Во время обучения вам будет предложено самостоятельно реализовать алгоритмы , шаг за шагом погружаясь в решение одной из задач. Каждый урок может быть пройден независимо от остальных, однако для полного погружения мы рекомендуем последовательное прохождение уроков.</p>
+  <p>This is an introductory Machine Learning course. Machine Learning 101 (Introduction to Machine Learning) is currently in an early access state. The materials will be further improved and supplemented. At the moment, only 5 lessons are available, the rest will be added as soon as they are ready. We highly appreciate any feedback that helps improving the course!</p>
+  <p>This course covers the basic concepts and algorithms of machine learning - from the simplest classifiers to neural networks. You will implement the algorithms step by step. Each lesson can be taken independently of the others, however, for a complete experience, we recommend going through all of them.</p>
 vendor:
   name: JetBrains
   email: support@jetbrains.com
