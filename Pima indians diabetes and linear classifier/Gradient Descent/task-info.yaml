@@ -1,0 +1,27 @@
+type: edu
+files:
+- name: gradient_descent.py
+  visible: true
+- name: __init__.py
+  visible: false
+- name: pima-indians-diabetes.csv
+  visible: true
+- name: task.py
+  visible: true
+- name: tests/test_task.py
+  visible: false
+- name: loss_functions.py
+  visible: true
+- name: precision_recall.py
+  visible: true
+- name: utils.py
+  visible: true
+- name: stochastic_gradient_descent.py
+  visible: false
+- name: gradient-descent.png
+  visible: false
+- name: hyperplane.png
+  visible: false
+- name: pima.png
+  visible: false
+feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScQIQGOPF_e3hQMM-nK5CEvJYufaCWpIbESFFSAOmkI55M_7Q/viewform?usp=pp_url&entry.2103429047=Pima+Indians+and+Linear+Classifier+/+Gradient+Descent
