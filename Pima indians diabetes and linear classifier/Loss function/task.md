@@ -1,4 +1,4 @@
-When classifying an object, the linear classifier makes a decision based on the [linear](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F) prediction function, which combines a set of weight coefficients and a feature vector.
+When classifying an object, the linear classifier makes a decision based on the [linear](https://en.wikipedia.org/wiki/Linear_function_(calculus)) prediction function, which combines a set of weight coefficients and a feature vector.
 
 If the input feature vector is $\vec {x}$, the output is
 
@@ -8,7 +8,7 @@ where $\vec {w}$ is a weight vector and $f$ is the above-mentioned linear functi
 
 First, our task is to set the weight vector $\vec {w}$ based on the training sample. Thus, the algorithm will "remember" the contribution of each feature (for example, the age or the body weight index) to the possibility of finding diabetes.
 
-Oftentimes, f is a [threshold function](https://neerc.ifmo.ru/wiki/index.php?title=%D0%9F%D0%BE%D1%80%D0%BE%D0%B3%D0%BE%D0%B2%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F), which maps $ \vec {w} \cdot \vec {x}$ above a certain threshold to the first class and other values — to the second one.
+Oftentimes, $f$ is a **threshold function**, which maps $ \vec {w} \cdot \vec {x}$ above a certain threshold to the first class and other values — to the second one.
 
 For our classification task, we can present the linear classifier as the division of high-dimensionality input data by a hyperplane: all objects on one side of the hyperplane are classified as the presence of diabetes, while all others – as its absence (see the picture in the previous task showing examples with data space dimensionality n = 2 and n = 3).
 

@@ -1,5 +1,5 @@
 The problem with the previously discussed algorithm is that in order to find a new approximation of the weight vector, we need to find the gradient of each sample element, which may significantly slow down the algorithm. The stochastic gradient descent (**SGD**) calculates the gradient for each update using only one (randomly chosen) training object $x_i$.
-The idea is that the gradient calculated this way is a [stochastic](https://ru.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81) approximation of the gradient calculated from the whole training sample.
+The idea is that the gradient calculated this way is a [stochastic](https://en.wikipedia.org/wiki/Stochastic_process) approximation of the gradient calculated from the whole training sample.
 Thus, calculating each update becomes much easier than in the case of group gradient descent, and according to the total of multiple updates, the algorithm will mainly proceed in the same direction.
 
 **Stochastic mini-batch gradient descent** calculates the gradient for each small batch of objects from the training sample data.
