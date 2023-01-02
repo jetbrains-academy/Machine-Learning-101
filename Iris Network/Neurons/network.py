@@ -4,7 +4,7 @@ from derivative import sigmoid_derivative
 
 
 # Here we implemented the class NN to store our neural network. It contains two weight
-# arrays - w1 and w1, which will be updated as the network learns. You will implement the
+# arrays - w1 and w2, which will be updated as the network learns. You will implement the
 # methods of this class that are needed to train the network and to use it for object classification.
 class NN:
     def __init__(self, input_size, hidden_size, output_size):

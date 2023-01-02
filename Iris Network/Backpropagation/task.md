@@ -45,7 +45,7 @@ Yet, it's impossible to just calculate the dependence of the derivative of the l
 Such calculations would require defining some connecting rule.
 $$\frac {\partial Loss(y, \hat{y})}{\partial W} = \frac { \partial Loss(y, \hat{y} ) } {\partial \hat{y}} \frac { \partial \hat{y} } {\partial z} \frac { \partial z } {\partial W} $$
 $$= 2 (y - \hat{y} ) * z (1- z) * x$$
-где $z = Wx + b$
+where $z = Wx + b$
 
 Here is the calculation of weights gain, i.e., the values that will be added to the weights of neurons of the output ($\delta_{o}$) and hidden layers ($\delta_{h}$):
 
