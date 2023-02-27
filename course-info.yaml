@@ -2,8 +2,11 @@ type: marketplace
 title: Machine Learning 101
 language: English
 summary: |-
-  <p>This is an introductory Machine Learning course. Machine Learning 101 (Introduction to Machine Learning) is currently in an early access state. The materials will be further improved and supplemented. We highly appreciate any feedback that will help us improve the course!</p>
-  <p>This course covers the basic concepts and algorithms of machine learning - from the simplest classifiers to neural networks. You will implement the algorithms step by step. Each lesson can be taken independently of the others; however, for a complete experience, we recommend going through all of them.</p>
+  <p>This is an introductory Machine Learning course by JetBrains Academy. Machine Learning-101 covers the basic concepts and algorithms of machine learning - from the simplest classifiers to neural networks. You will implement 
+  the algorithms step by step. Each lesson can be taken independently of the others; however, for a complete experience, we recommend going through all of them.</p>
+  
+  <p>The materials will be further improved and supplemented. We highly appreciate any feedback that will help us improve the course! Feel free to send a pull request to this course’s <a href="https://github.com/jetbrains-academy/introduction_to_python">git repo</a>.</p>
+  <p>Have fun and good luck!</p>
 vendor:
   name: JetBrains
   email: support@jetbrains.com
