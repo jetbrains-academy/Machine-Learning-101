@@ -5,4 +5,4 @@ files:
 - name: __init__.py
   visible: false
 - name: fw_lesson_view_dark.png
-  visible: true
+  visible: false
