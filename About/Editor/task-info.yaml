@@ -6,5 +6,9 @@ files:
   visible: false
 - name: edu_context_menu_run.png
   visible: false
+- name: edu_context_menu_run_dark.png
+  visible: false
 - name: edu_editor.png
+  visible: false
+- name: edu_editor_dark.png
   visible: false
