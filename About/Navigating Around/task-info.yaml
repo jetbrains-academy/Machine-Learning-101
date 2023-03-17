@@ -6,3 +6,5 @@ files:
   visible: false
 - name: edu_course_overview.png
   visible: false
+- name: edu_course_overview_dark.png
+  visible: false
