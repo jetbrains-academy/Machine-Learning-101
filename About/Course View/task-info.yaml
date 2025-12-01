@@ -4,6 +4,9 @@ files:
     visible: true
   - name: __init__.py
     visible: false
+  - name: edu_course_view_dark.png
+    visible: false
+    is_binary: true
   - name: edu_course_view.png
     visible: false
     is_binary: true

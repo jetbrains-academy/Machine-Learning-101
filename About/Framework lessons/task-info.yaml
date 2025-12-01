@@ -7,3 +7,6 @@ files:
   - name: fw_lesson_view_dark.png
     visible: false
     is_binary: true
+  - name: fw_lesson_view.png
+    visible: false
+    is_binary: true

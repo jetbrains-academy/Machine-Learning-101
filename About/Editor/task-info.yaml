@@ -4,6 +4,12 @@ files:
     visible: true
   - name: __init__.py
     visible: false
+  - name: edu_context_menu_run_dark.png
+    visible: false
+    is_binary: true
+  - name: edu_editor_dark.png
+    visible: false
+    is_binary: true
   - name: edu_context_menu_run.png
     visible: false
     is_binary: true

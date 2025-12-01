@@ -15,5 +15,5 @@ In the Course View on the left, you will not see a list of tasks for the current
 will just see the files available to you in the current task. The number and the name of the task can be 
 seen above the task description. 
 
-![](fw_lesson_view_dark.png)
+![](fw_lesson_view.png)
 
