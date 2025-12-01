@@ -14,11 +14,14 @@ vendor:
 programming_language: Python
 environment: unittest
 content:
-- About
-- Why study machine learning
-- Neighbors and wine
-- Comic-Con and k-means
-- Horror Trees
-- Pima indians diabetes and linear classifier
-- Bayes Guards SMS
-- Iris Network
+  - About
+  - Why study machine learning
+  - Neighbors and wine
+  - Comic-Con and k-means
+  - Horror Trees
+  - Pima indians diabetes and linear classifier
+  - Bayes Guards SMS
+  - Iris Network
+additional_files:
+  - name: requirements.txt
+yaml_version: 5

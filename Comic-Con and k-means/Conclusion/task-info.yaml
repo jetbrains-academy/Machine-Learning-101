@@ -1,19 +1,24 @@
 type: theory
 files:
-- name: task.py
-  visible: true
-- name: __init__.py
-  visible: false
-- name: superman-batman.png
-  visible: false
-- name: superman-batman-after.png
-  visible: false
-- name: clustering.py
-  visible: true
-- name: distances.py
-  visible: true
-- name: plotting.py
-  visible: true
-- name: processing.py
-  visible: true
+  - name: task.py
+    visible: true
+  - name: __init__.py
+    visible: false
+    propagatable: false
+  - name: superman-batman.png
+    visible: false
+    propagatable: false
+    is_binary: true
+  - name: superman-batman-after.png
+    visible: false
+    propagatable: false
+    is_binary: true
+  - name: clustering.py
+    visible: true
+  - name: distances.py
+    visible: true
+  - name: plotting.py
+    visible: true
+  - name: processing.py
+    visible: true
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Comic-Con+and+k-means+/+Conclusion

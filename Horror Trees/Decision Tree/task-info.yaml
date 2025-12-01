@@ -1,27 +1,36 @@
 type: edu
 files:
-- name: tree.py
-  visible: true
-- name: task.py
-  visible: true
-- name: __init__.py
-  visible: false
-- name: halloween.csv
-  visible: true
-- name: tests/test_task.py
-  visible: false
-- name: calculate_entropy.py
-  visible: true
-- name: divide.py
-  visible: true
-- name: halloween.py
-  visible: false
-- name: node.py
-  visible: true
-- name: boo.jpg
-  visible: false
-- name: RNA_tree.png
-  visible: false
-- name: example_tree.png
-  visible: false
+  - name: tree.py
+    visible: true
+  - name: task.py
+    visible: true
+  - name: __init__.py
+    visible: false
+    propagatable: false
+  - name: halloween.csv
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: calculate_entropy.py
+    visible: true
+  - name: divide.py
+    visible: true
+  - name: halloween.py
+    visible: false
+    propagatable: false
+  - name: node.py
+    visible: true
+  - name: boo.jpg
+    visible: false
+    propagatable: false
+    is_binary: true
+  - name: RNA_tree.png
+    visible: false
+    propagatable: false
+    is_binary: true
+  - name: example_tree.png
+    visible: false
+    propagatable: false
+    is_binary: true
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Horror+Trees+/+Decision+Tree

@@ -1,10 +1,12 @@
 type: theory
 files:
-- name: main.py
-  visible: true
-- name: __init__.py
-  visible: false
-- name: edu_context_menu_run.png
-  visible: false
-- name: edu_editor.png
-  visible: false
+  - name: main.py
+    visible: true
+  - name: __init__.py
+    visible: false
+  - name: edu_context_menu_run.png
+    visible: false
+    is_binary: true
+  - name: edu_editor.png
+    visible: false
+    is_binary: true
