@@ -1,23 +1,31 @@
 type: edu
 files:
-- name: plotting.py
-  visible: true
-- name: task.py
-  visible: true
-- name: __init__.py
-  visible: false
-- name: superman-batman.png
-  visible: true
-- name: tests/test_task.py
-  visible: false
-- name: barchart.png
-  visible: false
-- name: distances.py
-  visible: true
-- name: clustering.py
-  visible: true
-- name: processing.py
-  visible: false
-- name: superman-batman-after.png
-  visible: false
+  - name: plotting.py
+    visible: true
+  - name: task.py
+    visible: true
+  - name: __init__.py
+    visible: false
+    propagatable: false
+  - name: superman-batman.png
+    visible: true
+    is_binary: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: barchart.png
+    visible: false
+    propagatable: false
+    is_binary: true
+  - name: distances.py
+    visible: true
+  - name: clustering.py
+    visible: true
+  - name: processing.py
+    visible: false
+    propagatable: false
+  - name: superman-batman-after.png
+    visible: false
+    propagatable: false
+    is_binary: true
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Comic-Con+and+k-means+/+Histogram

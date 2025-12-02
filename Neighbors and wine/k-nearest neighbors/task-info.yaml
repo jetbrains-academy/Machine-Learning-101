@@ -1,19 +1,23 @@
 type: edu
 files:
-- name: metric_classification.py
-  visible: true
-- name: task.py
-  visible: true
-- name: wine.csv
-  visible: true
-- name: __init__.py
-  visible: false
-- name: tests/test_task.py
-  visible: false
-- name: distances.py
-  visible: true
-- name: metrics.py
-  visible: false
-- name: crossvalidation.py
-  visible: false
+  - name: metric_classification.py
+    visible: true
+  - name: task.py
+    visible: true
+  - name: wine.csv
+    visible: true
+  - name: __init__.py
+    visible: false
+    propagatable: false
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: distances.py
+    visible: true
+  - name: metrics.py
+    visible: false
+    propagatable: false
+  - name: crossvalidation.py
+    visible: false
+    propagatable: false
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Neighbors+and+Wine+/+k-nearest+Neighbors

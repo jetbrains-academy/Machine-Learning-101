@@ -1,12 +1,8 @@
 type: marketplace
-title: Machine Learning 101
+title: Introduction to Machine Learning
 language: English
 summary: |-
-  <p>This is an introductory Machine Learning course by JetBrains Academy. Machine Learning-101 covers the basic concepts and algorithms of machine learning - from the simplest classifiers to neural networks. You will implement 
-  the algorithms step by step. Each lesson can be taken independently of the others; however, for a complete experience, we recommend going through all of them.</p>
-  
-  <p>The materials will be further improved and supplemented. We highly appreciate any feedback that will help us improve the course! Feel free to send a pull request to this course’s <a href="https://github.com/jetbrains-academy/introduction_to_python">git repo</a>.</p>
-  <p>Have fun and good luck!</p>
+  <p>Train your brain to train machines. Build your first ML models from scratch – from simple classifiers to neural networks – with hands-on coding, a bit of Python, and a guided IDE built for learners.</p>
 vendor:
   name: JetBrains
   email: support@jetbrains.com
@@ -14,11 +10,14 @@ vendor:
 programming_language: Python
 environment: unittest
 content:
-- About
-- Why study machine learning
-- Neighbors and wine
-- Comic-Con and k-means
-- Horror Trees
-- Pima indians diabetes and linear classifier
-- Bayes Guards SMS
-- Iris Network
+  - About
+  - Why study machine learning
+  - Neighbors and wine
+  - Comic-Con and k-means
+  - Horror Trees
+  - Pima indians diabetes and linear classifier
+  - Bayes Guards SMS
+  - Iris Network
+additional_files:
+  - name: requirements.txt
+yaml_version: 5
