@@ -2,8 +2,54 @@ type: edu
 files:
   - name: crossvalidation.py
     visible: true
+    propagatable: true
+    placeholders:
+      - offset: 98
+        length: 389
+        placeholder_text: "# TODO"
+      - offset: 499
+        length: 19
+        placeholder_text: "# opt_k"
   - name: task.py
     visible: true
+    propagatable: true
+    placeholders:
+      - offset: 442
+        length: 22
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Neighbors and wine
+          task: Sample division
+          file: task.py
+          placeholder: 1
+        is_visible: false
+      - offset: 557
+        length: 22
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Neighbors and wine
+          task: Sample division
+          file: task.py
+          placeholder: 2
+        is_visible: false
+      - offset: 681
+        length: 22
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Neighbors and wine
+          task: Sample division
+          file: task.py
+          placeholder: 3
+        is_visible: false
+      - offset: 796
+        length: 22
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Neighbors and wine
+          task: Sample division
+          file: task.py
+          placeholder: 4
+        is_visible: false
   - name: wine.csv
     visible: true
   - name: __init__.py
@@ -16,6 +62,37 @@ files:
     visible: true
   - name: metrics.py
     visible: true
+    propagatable: true
+    placeholders:
+      - offset: 95
+        length: 463
+        placeholder_text: "# for c in range(n_classes):"
+        dependency:
+          lesson: Neighbors and wine
+          task: Precision and recall
+          file: metrics.py
+          placeholder: 1
+        is_visible: false
   - name: metric_classification.py
     visible: true
+    propagatable: true
+    placeholders:
+      - offset: 69
+        length: 173
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Neighbors and wine
+          task: k-nearest neighbors
+          file: metric_classification.py
+          placeholder: 1
+        is_visible: false
+      - offset: 255
+        length: 36
+        placeholder_text: "#class for each x in the X_test"
+        dependency:
+          lesson: Neighbors and wine
+          task: k-nearest neighbors
+          file: metric_classification.py
+          placeholder: 2
+        is_visible: false
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Neighbors+and+Wine+/+Leave-one-out
