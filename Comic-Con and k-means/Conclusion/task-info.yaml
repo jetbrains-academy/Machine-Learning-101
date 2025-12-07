@@ -1,24 +1,104 @@
 type: theory
 files:
+  - name: processing.py
+    visible: true
+    placeholders:
+      - offset: 189
+        length: 83
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: processing.py
+          placeholder: 1
+          is_visible: false
+      - offset: 284
+        length: 17
+        placeholder_text: "# array of images recolored by k_means"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: processing.py
+          placeholder: 2
+          is_visible: false
+  - name: plotting.py
+    visible: true
+    placeholders:
+      - offset: 90
+        length: 54
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: plotting.py
+          placeholder: 1
+          is_visible: false
+      - offset: 156
+        length: 6
+        placeholder_text: "# counts of pixels per cluster index"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: plotting.py
+          placeholder: 2
+          is_visible: false
+      - offset: 375
+        length: 196
+        placeholder_text: "# TODO: draw rectangles with widths proportional to hist[i]\
+      \ for each cluster color in centroids[i]"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: plotting.py
+          placeholder: 3
+          is_visible: false
+  - name: clustering.py
+    visible: true
+    placeholders:
+      - offset: 192
+        length: 817
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: clustering.py
+          placeholder: 1
+          is_visible: false
+      - offset: 1021
+        length: 24
+        placeholder_text: "# (labels_per_pixel, cluster_centers)"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: clustering.py
+          placeholder: 2
+          is_visible: false
+  - name: distances.py
+    visible: true
   - name: task.py
     visible: true
-  - name: __init__.py
-    visible: false
+    placeholders:
+      - offset: 235
+        length: 16
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: task.py
+          placeholder: 1
+          is_visible: false
     propagatable: false
   - name: superman-batman.png
+    visible: true
+    is_binary: true
+  - name: histogram.png
     visible: false
-    propagatable: false
+    is_binary: true
+  - name: barchart.png
+    visible: false
     is_binary: true
   - name: superman-batman-after.png
     visible: false
-    propagatable: false
     is_binary: true
-  - name: clustering.py
-    visible: true
-  - name: distances.py
-    visible: true
-  - name: plotting.py
-    visible: true
-  - name: processing.py
-    visible: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Comic-Con+and+k-means+/+Conclusion
+  - name: __init__.py
+    visible: false

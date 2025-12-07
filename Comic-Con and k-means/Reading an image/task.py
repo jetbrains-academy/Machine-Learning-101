@@ -4,7 +4,7 @@ import numpy as np
 
 def read_image(path='superman-batman.png'):
     # Here we need to read the image using the PIL function open.
-    image = #TODO
+    image = Image.open(path)
     # We reshape the image array into one with the (M x N, 3)
     # shape.
     return np.array(image).reshape(-1, 3)

@@ -2,6 +2,11 @@ type: edu
 files:
   - name: task.py
     visible: true
+    placeholders:
+      - offset: 165
+        length: 16
+        placeholder_text: "# TODO"
+    propagatable: false
   - name: tests/test_task.py
     visible: false
     propagatable: false
