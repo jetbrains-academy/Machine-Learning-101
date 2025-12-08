@@ -11,7 +11,7 @@ files:
           task: Image recoloring
           file: processing.py
           placeholder: 1
-          is_visible: false
+        is_visible: false
       - offset: 284
         length: 17
         placeholder_text: "# array of images recolored by k_means"
@@ -20,7 +20,7 @@ files:
           task: Image recoloring
           file: processing.py
           placeholder: 2
-          is_visible: false
+        is_visible: false
   - name: plotting.py
     visible: true
     placeholders:
@@ -32,7 +32,7 @@ files:
           task: Image recoloring
           file: plotting.py
           placeholder: 1
-          is_visible: false
+        is_visible: false
       - offset: 156
         length: 6
         placeholder_text: "# counts of pixels per cluster index"
@@ -41,17 +41,17 @@ files:
           task: Image recoloring
           file: plotting.py
           placeholder: 2
-          is_visible: false
-      - offset: 375
-        length: 196
-        placeholder_text: "# TODO: draw rectangles with widths proportional to hist[i]\
-      \ for each cluster color in centroids[i]"
+        is_visible: false
+      - offset: 331
+        length: 240
+        placeholder_text: "# TODO: draw rectangles with widths proportional \n#to hist[i]\
+                \ for each cluster color in centroids[i]"
         dependency:
           lesson: Comic-Con and k-means
           task: Image recoloring
           file: plotting.py
           placeholder: 3
-          is_visible: false
+        is_visible: false
   - name: clustering.py
     visible: true
     placeholders:
@@ -63,7 +63,7 @@ files:
           task: Image recoloring
           file: clustering.py
           placeholder: 1
-          is_visible: false
+        is_visible: false
       - offset: 1021
         length: 24
         placeholder_text: "# (labels_per_pixel, cluster_centers)"
@@ -72,7 +72,7 @@ files:
           task: Image recoloring
           file: clustering.py
           placeholder: 2
-          is_visible: false
+        is_visible: false
   - name: distances.py
     visible: true
   - name: task.py
@@ -86,7 +86,16 @@ files:
           task: Image recoloring
           file: task.py
           placeholder: 1
-          is_visible: false
+        is_visible: false
+      - offset: 338
+        length: 30
+        placeholder_text: "# reshape the image"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Image recoloring
+          file: task.py
+          placeholder: 2
+        is_visible: false
     propagatable: false
   - name: superman-batman.png
     visible: true

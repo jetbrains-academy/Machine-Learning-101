@@ -30,10 +30,11 @@ files:
           file: plotting.py
           placeholder: 2
         is_visible: false
-      - offset: 375
-        length: 196
-        placeholder_text: "# TODO: draw rectangles with widths proportional to hist[i]\
-      \ for each cluster color in centroids[i]"
+      - offset: 332
+        length: 39
+        placeholder_text:
+          "# TODO: draw rectangles with widths proportional \n#to hist[i]\
+                \ for each cluster color in centroids[i]"
         dependency:
           lesson: Comic-Con and k-means
           task: Histogram
@@ -75,7 +76,15 @@ files:
           file: task.py
           placeholder: 1
         is_visible: false
-    propagatable: false
+      - offset: 344
+        length: 30
+        placeholder_text: "# reshape the image"
+        dependency:
+          lesson: Comic-Con and k-means
+          task: Histogram
+          file: task.py
+          placeholder: 2
+        is_visible: false
   - name: superman-batman.png
     visible: true
     is_binary: true
@@ -90,9 +99,6 @@ files:
     is_binary: true
   - name: __init__.py
     visible: false
-  - name: tests/__init__.py
-    visible: false
-    propagatable: false
   - name: tests/test_task.py
     visible: false
     propagatable: false

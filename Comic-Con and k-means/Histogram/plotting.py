@@ -11,6 +11,7 @@ def plot_colors(hist, centroids):
     bar = np.zeros((50, 500, 3), dtype=np.uint8)
     hist_plot = Image.fromarray(bar)
     draw = ImageDraw.ImageDraw(hist_plot)
+
     start_x = 0
     sum_hist = np.sum(hist)
     for (percent, color) in zip(hist, centroids):
