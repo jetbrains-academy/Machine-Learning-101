@@ -7,7 +7,7 @@ The provided materials offer examples of writing programs utilizing methods of m
 #### Prerequisites
 
 The course describes step-by-step problem solutions with a variety of approaches. However, we assume that you already have certain knowledge of:
- * Python basics – you can learn it in [JetBrains Academy](https://hyperskill.org/courses?track=python&category=1).
+ * Python basics – you can learn it with our [Introduction to Python](https://academy.jetbrains.com/course/16630-introduction-to-python) course.
  * Linear algebra basics. In the course, you will encounter formulas like this: 
  $$ {\mu_{c} = \frac{\sum\limits_{j=1,\dots, n} [c_i = c] x_i^j}{\sum\limits_{c_i = c} 1} } $$
  In case of any difficulties, we recommend that you study the respective topics.
