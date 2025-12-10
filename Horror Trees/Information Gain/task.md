@@ -1,4 +1,4 @@
-####Information Gain
+### Information Gain
 
 In information theory, [Information Gain](https://en.wikipedia.org/wiki/Information_gain_in_decision_trees) is
 the amount of information about a random value received while observing another random value. 

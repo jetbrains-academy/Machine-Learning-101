@@ -25,7 +25,7 @@ In the `tree.py` file, implement a recursive algorithm for building a decision t
 3. Choose the predicate that provides the best division in terms of information gain.
    The `get_best_predicate` method should return this predicate as an instance of the
    `Predicate` class.
-4. In the `build_sutree` method, divide the sample according to the chosen predicate using the
+4. In the `build_subtree` method, divide the sample according to the chosen predicate using the
    `divide` method of the `Predicate` class; recursively build the right and the left subtrees. The `build_sutree`
    method returns an instance of the `Node` class in case the best predicate was found.
    If not, the method returns the most frequently occurring class label.

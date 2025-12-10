@@ -2,30 +2,88 @@ type: edu
 files:
   - name: divide.py
     visible: true
-  - name: task.py
+    placeholders:
+      - offset: 188
+        length: 180
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Horror Trees
+          task: Predicate
+          file: divide.py
+          placeholder: 1
+        is_visible: false
+      - offset: 385
+        length: 36
+        placeholder_text: "# divided dataset and class labels"
+        dependency:
+          lesson: Horror Trees
+          task: Predicate
+          file: divide.py
+          placeholder: 2
+        is_visible: false
+      - offset: 482
+        length: 138
+        placeholder_text: "# TODO"
+      - offset: 629
+        length: 11
+        placeholder_text: "# return gain"
+  - name: calculate_entropy.py
     visible: true
+    placeholders:
+      - offset: 41
+        length: 44
+        placeholder_text: "# calculate the occurrence of each class"
+        dependency:
+          lesson: Horror Trees
+          task: Predicate
+          file: calculate_entropy.py
+          placeholder: 1
+        is_visible: false
+      - offset: 90
+        length: 19
+        placeholder_text: "# calculate the proportion of each class"
+        dependency:
+          lesson: Horror Trees
+          task: Predicate
+          file: calculate_entropy.py
+          placeholder: 2
+        is_visible: false
+      - offset: 121
+        length: 23
+        placeholder_text: "# calculate the entropy"
+        dependency:
+          lesson: Horror Trees
+          task: Predicate
+          file: calculate_entropy.py
+          placeholder: 3
+        is_visible: false
+  - name: node.py
+    visible: true
+    placeholders:
+      - offset: 356
+        length: 127
+        placeholder_text: "#TODO: implement the four attributes of the class Node"
+        dependency:
+          lesson: Horror Trees
+          task: Predicate
+          file: node.py
+          placeholder: 1
+        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false
   - name: halloween.csv
     visible: true
-  - name: tests/test_task.py
+  - name: boo.jpg
     visible: false
     propagatable: false
-  - name: calculate_entropy.py
-    visible: true
+    is_binary: true
   - name: tree.py
     visible: false
     propagatable: false
   - name: halloween.py
     visible: false
     propagatable: false
-  - name: node.py
-    visible: true
-  - name: boo.jpg
-    visible: false
-    propagatable: false
-    is_binary: true
   - name: RNA_tree.png
     visible: false
     propagatable: false
@@ -34,4 +92,8 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Horror+Trees+/+Information+Gain
+  - name: task.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
