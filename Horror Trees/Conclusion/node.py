@@ -8,7 +8,6 @@ class Node:
         self.value = value
         self.true_branch = true_branch
         self.false_branch = false_branch
-        pass
 
     # Below we defined the __repr__ method to ensure readable printing of Node instances.
     def __repr__(self):

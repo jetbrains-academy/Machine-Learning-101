@@ -18,7 +18,6 @@ class DecisionTree:
         else:
             unique_y = np.unique(y, return_counts=True)
             return unique_y[np.argmax(unique_y[1])][0]
-        pass
 
     def get_best_predicate(X, y):
         best_predicate = None
@@ -56,7 +55,6 @@ class DecisionTree:
                 else:
                     branch = sub_tree.false_branch
             return self.classify_subtree(x, branch)
-        pass
 
     def __repr__(self):
         return f'Decision Tree: \n{self.root};\n'
