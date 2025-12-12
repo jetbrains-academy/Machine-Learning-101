@@ -21,8 +21,11 @@ class StochasticGradientDescent:
         errors = []
 
         q, _ = self.calc_grad(self.weights, X, y)
+
         # eta value should be in [0,1] range, this one is chosen arbitrary
         eta = 1 / len(y)
+
+        # do exactly n_iter iterations
         for i in range(self.n_iter):
             batch_index = np.random.choice(len(y), self.k)
             loss, grad = self.calc_grad(self.weights, X[batch_index], y[batch_index])

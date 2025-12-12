@@ -1,23 +1,128 @@
 type: theory
 files:
-  - name: __init__.py
-    visible: false
-    propagatable: false
   - name: pima-indians-diabetes.csv
-    visible: true
-  - name: task.py
-    visible: true
-  - name: loss_functions.py
-    visible: true
-  - name: gradient_descent.py
-    visible: true
-  - name: precision_recall.py
     visible: true
   - name: stochastic_gradient_descent.py
     visible: true
-  - name: utils.py
+    placeholders:
+      - offset: 562
+        length: 193
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: stochastic_gradient_descent.py
+          placeholder: 1
+        is_visible: false
+      - offset: 840
+        length: 16
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: stochastic_gradient_descent.py
+          placeholder: 2
+        is_visible: false
+      - offset: 905
+        length: 292
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: stochastic_gradient_descent.py
+          placeholder: 3
+        is_visible: false
+      - offset: 1214
+        length: 6
+        placeholder_text: "# cost values per iteration"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: stochastic_gradient_descent.py
+          placeholder: 4
+        is_visible: false
+  - name: gradient_descent.py
     visible: true
-  - name: gradient-descent.png
+    placeholders:
+      - offset: 300
+        length: 553
+        placeholder_text: "# TODO: run gradient descent, update weights until convergence"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: gradient_descent.py
+          placeholder: 1
+        is_visible: false
+      - offset: 870
+        length: 6
+        placeholder_text: "# cost values per iteration"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: gradient_descent.py
+          placeholder: 2
+        is_visible: false
+  - name: loss_functions.py
+    visible: true
+    placeholders:
+      - offset: 49
+        length: 57
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: loss_functions.py
+          placeholder: 1
+        is_visible: false
+      - offset: 141
+        length: 58
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: loss_functions.py
+          placeholder: 2
+        is_visible: false
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 383
+        length: 35
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: task.py
+          placeholder: 1
+        is_visible: false
+      - offset: 894
+        length: 36
+        placeholder_text: "# Standardize it"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: task.py
+          placeholder: 2
+        is_visible: false
+      - offset: 1135
+        length: 60
+        placeholder_text: "# Add a column of -1 to the left of the X"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: task.py
+          placeholder: 3
+        is_visible: false
+      - offset: 1264
+        length: 12
+        placeholder_text: "# {0, 1} -> {1, -1}"
+        dependency:
+          lesson: Pima indians diabetes and linear classifier
+          task: Stochastic Gradient Descent
+          file: task.py
+          placeholder: 4
+        is_visible: false
+  - name: pima.png
     visible: false
     propagatable: false
     is_binary: true
@@ -25,8 +130,31 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-  - name: pima.png
+  - name: gradient-descent.png
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScQIQGOPF_e3hQMM-nK5CEvJYufaCWpIbESFFSAOmkI55M_7Q/viewform?usp=pp_url&entry.2103429047=Pima+Indians+and+Linear+Classifier+/+%D0%97%D0%B0%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5
+  - name: __init__.py
+    visible: false
+  - name: precision_recall.py
+    visible: true
+  - name: utils.py
+    visible: true
+  - name: sdg-sigmoid_loss-1.png
+    visible: true
+    is_binary: true
+  - name: sdg-sigmoid_loss-10.png
+    visible: true
+    is_binary: true
+  - name: sdg-sigmoid_loss-50.png
+    visible: true
+    is_binary: true
+  - name: sdg-log_loss-50.png
+    visible: true
+    is_binary: true
+  - name: sdg-log_loss-1.png
+    visible: true
+    is_binary: true
+  - name: sdg-log_loss-10.png
+    visible: true
+    is_binary: true

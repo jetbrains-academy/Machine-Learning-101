@@ -26,6 +26,7 @@ class GradientDescent:
             if np.linalg.norm(self.weights - new_weights) < self.threshold:
                 break
             self.weights = new_weights
+
         return errors
 
     def predict(self, X):

@@ -1,4 +1,4 @@
-#Introduction
+### Introduction
 
 The Pima Indians live in the central and southern parts of Arizona. For some reason that still remains unclear, the Pima are at high risk of developing type 2 diabetes.
 One of the hypotheses is that the high incidence of diabetes among native Americans results from a combination of several factors: genetic susceptibility, rapid dietary changes over the last centuries (transition from traditional agricultural produce to processed products), and reduced physical activity. In the current task, we will use the [linear
@@ -11,11 +11,11 @@ We've chosen the algorithm due to the following reasons:
 - It's hard to specify the [probability space](https://en.wikipedia.org/wiki/Probability_space) for the objects.
 
 The *gradient descent* algorithm discussed in this lesson does not require calculating distances or building predicates. The objects do not have to be in the same probability space either.
-#Description of .csv
+### Description of .csv
 The `pima-indians-diabetes.csv` file ([source](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)) contains medical data of Pima individuals.
 The last column of each line is the indicator of type 2 diabetes. The contents of other columns are explained in the file headers.
 
-#  Task
+###  Task
 When implementing the linear classifier, we assume that the objects lie in an `n`-dimensional space and we can define a `(n-1)`-dimensional plane to divide the classes (`n` being the number of features).
 
 ![hyperplane](hyperplane.png)

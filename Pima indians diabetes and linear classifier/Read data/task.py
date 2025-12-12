@@ -17,13 +17,13 @@ def read_data(fname):
     # with a unit standard deviation. It means if we will calculate mean
     # and standard deviation of standard scores it will be 0 and 1 respectively.
     # This procedure is recommended if the data follows normal distribution
-    X = # Standardize it
+    X = (X - X.mean(axis=0)) / X.std(axis=0)
     # A column with '-1' values is added to the left of the X array
     # It is a pseudo-feature that will allow us to build initial vectors
     # for all of the cases. It will be essential later
-    X = # Add a column of -1 to the left of the X
+    X = np.concatenate((-np.ones(len(X)).reshape(-1, 1), X), axis=1)
     # y is normalized - centered around 0 with a unit of 1
-    y =  # {0, 1} -> {1, -1}
+    y =  -(y * 2 - 1)
     return X, y
 
 

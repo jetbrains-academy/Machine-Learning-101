@@ -14,7 +14,7 @@ class TestCase(unittest.TestCase):
                       [0, 0, 0, 0, 0]])
         y = np.array([1, 1, 2, 2])
         gd.fit(X, y)
-        self.assertEquals(5, len(gd.weights))
+        self.assertEqual(5, len(gd.weights))
 
     def test_fit(self):
         gd = StochasticGradientDescent(alpha=0.1)
@@ -31,5 +31,5 @@ class TestCase(unittest.TestCase):
                       [0, 0, 0, 0, 0]])
         y = np.array([1, 1, 2, 2])
         gd.fit(X, y)
-        self.assertEquals(1, gd.predict(np.array([1, 2, 3, 4, 5])))
-        self.assertEquals(0, gd.predict(np.array([0, 0, 0, 0, 0])))
+        self.assertEqual(1, gd.predict(np.array([1, 2, 3, 4, 5])))
+        self.assertEqual(0, gd.predict(np.array([0, 0, 0, 0, 0])))
