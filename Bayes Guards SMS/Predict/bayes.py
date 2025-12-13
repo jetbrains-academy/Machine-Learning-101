@@ -25,6 +25,7 @@ class NaiveBayes:
             denominator = self.classes_words_count[i] + self.alpha * self.dict_size
             self.likelihood[i] = self.likelihood[i] / denominator
 
+
     def predict(self, X):
         result = []
         X = split_by_words(X)
@@ -41,6 +42,8 @@ class NaiveBayes:
             predicted = self.unique_classes[np.argmax(posterior)]
             result.append(predicted)
         return result
+        pass
 
     def score(self, X, y):
         return np.sum(self.predict(X) == y) / len(y)
+        pass

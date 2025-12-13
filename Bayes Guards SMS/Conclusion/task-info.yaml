@@ -2,20 +2,126 @@ type: theory
 files:
   - name: task.py
     visible: true
+  - name: bayes.py
+    visible: true
+    placeholders:
+      - offset: 310
+        length: 52
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: bayes.py
+          placeholder: 1
+        is_visible: false
+      - offset: 398
+        length: 52
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: bayes.py
+          placeholder: 2
+        is_visible: false
+      - offset: 477
+        length: 85
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: bayes.py
+          placeholder: 3
+        is_visible: false
+      - offset: 572
+        length: 448
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: bayes.py
+          placeholder: 4
+        is_visible: false
+      - offset: 1056
+        length: 640
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: bayes.py
+          placeholder: 5
+        is_visible: false
+      - offset: 1733
+        length: 44
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: bayes.py
+          placeholder: 6
+        is_visible: false
+  - name: vectorize.py
+    visible: true
+    placeholders:
+      - offset: 858
+        length: 17
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: vectorize.py
+          placeholder: 1
+        is_visible: false
+      - offset: 928
+        length: 29
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: vectorize.py
+          placeholder: 2
+        is_visible: false
+      - offset: 1110
+        length: 24
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: vectorize.py
+          placeholder: 3
+        is_visible: false
+      - offset: 1264
+        length: 50
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: vectorize.py
+          placeholder: 4
+        is_visible: false
+      - offset: 1543
+        length: 38
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: vectorize.py
+          placeholder: 5
+        is_visible: false
+      - offset: 1636
+        length: 85
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Predict
+          file: vectorize.py
+          placeholder: 6
+        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false
   - name: spam.txt
     visible: true
-  - name: bayes.py
-    visible: true
-  - name: vectorize.py
-    visible: true
   - name: Thomas_Bayes.png
     visible: false
     propagatable: false
     is_binary: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Bayes+Guards+SMS+/+Conclusion

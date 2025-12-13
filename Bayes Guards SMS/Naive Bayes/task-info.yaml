@@ -2,20 +2,90 @@ type: edu
 files:
   - name: bayes.py
     visible: true
-  - name: task.py
+    placeholders:
+      - offset: 250
+        length: 52
+        placeholder_text: "# TODO"
+      - offset: 338
+        length: 52
+        placeholder_text: "# TODO"
+      - offset: 417
+        length: 76
+        placeholder_text: "# TODO"
+      - offset: 503
+        length: 418
+        placeholder_text: "# TODO"
+  - name: vectorize.py
     visible: true
+    placeholders:
+      - offset: 858
+        length: 17
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Vectorize
+          file: vectorize.py
+          placeholder: 1
+          is_visible: false
+      - offset: 928
+        length: 29
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Vectorize
+          file: vectorize.py
+          placeholder: 2
+          is_visible: false
+      - offset: 1110
+        length: 24
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Vectorize
+          file: vectorize.py
+          placeholder: 3
+          is_visible: false
+      - offset: 1264
+        length: 50
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Vectorize
+          file: vectorize.py
+          placeholder: 4
+          is_visible: false
+      - offset: 1543
+        length: 38
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Vectorize
+          file: vectorize.py
+          placeholder: 5
+          is_visible: false
+      - offset: 1636
+        length: 85
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Bayes Guards SMS
+          task: Vectorize
+          file: vectorize.py
+          placeholder: 6
+          is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false
   - name: spam.txt
     visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: vectorize.py
-    visible: true
   - name: Thomas_Bayes.png
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Bayes+Guards+SMS+/+Naive+Bayes
+  - name: tests/__init__.py
+    visible: false
+    propagatable: false
+  - name: task.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false

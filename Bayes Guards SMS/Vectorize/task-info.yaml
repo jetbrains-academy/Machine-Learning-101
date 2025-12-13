@@ -2,6 +2,25 @@ type: edu
 files:
   - name: vectorize.py
     visible: true
+    placeholders:
+      - offset: 858
+        length: 17
+        placeholder_text: "# TODO"
+      - offset: 928
+        length: 29
+        placeholder_text: "# TODO"
+      - offset: 1110
+        length: 24
+        placeholder_text: "# TODO"
+      - offset: 1264
+        length: 50
+        placeholder_text: "# TODO"
+      - offset: 1543
+        length: 38
+        placeholder_text: "# TODO"
+      - offset: 1636
+        length: 85
+        placeholder_text: "# TODO"
   - name: task.py
     visible: true
   - name: tests/test_task.py

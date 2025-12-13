@@ -52,7 +52,7 @@ the set of words in a specific sentence.
 
 ### Task
 
-In the "Spam.txt" file, you will find a dataset containing marked sentences. The first word in each line 
+In the `spam.txt` file, you will find a dataset containing marked sentences. The first word in each line 
 is an identifier of the "Spam" or "Ham" class; then, after a tabulation, follows the body of the message.
 
 Before building a classifier, we need to present the data in a format convenient for classifying. To do that,
