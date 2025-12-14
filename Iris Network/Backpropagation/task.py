@@ -15,7 +15,7 @@ def read_data(fpath):
 
 
 def plot_data(X, y):
-    plt.scatter(X[0, :], X[1, :], c=y[0, :], s=40, cmap=plt.cm.Spectral)
+    plt.scatter(X[:, 0], X[:, 1], c=y.ravel(), s=40, cmap=plt.cm.Spectral)
     plt.title("IRIS DATA | Blue - Versicolor, Red - Virginica ")
     plt.xlabel('Petal Length')
     plt.ylabel('Petal Width')

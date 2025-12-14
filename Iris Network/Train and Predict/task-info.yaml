@@ -2,20 +2,84 @@ type: edu
 files:
   - name: network.py
     visible: true
-  - name: task.py
+    placeholders:
+      - offset: 345
+        length: 41
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: network.py
+          placeholder: 1
+        is_visible: false
+      - offset: 402
+        length: 37
+        placeholder_text: "# result"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: network.py
+          placeholder: 2
+        is_visible: false
+      - offset: 518
+        length: 41
+        placeholder_text: "# Calculate the error for the output layer"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: network.py
+          placeholder: 3
+        is_visible: false
+      - offset: 579
+        length: 61
+        placeholder_text: "# Calculate the error for the hidden layer"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: network.py
+          placeholder: 4
+        is_visible: false
+      - offset: 660
+        length: 49
+        placeholder_text: "# Adjust the weight coefficients of the output layer"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: network.py
+          placeholder: 5
+        is_visible: false
+      - offset: 729
+        length: 39
+        placeholder_text: "# Adjust the weight coefficients of the hidden layer"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: network.py
+          placeholder: 6
+        is_visible: false
+      - offset: 819
+        length: 98
+        placeholder_text: "# TODO"
+      - offset: 960
+        length: 19
+        placeholder_text: "# TODO"
+  - name: iris.csv
     visible: true
+  - name: activation.py
+    visible: true
+    placeholders:
+      - offset: 182
+        length: 24
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Iris Network
+          task: Backpropagation
+          file: activation.py
+          placeholder: 1
+        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false
-  - name: iris.csv
-    visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: activation.py
-    visible: true
-  - name: derivative.py
-    visible: true
   - name: evaluate.py
     visible: false
     propagatable: false
@@ -30,7 +94,13 @@ files:
     visible: false
     propagatable: false
     is_binary: true
+  - name: derivative.py
+    visible: true
+  - name: task.py
+    visible: true
   - name: tests/__init__.py
     visible: false
     propagatable: false
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Iris+Network+/+Train+and+Predict
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false

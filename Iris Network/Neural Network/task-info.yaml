@@ -1,22 +1,32 @@
 type: theory
 files:
-  - name: __init__.py
-    visible: false
-    propagatable: false
   - name: iris.csv
     visible: true
   - name: activation.py
     visible: true
-  - name: derivative.py
+    placeholders:
+      - offset: 182
+        length: 24
+        placeholder_text: "# TODO"
+        dependency:
+          lesson: Iris Network
+          task: Neurons
+          file: activation.py
+          placeholder: 1
+        is_visible: false
+  - name: task.py
     visible: false
     propagatable: false
-  - name: evaluate.py
+  - name: __init__.py
     visible: false
     propagatable: false
   - name: network.py
     visible: false
     propagatable: false
-  - name: task.py
+  - name: derivative.py
+    visible: false
+    propagatable: false
+  - name: evaluate.py
     visible: false
     propagatable: false
   - name: final.py
@@ -30,4 +40,3 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Iris+Network+/+Neural+Network
