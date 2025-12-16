@@ -1,5 +1,5 @@
 Halloween comes every year, and you better be ready for it! It might be a good idea to learn to tell one monster from another.
-The halloween.csv file
+The `halloween.csv` file
 contains a dataset with the information that will help us distinguish between ghosts, 
 goblins, and ghouls. The meaning of columns is indicated in the file header; the last column,
  `type`, will be used as class labels. This dataset contains not only quantitative characteristics, like in the
@@ -46,6 +46,5 @@ according to which subtrees are divided. It will be convenient to save the predi
 according to which the sample is divided, and its value. Don't forget to delete the `pass` operator.
 
 You can run `task.py` in each task in order to see how your code is working.
-In the current task, you don't need to modify `task.py`.
 
 ![Boo](boo.jpg)

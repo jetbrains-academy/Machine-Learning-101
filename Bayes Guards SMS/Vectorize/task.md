@@ -43,23 +43,23 @@ sick people in the sample group. You can find the calculations and more examples
 The **naive classifier** is a probability model. It calculates the probability for each text class
 and returns the more probable one.
 
-Our task will be to calculate the probability of a given sentence being "Spam" or "Ham" and then 
+Our task will be to calculate the probability of a given sentence being "spam" or "Ham" and then 
 choose the more probable variant.
 
-$P(Spam|sentence)$ is the probability that a sentence is "Spam", taking into account
+$P(spam|sentence)$ is the probability that a sentence is "spam", taking into account
 the set of words in a specific sentence.
 
 
 ### Task
 
-In the "Spam.txt" file, you will find a dataset containing marked sentences. The first word in each line 
-is an identifier of the "Spam" or "Ham" class; then, after a tabulation, follows the body of the message.
+In the `spam.txt` file, you will find a dataset containing marked sentences. The first word in each line 
+is an identifier of the "spam" or "ham" class; then, after a tabulation, follows the body of the message.
 
 Before building a classifier, we need to present the data in a format convenient for classifying. To do that,
 we will use a standard text-processing model named [Bag of words](https://en.wikipedia.org/wiki/Bag-of-words_model). It allows calculating 
 the number of occurrences for each word in a document, regardless of word order and syntactic structures.
 
-In the `vectorize.py` file, we have implemented a function `split_by_words()`, which takes a vector of text lines and returns a vector of word lists for each line.
+In the `vectorize.py` file, we have implemented a function `split_by_words`, which takes a vector of text lines and returns a vector of word lists for each line.
 It utilizes the following functions:
 
 - [numpy.char.lower](https://numpy.org/doc/stable/reference/generated/numpy.char.lower.html) – it returns a list of elements transformed into lowercase.
@@ -72,7 +72,7 @@ It utilizes the following functions:
 
 In the same file, implement the`vectorize` function. It should do the following:
 1) Find the number of messages in the input.
-2) Get a vector of separate word lists from them using the `split_by_words()` function.
+2) Get a vector of separate word lists from them using the `split_by_words` function.
 3) Get a one-dimensional array of unique words from it.
 4) Build a dictionary, where each unique word will be assigned an index.
 5) Create a matrix of the shape `(N, M)`, where `M` is the dictionary size. The j-th element of each matrix line
@@ -86,4 +86,4 @@ In this task, you might want to use the following functions:
 are concatenated along the first axis.
 </div>
 
-To see how your code works, you can run `task.py`. You don't need to modify this file in the current task.
+To see how your code works, you can run `task.py`.

@@ -1,6 +1,6 @@
 One of the problems with the naive approach is the following: if a word has not occurred in the training sample of the 
-`Spam` class, its probability is:
-$$P(word|Spam)=0$$
+`spam` class, its probability is:
+$$P(word|spam)=0$$
 
 It's called the problem of zero occurrences. It leads to the impossibility of classifying a message
 with this word, as it will have a zero probability in all classes. The problem may not be handled by means
@@ -48,5 +48,5 @@ of the denominator value. </div>
 Initially, the <code>likelihood</code> array must be filled not with zeros but with $\alpha=1$. </div>
 
 To see how your code works, you can run `task.py`.
-In this task, you don't need to modify `task.py`. Mind the change of probability values compared to the previous 
+Mind the change of probability values compared to the previous 
 step.

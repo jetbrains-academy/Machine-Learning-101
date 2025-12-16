@@ -33,7 +33,6 @@ The function may look as follows:
             
         return class_precision_recall
 
-Don't forget to import the implemented function to `task.py` in order to use it in the main program and output the result.
 
 <div class="hint">
 You can calculate the value of <code>n_classes</code> using <code>y_test</code>:
