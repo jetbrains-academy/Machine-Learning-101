@@ -17,7 +17,6 @@ In `classify_subtree`, you need to:
 3. Depending on the result, choose the tree branch along which you will proceed (`true_branch` or `false_branch`).
 4. Repeat these actions recursively until the result will be a class label (a leaf node).
 
-<div class="hint">Follow the instructions in the code comments! :)</div>
 
 To see the results of your code, add the following lines
 to the `main` block in `task.py` and run it:
