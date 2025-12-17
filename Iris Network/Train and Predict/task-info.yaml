@@ -3,8 +3,8 @@ files:
   - name: network.py
     visible: true
     placeholders:
-      - offset: 345
-        length: 41
+      - offset: 359
+        length: 27
         placeholder_text: "# TODO"
         dependency:
           lesson: Iris Network

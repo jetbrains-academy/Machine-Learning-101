@@ -63,9 +63,6 @@ files:
   - name: tests/test_task.py
     visible: false
     propagatable: false
-  - name: histogram.png
-    visible: false
-    is_binary: true
   - name: barchart.png
     visible: false
     is_binary: true
