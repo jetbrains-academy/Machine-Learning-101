@@ -1,0 +1,8 @@
+type: framework
+content:
+  - Reading an image
+  - K-means
+  - Histogram
+  - Image recoloring
+  - Conclusion
+is_template_based: false

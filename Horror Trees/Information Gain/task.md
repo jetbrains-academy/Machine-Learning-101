@@ -42,4 +42,4 @@ where:
 - `p` is the proportion of the objects of the first child set among all objects of the whole dataset (consequently, `1 - p` is the proportion of the second one).
 </div>
 
-To see the results of your code, you can run `main` block in `task.py`.
+To see the results of your code, you can run the `main` block in `task.py`.

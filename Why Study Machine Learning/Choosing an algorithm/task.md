@@ -10,7 +10,7 @@ The set of instances used for algorithm training is called a [training set](http
 #### [Classification](https://en.wikipedia.org/wiki/Statistical_classification)
 In this kind of tasks, there is a set of objects (situations) divided into classes. The training sample is a finite set of objects belonging to known classes. An example of such a task is medical diagnostics: on the grounds of formally described medical analyses, we can assume the presence of a certain disease.
 
-You can find examples of solving such tasks in the following lessons: [**Neighbors and wine**](course://Neighbors and wine/Sample division), [**Horror Trees**](course://Horror Trees/Node), [**Pima indians diabetes and linear classifier**](course://Pima indians diabetes and linear classifier/Read data), and [**Iris Network**](course://Iris Network/Neurons).
+You can find examples of solving such tasks in the following lessons: [**Neighbors and Wine**](course://Neighbors and Wine/Sample division), [**Horror Trees**](course://Horror Trees/Node), [**Pima Indians Diabetes and Linear Classifier**](course://Pima Indians Diabetes and Linear Classifier/Read data), and [**Iris Network**](course://Iris Network/Neurons).
 
 #### [Regression](https://en.wikipedia.org/wiki/Regression_analysis)
 This task involves building a model of measurable data and studying their properties. The data include pairs of values: a dependable variable and an independent variable. The result is a model explaining the dependence of the response variable on the explanatory variable. An example is a model predicting the dependence of real estate prices on time.
@@ -26,7 +26,7 @@ In this class of tasks, we know only the description of a set of objects (the le
 
 #### [Data clustering](https://en.wikipedia.org/wiki/Cluster_analysis)
 The task involves grouping objects into clusters using the information of pairwise similarity between the objects.
-An example of such a task is considered in the [**Comic-Con and k-means**](course://Comic-Con and k-means/Reading an image) lesson.
+An example of such a task is considered in the [**Comic-Con and K-means**](course://Comic-Con and K-means/Reading an image) lesson.
 
 #### [Association rule learning](https://en.wikipedia.org/wiki/Association_rule_learning)
 The given data represent feature descriptions. It is necessary to find such sets of features and such feature values that most frequently (non-randomly) occur in the object feature descriptions.

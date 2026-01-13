@@ -43,7 +43,7 @@ sick people in the sample group. You can find the calculations and more examples
 The **naive classifier** is a probability model. It calculates the probability for each text class
 and returns the more probable one.
 
-Our task will be to calculate the probability of a given sentence being "spam" or "Ham" and then 
+Our task will be to calculate the probability of a given sentence being "spam" or "ham" and then 
 choose the more probable variant.
 
 $P(spam|sentence)$ is the probability that a sentence is "spam", taking into account
