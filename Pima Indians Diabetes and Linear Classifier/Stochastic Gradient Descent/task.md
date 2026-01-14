@@ -27,7 +27,7 @@ The `k` parameter defines the size of the random subset of
 
 In the `stohastic_gradient-descent.py` file, you can find a template for implementation. Note that the function for calculating the gradient is provided separately (`calc_grad(self, w, X, y)`), the $\eta$ parameter is added, and – most importantly – in the `fit` function, the `while` cycle is substituted by `for i in range(self.n_iter)`. This solves the problem of `Q` instability; however, it may result in a worse approximation of the result. Such a trade-off between the working time, reliability, and stability often occurs in machine learning algorithm settings.
 
-For output visualization, we modified the `plot_classification(X, y)` function (look at it in `utils.py`). We've added the number of iterations `n_iter = 5000` and one more internal loop to see the results of work with `k = 1`, `k = 10`, and `k = 50`. To save the image for each chosen batch size, we also edited the lines defining the image names.
+For output visualization, we modified the `plot_classification(X, y)` function (see `utils.py`). We've added the number of iterations `n_iter = 5000` and one more internal loop to compare results using `k = 1`, `k = 10`, and `k = 50`. To save the image for each chosen batch size, we also edited the lines defining the image names.
 
 Run `task.py`. You will see the visualizations of the algorithm work for different `k` with different `loss` functions in *Course View* on the left.
 

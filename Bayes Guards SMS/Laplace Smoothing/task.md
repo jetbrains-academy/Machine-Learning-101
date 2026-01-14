@@ -48,5 +48,4 @@ of the denominator value. </div>
 Initially, the <code>likelihood</code> array must be filled not with zeros but with $\alpha=1$. </div>
 
 To see how your code works, you can run `task.py`.
-Mind the change of probability values compared to the previous 
-step.
+Note the change in probability values compared to the previous step.

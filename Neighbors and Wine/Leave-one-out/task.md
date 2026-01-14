@@ -51,4 +51,4 @@ The function needs to take the training sample and the distance function:
 The function template is in the `crossvalidation.py` file. 
 
 Assess the precision and recall of the classifier with the optimal `k` and any two distance functions. 
-To do that, run `task.py`
+To do that, run `task.py`.
