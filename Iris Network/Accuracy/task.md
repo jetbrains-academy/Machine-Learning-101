@@ -1,4 +1,4 @@
-<h2>Numerical assessment of algorithm quality</h2>
+<h3>Numerical assessment of algorithm quality</h3>
 
 In the simplest case, a quality metric might be the proportion of the correctly classified objects.
 $$Accuracy=\frac{P}{N}$$
@@ -25,7 +25,7 @@ all objects of that class in the testing sample.</p>
 <summary><b><a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion Matrix</a></b></summary>
 <p>In practice, precision and recall values are conveniently calculated with the help of the confusion matrix.
 When the number of classes is relatively small (not more than 100-150), it allows visualizing
-the results of the algorithm's work..</p>
+the results of the algorithm's work.</p>
 <p>Confusion matrix is a matrix of order N х N, where N is the number of classes. Matrix columns represent the reality, and matrix rows
 – the classifier's decisions. When an object from the testing sample is classified, the number at the intersection of the class row returned by the algorithm and the
 class column the object really belongs to, increases. Consequently,
@@ -49,17 +49,4 @@ objects in the sample.
 In the `evaluate.py` file, implement the `accuracy` function, which passes the testing sample through the algorithm, compares 
 the received class labels with the real ones, and returns the proportion of correctly classified objets.
 
-To see the results of your code's work, you can add the following lines to the `main` block in `task.py` block and run it:
-
-```python
-print("Accuracy:")
-print(accuracy(nn, X_test, y_test))
-```
-Variables required for the correct work of this code were introduced in previous steps; if you haven't worked with `task.py` yet, pay attention to them:
-```python
-X, y = read_data('iris.csv')
-trainX, trainY, testX, testY = train_test_split(X, y, 0.7)
-nn = NN(len(X[0]), 5, 1)
-nn.train(trainX, trainY)
-```
-Try running the code in `task.py` several times to see how `accuracy` changes on each run.
+To see the results of your code's work, run `task.py`. Try running it several times to see how `accuracy` changes on each run.

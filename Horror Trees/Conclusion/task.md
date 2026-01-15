@@ -37,7 +37,7 @@ take a while.
 
 
 To see the results of the algorithm's work, run the code in the `halloween.py` file. Upon its completion, you will
-see an image `tree.jpg` in the list of files in Course View – it is our decision tree!
+see an image `tree.jpg` in the list of files in *Course View* – it is our decision tree!
 
 #### Additional information links: 
 1) An [example](https://iq.opengenus.org/id3-algorithm/#:~:text=ID3%20algorithm%2C%20stands%20for%20Iterative,or%20minimum%20Entropy%20(H)) of using the ID3 algorithm in weather forecasts.

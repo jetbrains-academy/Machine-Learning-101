@@ -1,10 +1,10 @@
-####Information Gain
+### Information Gain
 
 In information theory, [Information Gain](https://en.wikipedia.org/wiki/Information_gain_in_decision_trees) is
 the amount of information about a random value received while observing another random value. 
 It is based on the decrease of entropy after dividing a sample according to a certain characteristic, 
 and it allows assessing the division quality. In other words, 
-the expected information gain is the change of information entropy H from the previous state to a state
+the expected information gain is the change of information entropy `H` from the previous state to a state
 that takes certain information (a condition) as given.
 To build a decision tree is to find a characteristic (i.e., the homogenous branches) that 
 provides the largest amount of information.
@@ -42,11 +42,4 @@ where:
 - `p` is the proportion of the objects of the first child set among all objects of the whole dataset (consequently, `1 - p` is the proportion of the second one).
 </div>
 
-To see the results of your code, you can add the following line to the
-`main` block in `task.py` and run it:
-
-```python
-    print(f'Information Gain: {predicate.information_gain(X, y)}\n')     
-```
-Variables required for the correct work of this code were introduced in the previous steps; in case you haven't worked with 
-`task.py` yet, pay attention to them.
+To see the results of your code, you can run the `main` block in `task.py`.
