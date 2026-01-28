@@ -8,43 +8,6 @@ files:
         placeholder_text: "# for c in range(n_classes):"
   - name: task.py
     visible: true
-    placeholders:
-      - offset: 408
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 1
-        is_visible: false
-      - offset: 523
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 2
-        is_visible: false
-      - offset: 647
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 3
-        is_visible: false
-      - offset: 762
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 4
-        is_visible: false
   - name: wine.csv
     visible: true
   - name: __init__.py
@@ -60,23 +23,4 @@ files:
     propagatable: false
   - name: metric_classification.py
     visible: true
-    placeholders:
-      - offset: 69
-        length: 173
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: k-nearest neighbors
-          file: metric_classification.py
-          placeholder: 1
-        is_visible: false
-      - offset: 255
-        length: 36
-        placeholder_text: "#class for each x in the X_test"
-        dependency:
-          lesson: Neighbors and wine
-          task: k-nearest neighbors
-          file: metric_classification.py
-          placeholder: 2
-        is_visible: false
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Neighbors+and+Wine+/+Precision+and+Recall

@@ -8,21 +8,11 @@ files:
         placeholder_text: "# TODO"
       - offset: 402
         length: 37
-        placeholder_text: "# result"
+        placeholder_text: "# Result"
   - name: iris.csv
     visible: true
   - name: activation.py
     visible: true
-    placeholders:
-      - offset: 182
-        length: 24
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Iris Network
-          task: Neural Network
-          file: activation.py
-          placeholder: 1
-        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false

@@ -3,24 +3,6 @@ files:
   - name: network.py
     visible: true
     placeholders:
-      - offset: 359
-        length: 27
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Iris Network
-          task: Forward Step
-          file: network.py
-          placeholder: 1
-        is_visible: false
-      - offset: 402
-        length: 37
-        placeholder_text: "# result"
-        dependency:
-          lesson: Iris Network
-          task: Forward Step
-          file: network.py
-          placeholder: 2
-        is_visible: false
       - offset: 518
         length: 41
         placeholder_text: "# Calculate the error for the output layer"
@@ -29,24 +11,14 @@ files:
         placeholder_text: "# Calculate the error for the hidden layer"
       - offset: 660
         length: 49
-        placeholder_text: "# Adjust the weight coefficients of the output layer"
+        placeholder_text: "# Update the weight coefficients of the output layer"
       - offset: 729
         length: 39
-        placeholder_text: "# Adjust the weight coefficients of the hidden layer"
+        placeholder_text: "# Update the weight coefficients of the hidden layer"
   - name: iris.csv
     visible: true
   - name: activation.py
     visible: true
-    placeholders:
-      - offset: 182
-        length: 24
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Iris Network
-          task: Forward Step
-          file: activation.py
-          placeholder: 1
-        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false

@@ -5,102 +5,27 @@ files:
     placeholders:
       - offset: 138
         length: 24
-        placeholder_text: "# build tree using build_subtree"
+        placeholder_text: "# Build the tree using build_subtree"
       - offset: 178
         length: 4
         placeholder_text: "# self"
       - offset: 227
         length: 503
-        placeholder_text: "# TODO: divide by predicate, recursively build subtrees, return\
-      \ Node or majority class"
+        placeholder_text: "# TODO: Split by predicate, recursively build subtrees, and\
+      \ return a Node or the majority class"
       - offset: 787
         length: 448
-        placeholder_text: "# TODO: build all predicates for the characteristic, compute\
-      \ info gain, return the best one"
+        placeholder_text: "# TODO: Build predicates for the attribute, compute information\
+      \ gain, and return the optimal one"
       - offset: 1252
         length: 14
         placeholder_text: "# best_predicate"
   - name: divide.py
     visible: true
-    placeholders:
-      - offset: 188
-        length: 180
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: divide.py
-          placeholder: 1
-        is_visible: false
-      - offset: 385
-        length: 36
-        placeholder_text: "# divided dataset and class labels"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: divide.py
-          placeholder: 2
-        is_visible: false
-      - offset: 482
-        length: 138
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: divide.py
-          placeholder: 3
-        is_visible: false
-      - offset: 629
-        length: 11
-        placeholder_text: "# return gain"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: divide.py
-          placeholder: 4
-        is_visible: false
   - name: calculate_entropy.py
     visible: true
-    placeholders:
-      - offset: 41
-        length: 44
-        placeholder_text: "# calculate the occurrence of each class"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: calculate_entropy.py
-          placeholder: 1
-        is_visible: false
-      - offset: 90
-        length: 19
-        placeholder_text: "# calculate the proportion of each class"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: calculate_entropy.py
-          placeholder: 2
-        is_visible: false
-      - offset: 121
-        length: 23
-        placeholder_text: "# calculate the entropy"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: calculate_entropy.py
-          placeholder: 3
-        is_visible: false
   - name: node.py
     visible: true
-    placeholders:
-      - offset: 356
-        length: 127
-        placeholder_text: "#TODO: implement the four attributes of the class Node"
-        dependency:
-          lesson: Horror Trees
-          task: Information Gain
-          file: node.py
-          placeholder: 1
-        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false

@@ -3,54 +3,16 @@ files:
   - name: divide.py
     visible: true
     placeholders:
-      - offset: 188
+      - offset: 241
         length: 180
         placeholder_text: "# TODO"
-      - offset: 385
+      - offset: 438
         length: 36
-        placeholder_text: "# divided dataset and class labels"
+        placeholder_text: "# Split dataset and class labels"
   - name: calculate_entropy.py
     visible: true
-    placeholders:
-      - offset: 41
-        length: 44
-        placeholder_text: "# calculate the occurrence of each class"
-        dependency:
-          lesson: Horror Trees
-          task: Entropy
-          file: calculate_entropy.py
-          placeholder: 1
-        is_visible: false
-      - offset: 90
-        length: 19
-        placeholder_text: "# calculate the proportion of each class"
-        dependency:
-          lesson: Horror Trees
-          task: Entropy
-          file: calculate_entropy.py
-          placeholder: 2
-        is_visible: false
-      - offset: 121
-        length: 23
-        placeholder_text: "# calculate the entropy"
-        dependency:
-          lesson: Horror Trees
-          task: Entropy
-          file: calculate_entropy.py
-          placeholder: 3
-        is_visible: false
   - name: node.py
     visible: true
-    placeholders:
-      - offset: 356
-        length: 127
-        placeholder_text: "#TODO: implement the four attributes of the class Node"
-        dependency:
-          lesson: Horror Trees
-          task: Entropy
-          file: node.py
-          placeholder: 1
-        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false

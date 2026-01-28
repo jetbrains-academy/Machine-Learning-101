@@ -5,25 +5,15 @@ files:
     placeholders:
       - offset: 41
         length: 44
-        placeholder_text: "# calculate the occurrence of each class"
+        placeholder_text: "# Count the occurrences of each class"
       - offset: 90
         length: 19
-        placeholder_text: "# calculate the proportion of each class"
+        placeholder_text: "# Calculate the proportion of each class"
       - offset: 121
         length: 23
-        placeholder_text: "# calculate the entropy"
+        placeholder_text: "# Calculate the entropy"
   - name: node.py
     visible: true
-    placeholders:
-      - offset: 356
-        length: 127
-        placeholder_text: "#TODO: implement the four attributes of the class Node"
-        dependency:
-          lesson: Horror Trees
-          task: Node
-          file: node.py
-          placeholder: 1
-        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false

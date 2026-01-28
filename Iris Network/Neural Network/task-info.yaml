@@ -4,16 +4,6 @@ files:
     visible: true
   - name: activation.py
     visible: true
-    placeholders:
-      - offset: 182
-        length: 24
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Iris Network
-          task: Neurons
-          file: activation.py
-          placeholder: 1
-        is_visible: false
   - name: task.py
     visible: false
     propagatable: false

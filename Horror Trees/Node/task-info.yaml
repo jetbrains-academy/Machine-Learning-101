@@ -5,7 +5,7 @@ files:
     placeholders:
       - offset: 356
         length: 127
-        placeholder_text: "#TODO: implement the four attributes of the class Node"
+        placeholder_text: "# TODO: Implement the four attributes of the Node class"
   - name: task.py
     visible: true
   - name: tests/test_task.py

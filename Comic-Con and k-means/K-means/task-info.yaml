@@ -13,25 +13,6 @@ files:
     visible: true
   - name: task.py
     visible: true
-    placeholders:
-      - offset: 236
-        length: 16
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Reading an image
-          file: task.py
-          placeholder: 1
-        is_visible: false
-      - offset: 339
-        length: 30
-        placeholder_text: "# reshape the image"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Reading an image
-          file: task.py
-          placeholder: 2
-        is_visible: false
   - name: __init__.py
     visible: false
     propagatable: false

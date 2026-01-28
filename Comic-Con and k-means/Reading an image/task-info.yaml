@@ -8,7 +8,7 @@ files:
         placeholder_text: "# TODO"
       - offset: 268
         length: 30
-        placeholder_text: "# reshape the image"
+        placeholder_text: "# Reshape the image"
   - name: tests/test_task.py
     visible: false
     propagatable: false

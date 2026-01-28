@@ -8,46 +8,9 @@ files:
         placeholder_text: "# TODO"
       - offset: 255
         length: 36
-        placeholder_text: "#class for each x in the X_test"
+        placeholder_text: "# Predict the class for each x in X_test"
   - name: task.py
     visible: true
-    placeholders:
-      - offset: 333
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 1
-        is_visible: false
-      - offset: 448
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 2
-        is_visible: false
-      - offset: 572
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 3
-        is_visible: false
-      - offset: 687
-        length: 22
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Neighbors and wine
-          task: Sample division
-          file: task.py
-          placeholder: 4
-        is_visible: false
   - name: wine.csv
     visible: true
   - name: __init__.py

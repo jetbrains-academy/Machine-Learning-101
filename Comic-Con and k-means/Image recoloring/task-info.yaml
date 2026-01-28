@@ -8,83 +8,15 @@ files:
         placeholder_text: "# TODO"
       - offset: 284
         length: 17
-        placeholder_text: "# array of images recolored by k_means"
+        placeholder_text: "# Array of images recolored by k-means"
   - name: plotting.py
     visible: true
-    placeholders:
-      - offset: 90
-        length: 54
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: plotting.py
-          placeholder: 1
-        is_visible: false
-      - offset: 156
-        length: 6
-        placeholder_text: "# counts of pixels per cluster index"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: plotting.py
-          placeholder: 2
-        is_visible: false
-      - offset: 332
-        length: 39
-        placeholder_text:
-          "# TODO: draw rectangles with widths proportional \n#to hist[i]\
-                \ for each cluster color in centroids[i]"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: plotting.py
-          placeholder: 3
-        is_visible: false
   - name: clustering.py
     visible: true
-    placeholders:
-      - offset: 192
-        length: 817
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: clustering.py
-          placeholder: 1
-        is_visible: false
-      - offset: 1021
-        length: 24
-        placeholder_text: "# (labels_per_pixel, cluster_centers)"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: clustering.py
-          placeholder: 2
-        is_visible: false
   - name: distances.py
     visible: true
   - name: task.py
     visible: true
-    placeholders:
-      - offset: 241
-        length: 16
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: task.py
-          placeholder: 1
-        is_visible: false
-      - offset: 344
-        length: 30
-        placeholder_text: "# reshape the image"
-        dependency:
-          lesson: Comic-Con and k-means
-          task: Histogram
-          file: task.py
-          placeholder: 2
-        is_visible: false
   - name: superman-batman.png
     visible: true
     is_binary: true

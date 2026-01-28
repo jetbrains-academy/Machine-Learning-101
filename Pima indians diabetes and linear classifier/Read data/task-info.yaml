@@ -8,10 +8,10 @@ files:
         placeholder_text: "# TODO"
       - offset: 856
         length: 36
-        placeholder_text: "# Standardize it"
+        placeholder_text: "# Standardize the dataset"
       - offset: 1097
         length: 60
-        placeholder_text: "# Add a column of -1 to the left of the X"
+        placeholder_text: "# Add a column of -1 to the left of X"
       - offset: 1226
         length: 12
         placeholder_text: "# {0, 1} -> {1, -1}"

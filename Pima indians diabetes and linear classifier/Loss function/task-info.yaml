@@ -11,43 +11,6 @@ files:
         placeholder_text: "# TODO"
   - name: task.py
     visible: true
-    placeholders:
-      - offset: 345
-        length: 35
-        placeholder_text: "# TODO"
-        dependency:
-          lesson: Pima indians diabetes and linear classifier
-          task: Read data
-          file: task.py
-          placeholder: 1
-        is_visible: false
-      - offset: 856
-        length: 36
-        placeholder_text: "# Standardize it"
-        dependency:
-          lesson: Pima indians diabetes and linear classifier
-          task: Read data
-          file: task.py
-          placeholder: 2
-        is_visible: false
-      - offset: 1097
-        length: 60
-        placeholder_text: "# Add a column of -1 to the left of the X"
-        dependency:
-          lesson: Pima indians diabetes and linear classifier
-          task: Read data
-          file: task.py
-          placeholder: 3
-        is_visible: false
-      - offset: 1226
-        length: 12
-        placeholder_text: "# {0, 1} -> {1, -1}"
-        dependency:
-          lesson: Pima indians diabetes and linear classifier
-          task: Read data
-          file: task.py
-          placeholder: 4
-        is_visible: false
   - name: pima.png
     visible: false
     propagatable: false
