@@ -3,11 +3,11 @@ files:
   - name: divide.py
     visible: true
     placeholders:
-      - offset: 241
+      - offset: 188
         length: 180
         placeholder_text: "# TODO"
-      - offset: 438
-        length: 36
+      - offset: 378
+        length: 43
         placeholder_text: "# Split dataset and class labels"
   - name: calculate_entropy.py
     visible: true

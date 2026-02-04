@@ -3,7 +3,7 @@ files:
   - name: divide.py
     visible: true
     placeholders:
-      - offset: 198
+      - offset: 469
         length: 158
         placeholder_text: "# TODO"
   - name: calculate_entropy.py
