@@ -8,5 +8,25 @@ class NN:
         self.w2 = 2 * np.random.random((hidden_size, output_size)) - 1
 
     def feedforward(self, X):
-        self.layer1 = sigmoid(np.dot(X, self.w1))
-        return sigmoid(np.dot(self.layer1, self.w2))
+        """
+        self.layer1 = TODO
+        return Result
+        """
+        pass
+
+    def backward(self, X, y, output, learning_rate=0.01):
+        """ TODO:
+        delta_l2 = Calculate the error for the output layer
+        delta_l1 = Calculate the error for the hidden layer
+        self.w2 += Update the weight coefficients of the output layer
+        self.w1 += Update the weight coefficients of the hidden layer
+        """
+        pass
+
+    def train(self, X, y, n_iter=20000):
+        # TODO
+        pass
+
+    def predict(self, X):
+        # TODO
+        pass

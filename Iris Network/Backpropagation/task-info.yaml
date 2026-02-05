@@ -2,19 +2,6 @@ type: edu
 files:
   - name: network.py
     visible: true
-    placeholders:
-      - offset: 518
-        length: 41
-        placeholder_text: "# Calculate the error for the output layer"
-      - offset: 579
-        length: 61
-        placeholder_text: "# Calculate the error for the hidden layer"
-      - offset: 660
-        length: 49
-        placeholder_text: "# Update the weight coefficients of the output layer"
-      - offset: 729
-        length: 39
-        placeholder_text: "# Update the weight coefficients of the hidden layer"
   - name: iris.csv
     visible: true
   - name: activation.py
@@ -38,6 +25,7 @@ files:
     is_binary: true
   - name: task.py
     visible: true
+    propagatable: false
   - name: derivative.py
     visible: true
   - name: tests/__init__.py

@@ -2,13 +2,6 @@ type: edu
 files:
   - name: network.py
     visible: true
-    placeholders:
-      - offset: 819
-        length: 98
-        placeholder_text: "# TODO"
-      - offset: 960
-        length: 19
-        placeholder_text: "# TODO"
   - name: iris.csv
     visible: true
   - name: activation.py
@@ -34,6 +27,7 @@ files:
     visible: true
   - name: task.py
     visible: true
+    propagatable: false
   - name: tests/__init__.py
     visible: false
     propagatable: false

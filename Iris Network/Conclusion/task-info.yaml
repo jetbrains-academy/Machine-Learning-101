@@ -2,6 +2,7 @@ type: theory
 files:
   - name: task.py
     visible: true
+    propagatable: false
   - name: evaluate.py
     visible: true
   - name: network.py

@@ -18,9 +18,9 @@ class NN:
         self.w1 += (np.dot(X.T, delta_l1) * learning_rate)
 
     def train(self, X, y, n_iter=20000):
-        for itr in range(n_iter):
-            l2 = self.feedforward(X)
-            self.backward(X, y, l2)
+        # TODO
+        pass
 
     def predict(self, X):
-        return self.feedforward(X)
+        # TODO
+        pass
