@@ -5,15 +5,23 @@ from network import NN
 from evaluate import accuracy
 
 
+# This function reads table data from the csv file and retains only two species for our analysis
+# as well as only two kinds of measurements - petal length and width.
 def read_data(fpath):
     iris = pd.read_csv(fpath)
-    iris.loc[iris['species'] == 'virginica', 'species'] = 0
-    iris.loc[iris['species'] == 'versicolor', 'species'] = 1
-    iris.loc[iris['species'] == 'setosa', 'species'] = 2
+    iris['species'] = iris['species'].map({
+        'virginica': 0,
+        'versicolor': 1,
+        'setosa': 2
+    }).astype('uint8')
     iris = iris[iris['species'] != 2]
-    return iris[['petal_length', 'petal_width']].values, iris[['species']].values.astype('uint8')
 
+    return (
+        iris[['petal_length', 'petal_width']].values,
+        iris[['species']].values
+    )
 
+# This function plots the input data using matplotlib.pyplot so that you can visualize the distribution.
 def plot_data(X, y):
     plt.scatter(X[:, 0], X[:, 1], c=y[:, 0], s=40, cmap=plt.cm.Spectral)
     plt.title("IRIS DATA | Blue - Versicolor, Red - Virginica ")
@@ -22,6 +30,7 @@ def plot_data(X, y):
     plt.show()
 
 
+# This function splits the dataset into train set and test set using a provided ratio for the split
 def train_test_split(X, y, ratio=0.8):
     indices = np.arange(X.shape[0])
     np.random.shuffle(indices)
@@ -31,7 +40,7 @@ def train_test_split(X, y, ratio=0.8):
 
 if __name__ == '__main__':
     X, y = read_data('iris.csv')
-    # comment the following line if you don't need the plot anymore
+    # Comment the following line after the 'Forward Step' task.
     plot_data(X, y)
     nn = NN(len(X[0]), 5, 1)
     X_train, y_train, X_test, y_test = train_test_split(X, y, 0.7)

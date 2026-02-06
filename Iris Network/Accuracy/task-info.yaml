@@ -2,25 +2,22 @@ type: edu
 files:
   - name: evaluate.py
     visible: true
+    placeholders:
+      - offset: 38
+        length: 25
+        placeholder_text: "# TODO"
+      - offset: 75
+        length: 56
+        placeholder_text: "# Proportion of correctly classified objects"
+  - name: network.py
+    visible: true
+  - name: iris.csv
+    visible: true
+  - name: activation.py
+    visible: true
   - name: __init__.py
     visible: false
     propagatable: false
-  - name: iris.csv
-    visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: tests/__init__.py
-    visible: false
-    propagatable: false
-  - name: activation.py
-    visible: true
-  - name: derivative.py
-    visible: true
-  - name: network.py
-    visible: true
-  - name: task.py
-    visible: true
   - name: final.py
     visible: false
     propagatable: false
@@ -32,4 +29,14 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Iris+Network+/+Accuracy
+  - name: derivative.py
+    visible: true
+  - name: tests/__init__.py
+    visible: false
+    propagatable: false
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: task.py
+    visible: true
+    propagatable: false

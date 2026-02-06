@@ -47,7 +47,7 @@ In this task, we assess the classification quality by mere calculation of the pr
 objects in the sample.
 
 In the `evaluate.py` file, implement the `accuracy` function, which passes the testing sample through the algorithm, compares 
-the received class labels with the real ones, and returns the proportion of correctly classified objets.
+the received class labels with the real ones, and returns the proportion of correctly classified objects.
 
 To see the results of your code's work, you can add the following lines to the `main` block in `task.py` block and run it:
 

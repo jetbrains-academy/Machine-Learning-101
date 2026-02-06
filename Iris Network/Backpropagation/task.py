@@ -7,15 +7,21 @@ from network import NN
 
 def read_data(fpath):
     iris = pd.read_csv(fpath)
-    iris.loc[iris['species'] == 'virginica', 'species'] = 0
-    iris.loc[iris['species'] == 'versicolor', 'species'] = 1
-    iris.loc[iris['species'] == 'setosa', 'species'] = 2
+    iris['species'] = iris['species'].map({
+        'virginica': 0,
+        'versicolor': 1,
+        'setosa': 2
+    }).astype('uint8')
     iris = iris[iris['species'] != 2]
-    return iris[['petal_length', 'petal_width']].values, iris[['species']].values.astype('uint8')
+
+    return (
+        iris[['petal_length', 'petal_width']].values,
+        iris[['species']].values
+    )
 
 
 def plot_data(X, y):
-    plt.scatter(X[0, :], X[1, :], c=y[0, :], s=40, cmap=plt.cm.Spectral)
+    plt.scatter(X[:, 0], X[:, 1], c=y.ravel(), s=40, cmap=plt.cm.Spectral)
     plt.title("IRIS DATA | Blue - Versicolor, Red - Virginica ")
     plt.xlabel('Petal Length')
     plt.ylabel('Petal Width')

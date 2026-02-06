@@ -2,6 +2,10 @@ type: edu
 files:
   - name: activation.py
     visible: true
+    placeholders:
+      - offset: 182
+        length: 24
+        placeholder_text: "# TODO"
   - name: task.py
     visible: false
     propagatable: false
