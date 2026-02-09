@@ -1,7 +1,5 @@
 <html>
 
-<h2>Neural network</h2>
-
 <p>A neural network is a group of interconnected neurons. Actually, a neural network is also a function, like a separate neuron, but often a very complex and multi-parameter one. </p>
 <p>Neural networks consist of the following parts:</p>
 

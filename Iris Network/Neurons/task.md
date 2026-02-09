@@ -10,7 +10,7 @@
 <p>In this lesson, we will build a neural network-assisted classification model based on the data concerning the petal length and width in different
 types of irises.</p>
 
-<h2>Neural networks and neurons</h2>
+<h3>Neural networks and neurons</h3>
 
 <p>A <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">neural network</a> (or artificial neural network, ANN) is a mathematical model built according to
 the organization and functioning principles of biological neural networks – neuron cell networks in live organisms. This concept
@@ -60,9 +60,9 @@ larger than 10, we add a bias of -10.
 </details>
 
 <p>As we will need to work with diverse input data of different scale, it is necessary to rescale values to a known simple and strict range.
-This process is called **normalization**, and it is very common in neural networks.
+This process is called <b>normalization</b>, and it is very common in neural networks.
 After summing up the input data and adding the bias, the neuron applies the
-<a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a> $\sigma$ to the received value. The activation function "compresses"(standardizes) the numerical series into an interval
+<a href="https://en.wikipedia.org/wiki/Activation_function">activation function</a> $\sigma$ to the received value. The activation function "compresses" (standardizes) the numerical series into an interval
 from 0 to 1 or from -1 to 1. A logistic sigmoid provides values in the range of [0,1], while, for example,
 tanh – in the range of [-1,1].</p>
 
@@ -131,7 +131,7 @@ b_{n}
 \right)$$
 </p>
 
-<h2>Task</h2>
+<h3>Task</h3>
 In the <code>activation.py</code> file, use the above formula to implement the logistic activation function <code>sigmoid()</code>.
 
 </html>

@@ -1,12 +1,12 @@
 In our case, the class variable has only two possible values:
-`Spam` or `Ham`. Of course, there are cases when the classification is multi-dimensional. That's why we need to
+`spam` or `ham`. Of course, there are cases when the classification is multi-dimensional. That's why we need to
 find the class variable with the maximum probability. Using
 the below formula of a classification algorithm, we can get such a class according
 to the available predictors.
 
 $$y=\arg\max\limits_{y \in Y}  \prod  P(y) \times  P(x_j |y)$$
 
-$y$ are `Spam` or `Ham` classes;
+$y$ are `spam` or `ham` classes;
 
 $x_j$ is the j-th word in a sentence.
 
@@ -59,12 +59,4 @@ one is the largest among them and choose a class corresponding to it from <code>
 you may use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">numpy.argmax</a> function.
 </div>
 
-To see the results of your code, you can add the following
-lines to the `main` block in `task.py` and then run it:
-
-```python
-print(nb.predict(["This is not a spam"]))
-print("Score:")
-print(nb.score(X_test, y_test))
-print(nb.score(X_train, y_train))
-```
+To see the results of your code, you can run `task.py`.

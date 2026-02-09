@@ -28,16 +28,4 @@ Then, you need to calculate the proportion of each class in the whole set and su
 use the above formula to calculate the entropy.
 
 
-In order to see the results of your code, you can add the following lines to
-`task.py` and run it:
-
-1. Required import:
-```python
-        from calculate_entropy import entropy
-```
-2. Lines in the `main` block for printing the dataset entropy calculation results:
-```python
-        X, y, columns = read_data("halloween.csv")
-        print(f'dataset entropy: {entropy(y)}\n')
-```
-In the file, the block `if __name__ == '__main__':` should be put **after** all the functions and variables it uses!
+To see the results of your code, you can run `task.py`.

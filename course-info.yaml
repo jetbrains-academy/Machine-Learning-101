@@ -1,8 +1,9 @@
 type: marketplace
 title: Introduction to Machine Learning
 language: English
-summary: |-
-  <p>Train your brain to train machines. Build your first ML models from scratch – from simple classifiers to neural networks – with hands-on coding, a bit of Python, and a guided IDE built for learners.</p>
+summary: "<p>Train your brain to train machines. Build your first ML models from scratch\
+  \ – from simple classifiers to neural networks – with hands-on coding, a bit of\
+  \ Python, and a guided IDE built for learners.</p>"
 vendor:
   name: JetBrains
   email: support@jetbrains.com
@@ -11,13 +12,14 @@ programming_language: Python
 environment: unittest
 content:
   - About
-  - Why study machine learning
-  - Neighbors and wine
+  - Why Study Machine Learning
+  - Neighbors and Wine
   - Comic-Con and K-means
   - Horror Trees
   - Pima Indians Diabetes and Linear Classifier
   - Bayes Guards SMS
   - Iris Network
+  - Neighbors and wine
 additional_files:
   - name: requirements.txt
 yaml_version: 5
