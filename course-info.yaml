@@ -19,7 +19,6 @@ content:
   - Pima Indians Diabetes and Linear Classifier
   - Bayes Guards SMS
   - Iris Network
-  - Neighbors and wine
 additional_files:
   - name: requirements.txt
 yaml_version: 5
