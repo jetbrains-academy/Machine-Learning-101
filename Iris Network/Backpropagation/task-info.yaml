@@ -23,9 +23,6 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-  - name: task.py
-    visible: true
-    propagatable: false
   - name: derivative.py
     visible: true
   - name: tests/__init__.py
@@ -34,3 +31,5 @@ files:
   - name: tests/test_task.py
     visible: false
     propagatable: false
+  - name: task.py
+    visible: true

@@ -4,9 +4,6 @@ files:
     visible: true
   - name: activation.py
     visible: true
-  - name: task.py
-    visible: false
-    propagatable: false
   - name: __init__.py
     visible: false
     propagatable: false
@@ -30,3 +27,5 @@ files:
     visible: false
     propagatable: false
     is_binary: true
+  - name: task.py
+    visible: false

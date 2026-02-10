@@ -21,6 +21,7 @@ def read_data(fpath):
         iris[['species']].values
     )
 
+
 # This function plots the input data using matplotlib.pyplot so that you can visualize the distribution.
 def plot_data(X, y):
     plt.scatter(X[:, 0], X[:, 1], c=y[:, 0], s=40, cmap=plt.cm.Spectral)
@@ -30,7 +31,7 @@ def plot_data(X, y):
     plt.show()
 
 
-# This function splits the dataset into train set and test set using a provided ratio for the split
+# This function splits the dataset into train set and test set using a provided ratio for the split.
 def train_test_split(X, y, ratio=0.8):
     indices = np.arange(X.shape[0])
     np.random.shuffle(indices)
@@ -40,9 +41,22 @@ def train_test_split(X, y, ratio=0.8):
 
 if __name__ == '__main__':
     X, y = read_data('iris.csv')
-    # Comment the following line after the 'Forward Step' task.
+    # Comment the following line if you don't need the plot anymore.
     plot_data(X, y)
-    nn = NN(len(X[0]), 5, 1)
     X_train, y_train, X_test, y_test = train_test_split(X, y, 0.7)
+    nn = NN(len(X[0]), 5, 1)
     output = nn.feedforward(X_train)
     print(output)
+
+    # Uncomment after solving the Backpropagation task
+    # print(f'w1 before backward propagation: \n{nn.w1} \nw2 before backward propagation:\n{nn.w2}')
+    # nn.backward(X_train, y_train, output)
+    # print(f'w1 after backward propagation: \n{nn.w1} \nw2 after backward propagation:\n{nn.w2}')
+
+    # Uncomment after solving the Train and Predict task
+    # nn.train(X_train, y_train)
+    # print(f'w1 after training: \n{nn.w1} \nw2 after training:\n{nn.w2}')
+
+    # Uncomment after solving the Accuracy task
+    # print("Accuracy:")
+    # print(accuracy(nn, X_test, y_test))

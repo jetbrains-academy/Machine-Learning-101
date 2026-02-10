@@ -39,4 +39,3 @@ files:
     propagatable: false
   - name: task.py
     visible: true
-    propagatable: false
