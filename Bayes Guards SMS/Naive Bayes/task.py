@@ -2,7 +2,6 @@ import codecs
 from vectorize import *
 from bayes import NaiveBayes
 
-
 def test_train_split(X, y, ratio=0.8):
     mask = np.random.uniform(size=len(y)) < ratio
     return X[mask], y[mask], X[~mask], y[~mask]
@@ -20,7 +19,6 @@ if __name__ == '__main__':
 
     index_dict, vectorization = vectorize(X_train)
     print('Last 10 items of your index dictionary: ', dict(list(index_dict.items())[-10:]))
-    #  np.savetxt("vectorization.txt", vectorization)
     print('Vectorization array dimensions: ', vectorization.shape)
     nb = NaiveBayes()
     nb.fit(X_train, y_train)

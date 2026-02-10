@@ -16,23 +16,24 @@ def vectorize(X):
     # get the number of input messages
     X_len = len(X)
     # get a vector of words out of each message
-    X_split = # TODO
+    X_split = split_by_words(X)
 
     # get a 1D array of unique words
-    uniques = # TODO
+    uniques = np.unique(np.hstack(X_split))
     # create an index dictionary and fill it with unique words and their indices
     index_dict = {}
     for index, word in enumerate(uniques):
-        # TODO
+        index_dict[word] = index
 
     # create an array of zeros with dimensions corresponding
     # to input data size and index_dict length
-    vectorization = # TODO
+    vectorization = np.zeros((X_len, len(index_dict)), dtype=np.int64)
     # each i'th line of the array contains in the j'th position a number x
     # which shows how many times the i'th word was encountered in the j'th message
     for index, message in enumerate(X_split):
-        unique, count = # TODO
+        unique, count = np.unique(message, return_counts=True)
         for i, word in enumerate(unique):
-            # TODO
+            word_index = index_dict[word]
+            vectorization[index, word_index] = count[i]
 
     return index_dict, vectorization

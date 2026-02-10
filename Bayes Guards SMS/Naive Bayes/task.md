@@ -6,9 +6,9 @@ of calculating the probability of event $A$ occurring in case event $B$ has alre
 $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
 
 In our case, we need to calculate the probability of a message being spam in case of the occurrence of a certain set of words in it, i.e.,
-$P(spam|sentence)$. Thus, with Bayes' theorem, we get the following:
+$P(Spam|sentence)$. Thus, with Bayes' theorem, we get the following:
 
-$$P(spam|sentence) = \frac{P(sentence|spam) \times P(spam)}{P(sentence)}$$
+$$P(Spam|sentence) = \frac{P(sentence|Spam) \times P(Spam)}{P(sentence)}$$
 
 In our classifier, we are only trying to find the most probable class, so we can ignore
 the denominator, which will be the same for both classes, and compare only the numerators:
@@ -59,3 +59,16 @@ The `numpy.sum` function allows summarizing both all the array elements and
 the elements along the chosen axis. By default, `axis=None`, that is all the elements of an array are summarized.</div>
 
 To see how your code works, you can run `task.py`.
+In this task, add the following lines to the `main` block before running
+your code:
+```python
+nb = NaiveBayes()
+nb.fit(X_train, y_train)
+print('Total number of words in each class: ', nb.classes_words_count)
+print('Class prior probabilities: ', nb.classes_prior)
+print('Relative word frequencies for each class: ', nb.likelihood)
+```
+Besides, you need to import the module with the required class to `task.py`:
+```python
+from bayes import NaiveBayes
+```

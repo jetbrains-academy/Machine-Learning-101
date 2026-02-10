@@ -2,12 +2,12 @@ import unittest
 
 import numpy as np
 
-from bayes import NaiveBayes
+from smoothed_bayes import SmoothedNaiveBayes
 
 
 class TestCase(unittest.TestCase):
     def test_score(self):
-        nb = NaiveBayes()
+        nb = SmoothedNaiveBayes()
         X = np.array(['A great game', 'The election was over', 'Very clean match', 'A clean but forgettable game',
                           'It was a close election'])
         y = np.array(['Sports', 'Not sports', 'Sports', 'Sports', 'Not sports'])
@@ -15,7 +15,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(1, nb.score(X, y), msg="The score is incorrect!")
 
     def test_game(self):
-        nb = NaiveBayes()
+        nb = SmoothedNaiveBayes()
         X = np.array(['A great game', 'The election was over', 'Very clean match', 'A clean but forgettable game',
                           'It was a close election'])
         y = np.array(['Sports', 'Not sports', 'Sports', 'Sports', 'Not sports'])
@@ -23,7 +23,7 @@ class TestCase(unittest.TestCase):
         self.assertEqual(["Sports"], nb.predict(np.array(["game"])), msg="Your predictions seem off!")
 
     def test_election(self):
-        nb = NaiveBayes()
+        nb = SmoothedNaiveBayes()
         X = np.array(['A great game', 'The election was over', 'Very clean match', 'A clean but forgettable game',
                           'It was a close election'])
         y = np.array(['Sports', 'Not sports', 'Sports', 'Sports', 'Not sports'])
