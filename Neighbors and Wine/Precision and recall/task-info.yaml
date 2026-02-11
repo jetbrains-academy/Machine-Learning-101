@@ -2,6 +2,10 @@ type: edu
 files:
   - name: metrics.py
     visible: true
+    placeholders:
+      - offset: 95
+        length: 463
+        placeholder_text: "# for c in range(n_classes):"
   - name: task.py
     visible: true
   - name: wine.csv

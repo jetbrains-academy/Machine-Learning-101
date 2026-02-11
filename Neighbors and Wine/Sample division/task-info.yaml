@@ -2,6 +2,19 @@ type: edu
 files:
   - name: task.py
     visible: true
+    placeholders:
+      - offset: 258
+        length: 22
+        placeholder_text: "# TODO"
+      - offset: 373
+        length: 22
+        placeholder_text: "# TODO"
+      - offset: 497
+        length: 22
+        placeholder_text: "# TODO"
+      - offset: 612
+        length: 22
+        placeholder_text: "# TODO"
   - name: wine.csv
     visible: true
   - name: __init__.py

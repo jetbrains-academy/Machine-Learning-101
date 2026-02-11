@@ -2,6 +2,13 @@ type: edu
 files:
   - name: metric_classification.py
     visible: true
+    placeholders:
+      - offset: 69
+        length: 173
+        placeholder_text: "# TODO"
+      - offset: 255
+        length: 36
+        placeholder_text: "# Predict the class for each x in X_test"
   - name: task.py
     visible: true
   - name: wine.csv

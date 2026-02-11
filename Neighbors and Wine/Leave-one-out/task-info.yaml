@@ -2,6 +2,13 @@ type: edu
 files:
   - name: crossvalidation.py
     visible: true
+    placeholders:
+      - offset: 98
+        length: 389
+        placeholder_text: "# TODO"
+      - offset: 499
+        length: 19
+        placeholder_text: "# opt_k"
   - name: task.py
     visible: true
   - name: wine.csv

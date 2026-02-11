@@ -53,3 +53,10 @@ In this task, you may use the following functions from the **NumPy** library:
 - [numpy.argpartition](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argpartition.html): it takes an array and a `k` index and returns a new array, where the `k` position is occupied by the element from the `k` position in the sorted original array; the lesser values will be to the left of `k` and the greater values – to the right of it. This function will help you select the nearest neighbors in an array sorted according to the distance.
 - [numpy.bincount](https://docs.scipy.org/doc/numpy/reference/generated/numpy.bincount.html): it returns the number of different elements in an array of non-negative numbers. This function will help you find out the number of classes among the neighbors.
 - [numpy.argmax](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html): it returns the indices of the elements with the greatest value. This function will help you find out the most frequent class identifiers.
+
+To see the results of your code's work, you can add the following line to the `main` block in `task.py` block and run it:
+```python
+y_predicted = knn(X_train, y_train, X_test, 5, euclidean_dist)
+```
+Don't forget to import the necessary functions.
+
