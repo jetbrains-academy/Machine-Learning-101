@@ -81,5 +81,11 @@ Other methods of the class will be implemented in further steps.
 
 <div class="hint">When multiplying matrices, you will need to transpose some of them!</div>
 
+To see the results of your code's work, you can add the following lines to the `main` block in `task.py` and run it:
 
-To see the results of your code's work, you can run `task.py`. In the output, you will see the weight changes after backpropagation.
+```python
+print(f'w1 before backward propagation: \n{nn.w1} \nw2 before backward propagation:\n{nn.w2}')
+nn.backward(X_train, y_train, output)
+print(f'w1 after backward propagation: \n{nn.w1} \nw2 after backward propagation:\n{nn.w2}')
+```
+This code will allow you to see the weigh changes after backpropagation.

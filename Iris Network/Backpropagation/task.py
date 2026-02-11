@@ -47,16 +47,6 @@ if __name__ == '__main__':
     nn = NN(len(X[0]), 5, 1)
     output = nn.feedforward(X_train)
     print(output)
-
-    # Uncomment after solving the Backpropagation task
-    # print(f'w1 before backward propagation: \n{nn.w1} \nw2 before backward propagation:\n{nn.w2}')
-    # nn.backward(X_train, y_train, output)
-    # print(f'w1 after backward propagation: \n{nn.w1} \nw2 after backward propagation:\n{nn.w2}')
-
-    # Uncomment after solving the Train and Predict task
-    # nn.train(X_train, y_train)
-    # print(f'w1 after training: \n{nn.w1} \nw2 after training:\n{nn.w2}')
-
-    # Uncomment after solving the Accuracy task
-    # print("Accuracy:")
-    # print(accuracy(nn, X_test, y_test))
+    print(f'w1 before backward propagation: \n{nn.w1} \nw2 before backward propagation:\n{nn.w2}')
+    nn.backward(X_train, y_train, output)
+    print(f'w1 after backward propagation: \n{nn.w1} \nw2 after backward propagation:\n{nn.w2}')
