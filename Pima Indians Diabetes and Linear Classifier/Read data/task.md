@@ -27,8 +27,7 @@ Implement the function`read_data`, which takes the path to the data file and ret
 - The first element of the pair is a matrix of features `X`, the first column of which contains the constant feature `-1` (it is a pseudo feature, we will refer to it in order to use each object as a vector in a scalar product), and other columns contain the features
   from the data file. The features will be [standardized](https://www.kdnuggets.com/2020/04/data-transformation-standardization-normalization.html), i.e., each feature value will be rescaled around the mean for all objects, and the deviation won't exceed the standard deviation:
   $$ x_{stand} = \dfrac {x - mean(x)} {standard \ deviation (x)}$$
-- The second element is the `y` vector, with `-1` signifying the presence of diabetes and `1` — its absence. The vector `y` needs to be normalized – centered around 0 with a unit of 1: $$
-\lbrace 0,1 \rbrace \mapsto \lbrace 1,-1 \rbrace $$ This is necessary for making a decision about the presumed class.
+- The second element is the `y` vector, with `-1` signifying the presence of diabetes and `1` — its absence. The vector `y` needs to be normalized – centered around 0 with a unit of 1: {0, 1} -> {1, -1}. This is necessary for making a decision about the presumed class.
 
 <div class="hint">
 In this task, you might need the following functions: <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.mean.html">numpy.ndarray.mean</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.std.html">numpy.mdarray.std</a>, <a href="https://numpy.org/doc/stable/reference/generated/numpy.concatenate.html">np.concatenate</a>. 

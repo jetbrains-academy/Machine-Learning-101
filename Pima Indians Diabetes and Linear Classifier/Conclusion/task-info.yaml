@@ -1,23 +1,16 @@
 type: theory
 files:
-  - name: __init__.py
-    visible: false
-    propagatable: false
   - name: pima-indians-diabetes.csv
-    visible: true
-  - name: task.py
-    visible: true
-  - name: loss_functions.py
-    visible: true
-  - name: gradient_descent.py
-    visible: true
-  - name: precision_recall.py
     visible: true
   - name: stochastic_gradient_descent.py
     visible: true
-  - name: utils.py
+  - name: gradient_descent.py
     visible: true
-  - name: gradient-descent.png
+  - name: loss_functions.py
+    visible: true
+  - name: task.py
+    visible: true
+  - name: pima.png
     visible: false
     propagatable: false
     is_binary: true
@@ -25,8 +18,13 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-  - name: pima.png
+  - name: gradient-descent.png
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScQIQGOPF_e3hQMM-nK5CEvJYufaCWpIbESFFSAOmkI55M_7Q/viewform?usp=pp_url&entry.2103429047=Pima+Indians+and+Linear+Classifier+/+%D0%97%D0%B0%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5
+  - name: __init__.py
+    visible: false
+  - name: precision_recall.py
+    visible: true
+  - name: utils.py
+    visible: true

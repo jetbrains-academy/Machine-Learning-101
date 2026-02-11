@@ -2,25 +2,24 @@ type: edu
 files:
   - name: stochastic_gradient_descent.py
     visible: true
-  - name: __init__.py
-    visible: false
-    propagatable: false
-  - name: pima-indians-diabetes.csv
+    placeholders:
+      - offset: 1113
+        length: 32
+        placeholder_text: "# TODO: Generate the batch"
+      - offset: 1171
+        length: 60
+        placeholder_text: "# TODO: Calculate the gradient using the current weights, X\
+      \ and y batches"
+      - offset: 2171
+        length: 25
+        placeholder_text: "# TODO: Initialize it here"
+  - name: gradient_descent.py
+    visible: true
+  - name: loss_functions.py
     visible: true
   - name: task.py
     visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: loss_functions.py
-    visible: true
-  - name: precision_recall.py
-    visible: true
-  - name: utils.py
-    visible: true
-  - name: gradient_descent.py
-    visible: true
-  - name: gradient-descent.png
+  - name: pima.png
     visible: false
     propagatable: false
     is_binary: true
@@ -28,8 +27,18 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-  - name: pima.png
+  - name: gradient-descent.png
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScQIQGOPF_e3hQMM-nK5CEvJYufaCWpIbESFFSAOmkI55M_7Q/viewform?usp=pp_url&entry.2103429047=Pima+Indians+and+Linear+Classifier+/+Stochastic+Gradient+Descent
+  - name: __init__.py
+    visible: false
+  - name: pima-indians-diabetes.csv
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: precision_recall.py
+    visible: true
+  - name: utils.py
+    visible: true

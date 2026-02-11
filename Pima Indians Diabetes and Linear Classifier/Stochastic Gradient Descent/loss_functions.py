@@ -2,7 +2,7 @@ import numpy as np
 
 
 def log_loss(M):
-    return np.log2(1 + np.exp(M)), -1 / (1 + np.exp(M))
+    return np.log2(1 + np.exp(-M)), -1 / (np.log(2)*(1 + np.exp(M)))
 
 
 def sigmoid_loss(M):

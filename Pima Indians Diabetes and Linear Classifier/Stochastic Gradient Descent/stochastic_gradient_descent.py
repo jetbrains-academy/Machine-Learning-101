@@ -23,6 +23,20 @@ class StochasticGradientDescent:
         q, _ = self.calc_grad(self.weights, X, y)
         # eta value should be in [0,1] range, this one is chosen arbitrary
         eta = 1 / len(y)
+
+        # The algorithm will iterate exactly n_iter times
+        for i in range(self.n_iter):
+            # We need to generate a batch of random k indices from the sample
+            # np.random.choice is a perfect fit for this
+            batch_index = np.random.choice(len(y), self.k)
+            loss, grad = self.calc_grad(self.weights, X[batch_index], y[batch_index])
+            # Here we evaluate the quality functional
+            q = q * (1 - eta) + loss * eta
+            errors.append(q)
+
+            # Updating the weights
+            self.weights -= self.alpha * grad
+
         for i in range(self.n_iter):
             batch_index = np.random.choice(len(y), self.k)
             loss, grad = self.calc_grad(self.weights, X[batch_index], y[batch_index])
@@ -34,9 +48,15 @@ class StochasticGradientDescent:
         return errors
 
     def calc_grad(self, w, X, y):
-        M = X.dot(w) * y
-        loss, loss_deric = self.loss(M)
-        grad = X.T * loss_deric * y
+        # Margin indicates how "deep" is an object inside its class. The less the margin
+        # the closer it is to the class boundary on the hyperplane
+        margin = X.dot(w) * y
+        loss, loss_derivative = self.loss(margin)
+        # The gradient could be evaluated as a multiplication product of
+        # X transposed, loss derivative and y
+        grad =  X.T * loss_derivative * y
+        # The function returns the mean values of loss and grad - for evaluating error and
+        # updating the weights accordingly
         return loss.mean(), grad.mean(axis=1)
 
     def predict(self, X):
