@@ -1,0 +1,37 @@
+type: edu
+files:
+  - name: plotting.py
+    visible: true
+    placeholders:
+      - offset: 90
+        length: 54
+        placeholder_text: "# TODO"
+      - offset: 156
+        length: 6
+        placeholder_text: "# Counts of pixels per cluster index"
+      - offset: 332
+        length: 240
+        placeholder_text: "# TODO: Draw rectangles with widths proportional \n    #to\
+      \ hist[i] for each cluster color in centroids[i]"
+  - name: clustering.py
+    visible: true
+  - name: distances.py
+    visible: true
+  - name: task.py
+    visible: true
+  - name: superman-batman.png
+    visible: true
+    is_binary: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: barchart.png
+    visible: false
+    is_binary: true
+  - name: superman-batman-after.png
+    visible: false
+    is_binary: true
+  - name: __init__.py
+    visible: false
+  - name: processing.py
+    visible: false

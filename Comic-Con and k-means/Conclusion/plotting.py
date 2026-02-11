@@ -17,5 +17,4 @@ def plot_colors(hist, centroids):
         end_x = start_x + percent * 500 / sum_hist
         draw.rectangle(((int(start_x), 0), (int(end_x), 50)), tuple(color))
         start_x = end_x
-
     hist_plot.save("histogram.png")

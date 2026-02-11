@@ -2,6 +2,13 @@ type: edu
 files:
   - name: task.py
     visible: true
+    placeholders:
+      - offset: 165
+        length: 16
+        placeholder_text: "# TODO"
+      - offset: 268
+        length: 30
+        placeholder_text: "# Reshape the image"
   - name: tests/test_task.py
     visible: false
     propagatable: false
