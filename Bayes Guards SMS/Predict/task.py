@@ -1,5 +1,3 @@
-import numpy as np
-import codecs
 from bayes import NaiveBayes
 from smoothed_bayes import SmoothedNaiveBayes
 from vectorize import *
@@ -11,8 +9,8 @@ def test_train_split(X, y, ratio=0.8):
 
 
 def read_data(path):
-    file = codecs.open(path, encoding='latin1')
-    text = np.loadtxt(file, dtype=np.bytes_, delimiter='\t', unpack=True)
+    with open(path, encoding='latin1') as file:
+        text = np.loadtxt(file, dtype=np.bytes_, delimiter='\t', unpack=True)
     return np.char.decode(text)
 
 
