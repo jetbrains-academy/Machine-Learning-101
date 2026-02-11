@@ -2,16 +2,27 @@ type: edu
 files:
   - name: calculate_entropy.py
     visible: true
-  - name: task.py
+    placeholders:
+      - offset: 41
+        length: 44
+        placeholder_text: "# Count the occurrences of each class"
+      - offset: 90
+        length: 19
+        placeholder_text: "# Calculate the proportion of each class"
+      - offset: 121
+        length: 23
+        placeholder_text: "# Calculate the entropy"
+  - name: node.py
     visible: true
   - name: __init__.py
     visible: false
     propagatable: false
   - name: halloween.csv
     visible: true
-  - name: tests/test_task.py
+  - name: boo.jpg
     visible: false
     propagatable: false
+    is_binary: true
   - name: divide.py
     visible: false
     propagatable: false
@@ -21,12 +32,6 @@ files:
   - name: halloween.py
     visible: false
     propagatable: false
-  - name: node.py
-    visible: true
-  - name: boo.jpg
-    visible: false
-    propagatable: false
-    is_binary: true
   - name: RNA_tree.png
     visible: false
     propagatable: false
@@ -35,4 +40,8 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Horror+Trees+/+Entropy
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: task.py
+    visible: true

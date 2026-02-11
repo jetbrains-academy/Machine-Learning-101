@@ -4,7 +4,10 @@
 # - the true and false branches.
 class Node:
     def __init__(self, column=-1, value=None, true_branch=None, false_branch=None):
-        #TODO: implement the four attributes of the class Node
+        self.column = column
+        self.value = value
+        self.true_branch = true_branch
+        self.false_branch = false_branch
         pass
 
     # Below we defined the __repr__ method to ensure readable printing of Node instances.
