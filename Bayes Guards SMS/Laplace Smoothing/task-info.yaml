@@ -2,6 +2,19 @@ type: edu
 files:
   - name: smoothed_bayes.py
     visible: true
+    placeholders:
+      - offset: 513
+        length: 52
+        placeholder_text: "# TODO"
+      - offset: 601
+        length: 52
+        placeholder_text: "# TODO"
+      - offset: 680
+        length: 85
+        placeholder_text: "# TODO"
+      - offset: 835
+        length: 388
+        placeholder_text: "# TODO"
   - name: bayes.py
     visible: true
   - name: vectorize.py

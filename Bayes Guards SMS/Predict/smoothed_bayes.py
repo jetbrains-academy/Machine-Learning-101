@@ -26,9 +26,21 @@ class SmoothedNaiveBayes:
             self.likelihood[i] = self.likelihood[i] / denominator
 
     def predict(self, X):
-        # TODO
-        pass
+        result = []
+        X = split_by_words(X)
+        for message in X:
+            unique = np.unique(message)
+            index_array = np.zeros(unique.shape, dtype=np.int64)
+
+            for i, word in enumerate(unique):
+                word_index = self.dictionary[word] if word in self.dictionary else self.dict_size
+                index_array[i] = word_index
+
+            log_likelihood = np.log(self.likelihood[:, index_array])
+            posterior = np.log(self.classes_prior) + np.sum(log_likelihood, axis=1)
+            predicted = self.unique_classes[np.argmax(posterior)]
+            result.append(predicted)
+        return result
 
     def score(self, X, y):
-        # TODO
-        pass
+        return np.sum(self.predict(X) == y) / len(y)

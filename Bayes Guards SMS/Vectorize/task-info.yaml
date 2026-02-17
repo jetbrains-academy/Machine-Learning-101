@@ -3,22 +3,22 @@ files:
   - name: vectorize.py
     visible: true
     placeholders:
-      - offset: 858
+      - offset: 436
         length: 17
         placeholder_text: "# TODO"
-      - offset: 928
+      - offset: 506
         length: 29
         placeholder_text: "# TODO"
-      - offset: 1110
+      - offset: 688
         length: 24
         placeholder_text: "# TODO"
-      - offset: 1264
+      - offset: 842
         length: 50
         placeholder_text: "# TODO"
-      - offset: 1543
+      - offset: 1121
         length: 38
         placeholder_text: "# TODO"
-      - offset: 1636
+      - offset: 1214
         length: 85
         placeholder_text: "# TODO"
   - name: task.py
