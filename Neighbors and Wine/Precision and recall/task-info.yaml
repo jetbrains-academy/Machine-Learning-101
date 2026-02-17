@@ -3,9 +3,21 @@ files:
   - name: metrics.py
     visible: true
     placeholders:
-      - offset: 95
-        length: 463
-        placeholder_text: "# for c in range(n_classes):"
+      - offset: 305
+        length: 73
+        placeholder_text: "# TODO"
+      - offset: 452
+        length: 73
+        placeholder_text: "# TODO"
+      - offset: 599
+        length: 72
+        placeholder_text: "# TODO"
+      - offset: 751
+        length: 37
+        placeholder_text: "# TODO"
+      - offset: 861
+        length: 46
+        placeholder_text: "# TODO"
   - name: task.py
     visible: true
   - name: wine.csv

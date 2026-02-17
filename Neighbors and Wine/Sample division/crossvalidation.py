@@ -16,7 +16,7 @@ def loocv(X_train, y_train, dist):
             # do it for a 1-d array.
             y_train_cur = #TODO
             # Here we should place a condition when the algorithm trained on the samples
-            # would to be wrong in determining the class of the testing case.
+            # would be wrong in determining the class of the testing case.
             # Note that the testing case is the one with index i in both samples.
             if #TODO:
                 c += 1

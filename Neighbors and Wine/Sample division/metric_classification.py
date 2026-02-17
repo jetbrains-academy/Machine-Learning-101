@@ -2,7 +2,7 @@ import numpy as np
 
 
 def knn(X_train, y_train, X_test, k, dist):
-    # The function will return the class for x based on its neighbours from the X_train
+    # The function will return the class for x based on its neighbors from the X_train
     # sample.
     def classify_single(x):
         # Here we create an array of distances from x to each of the X_train objects.
