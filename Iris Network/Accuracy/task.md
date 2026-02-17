@@ -47,6 +47,19 @@ In this task, we assess the classification quality by mere calculation of the pr
 objects in the sample.
 
 In the `evaluate.py` file, implement the `accuracy` function, which passes the testing sample through the algorithm, compares 
-the received class labels with the real ones, and returns the proportion of correctly classified objets.
+the received class labels with the real ones, and returns the proportion of correctly classified objects.
 
-To see the results of your code's work, run `task.py`. Try running it several times to see how `accuracy` changes on each run.
+To see the results of your code's work, you can add the following lines to the `main` block in `task.py` and run it:
+
+```python
+print("Accuracy:")
+print(accuracy(nn, X_test, y_test))
+```
+The variables required for this code to function correctly were introduced in previous steps. If you haven't worked with `task.py` yet, pay attention to them:
+```python
+X, y = read_data('iris.csv')
+trainX, trainY, testX, testY = train_test_split(X, y, 0.7)
+nn = NN(len(X[0]), 5, 1)
+nn.train(trainX, trainY)
+```
+Try running the code in `task.py` several times to see how `accuracy` changes on each run.

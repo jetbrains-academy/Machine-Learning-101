@@ -2,9 +2,10 @@ type: edu
 files:
   - name: activation.py
     visible: true
-  - name: task.py
-    visible: false
-    propagatable: false
+    placeholders:
+      - offset: 182
+        length: 24
+        placeholder_text: "# TODO"
   - name: __init__.py
     visible: false
     propagatable: false
@@ -36,4 +37,6 @@ files:
     visible: false
     propagatable: false
     is_binary: true
+  - name: task.py
+    visible: false
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Iris+Network+/+Neurons

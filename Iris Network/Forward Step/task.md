@@ -40,7 +40,7 @@ of <i>versicolor</i> and <i>virginica</i> irises.</p>
 <code>output_size</code> of output neurons. Attributes <code>w1</code> and <code>w2</code> are the connection weights between the input and hidden neurons and between the hidden and output neurons
 respectively. <code>input_size</code> will depend on the input data.</p>
 
-<p>Implement the <code>feedforward</code> method. It has to <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">multiply</a> 
+<p>Implement the <code>feedforward</code> method only. It has to <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">multiply</a> 
 the weights matrix <code>w1</code> by the matrix of the input data and then apply the activation function to the matrix product. 
 Then, the method has to multiply the data matrix received in the previous step by the weights matrix <code>w2</code>,
 apply the activation function to the product, and return the result. Other methods of the class will be implemented in further steps.</p>

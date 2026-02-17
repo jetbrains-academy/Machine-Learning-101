@@ -2,20 +2,13 @@ type: edu
 files:
   - name: network.py
     visible: true
-  - name: task.py
+  - name: iris.csv
+    visible: true
+  - name: activation.py
     visible: true
   - name: __init__.py
     visible: false
     propagatable: false
-  - name: iris.csv
-    visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: activation.py
-    visible: true
-  - name: derivative.py
-    visible: true
   - name: evaluate.py
     visible: false
     propagatable: false
@@ -30,7 +23,13 @@ files:
     visible: false
     propagatable: false
     is_binary: true
+  - name: derivative.py
+    visible: true
   - name: tests/__init__.py
     visible: false
     propagatable: false
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Iris+Network+/+Backpropagation
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: task.py
+    visible: true
