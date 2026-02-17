@@ -3,12 +3,9 @@ files:
   - name: evaluate.py
     visible: true
     placeholders:
-      - offset: 38
-        length: 25
-        placeholder_text: "# TODO"
-      - offset: 75
+      - offset: 347
         length: 56
-        placeholder_text: "# Proportion of correctly classified objects"
+        placeholder_text: "# TODO"
   - name: network.py
     visible: true
   - name: iris.csv

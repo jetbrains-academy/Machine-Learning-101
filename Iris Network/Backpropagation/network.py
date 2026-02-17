@@ -12,13 +12,10 @@ class NN:
         return sigmoid(np.dot(self.layer1, self.w2))
 
     def backward(self, X, y, output, learning_rate=0.01):
-        """ TODO:
-        delta_l2 = Calculate the error for the output layer
-        delta_l1 = Calculate the error for the hidden layer
-        self.w2 += Update the weight coefficients of the output layer
-        self.w1 += Update the weight coefficients of the hidden layer
-        """
-        pass
+        delta_l2 = (y - output) * sigmoid_derivative(output)
+        delta_l1 = np.dot(delta_l2, self.w2.T) * sigmoid_derivative(self.layer1)
+        self.w2 += (np.dot(self.layer1.T, delta_l2) * learning_rate)
+        self.w1 += (np.dot(X.T, delta_l1) * learning_rate)
 
     def train(self, X, y, n_iter=20000):
         # TODO

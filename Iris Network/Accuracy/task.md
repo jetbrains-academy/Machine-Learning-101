@@ -49,13 +49,13 @@ objects in the sample.
 In the `evaluate.py` file, implement the `accuracy` function, which passes the testing sample through the algorithm, compares 
 the received class labels with the real ones, and returns the proportion of correctly classified objects.
 
-To see the results of your code's work, you can add the following lines to the `main` block in `task.py` block and run it:
+To see the results of your code's work, you can add the following lines to the `main` block in `task.py` and run it:
 
 ```python
 print("Accuracy:")
 print(accuracy(nn, X_test, y_test))
 ```
-Variables required for the correct work of this code were introduced in previous steps; if you haven't worked with `task.py` yet, pay attention to them:
+The variables required for this code to function correctly were introduced in previous steps. If you haven't worked with `task.py` yet, pay attention to them:
 ```python
 X, y = read_data('iris.csv')
 trainX, trainY, testX, testY = train_test_split(X, y, 0.7)

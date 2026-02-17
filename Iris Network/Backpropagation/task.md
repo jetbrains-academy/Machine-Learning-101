@@ -66,7 +66,7 @@ that determines the step size at each iteration while approaching the minimum of
 </details>
 
 <h3>Task</h3>
-In the `network.py` file, implement the method `backward` of the `NN` class only, which performs the following operations:
+In the `network.py` file, implement only the `backward` method of the `NN` class, which performs the following operations:
 
 <ul>
 <li>Calculate the error for the output layer (<code>delta_l2</code>) as the difference between the network results (<code>output</code>) and the real class labels (<code>y</code>) multiplied elementwise by the derivative of the activation function for output ($\delta_{o}$ formula).</li>

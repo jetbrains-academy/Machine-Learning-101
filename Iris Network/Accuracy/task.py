@@ -31,7 +31,7 @@ def plot_data(X, y):
     plt.show()
 
 
-# This function splits the dataset into train set and test set using a provided ratio for the split.
+# This function splits the dataset into train and test sets based on the provided split ratio.
 def train_test_split(X, y, ratio=0.8):
     indices = np.arange(X.shape[0])
     np.random.shuffle(indices)
