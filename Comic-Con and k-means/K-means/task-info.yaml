@@ -3,12 +3,18 @@ files:
   - name: clustering.py
     visible: true
     placeholders:
-      - offset: 192
-        length: 817
+      - offset: 1382
+        length: 21
         placeholder_text: "# TODO"
-      - offset: 1021
-        length: 24
-        placeholder_text: "# (labels_per_pixel, cluster_centers)"
+      - offset: 1640
+        length: 27
+        placeholder_text: "# TODO"
+      - offset: 1815
+        length: 50
+        placeholder_text: "# TODO"
+      - offset: 2773
+        length: 42
+        placeholder_text: "# TODO"
   - name: distances.py
     visible: true
   - name: task.py

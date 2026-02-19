@@ -3,12 +3,9 @@ files:
   - name: processing.py
     visible: true
     placeholders:
-      - offset: 189
-        length: 83
+      - offset: 458
+        length: 61
         placeholder_text: "# TODO"
-      - offset: 284
-        length: 17
-        placeholder_text: "# Array of images recolored by k-means"
   - name: plotting.py
     visible: true
   - name: clustering.py

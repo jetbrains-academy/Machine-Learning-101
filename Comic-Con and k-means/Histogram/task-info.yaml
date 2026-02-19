@@ -3,16 +3,15 @@ files:
   - name: plotting.py
     visible: true
     placeholders:
-      - offset: 90
-        length: 54
+      - offset: 278
+        length: 37
         placeholder_text: "# TODO"
-      - offset: 156
-        length: 6
-        placeholder_text: "# Counts of pixels per cluster index"
-      - offset: 332
-        length: 240
-        placeholder_text: "# TODO: Draw rectangles with widths proportional \n    #to\
-      \ hist[i] for each cluster color in centroids[i]"
+      - offset: 1285
+        length: 34
+        placeholder_text: "# TODO"
+      - offset: 1636
+        length: 5
+        placeholder_text: "# TODO"
   - name: clustering.py
     visible: true
   - name: distances.py
