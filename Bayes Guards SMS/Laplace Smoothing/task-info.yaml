@@ -3,16 +3,16 @@ files:
   - name: smoothed_bayes.py
     visible: true
     placeholders:
-      - offset: 513
+      - offset: 506
         length: 52
         placeholder_text: "# TODO"
-      - offset: 601
+      - offset: 594
         length: 52
         placeholder_text: "# TODO"
-      - offset: 680
+      - offset: 673
         length: 85
         placeholder_text: "# TODO"
-      - offset: 835
+      - offset: 828
         length: 388
         placeholder_text: "# TODO"
   - name: bayes.py

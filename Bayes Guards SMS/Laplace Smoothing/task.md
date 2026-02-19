@@ -37,8 +37,8 @@ $V$ is the list of all unique words.
 
 
 ### Task
-In the `smoothed_bayes.py` file, implement the `fit` method only so that it uses Laplace smoothing.
-The `alpha` parameter is already initialized in the code. Other methods of the class will be implemented in further steps.
+In the `smoothed_bayes.py` file, implement the `fit` method using Laplace smoothing.
+Note that the `alpha` parameter is already initialized in the code. Other class methods will be implemented in subsequent steps.
 
 <div class="hint">
 You need to change the initial implementation of the <code>likelihood</code> attribute, as well as the calculation
@@ -57,7 +57,7 @@ print('Total number of words in each class: ', nb.classes_words_count)
 print('Class prior probabilities: ', nb.classes_prior)
 print('Relative word frequencies for each class: ', nb.likelihood)
 ```
-Besides, you need to import the module with the required class to `task.py`:
+Additionally, you must import the module with the required class into `task.py`:
 ```python
 from smoothed_bayes import SmoothedNaiveBayes
 ```

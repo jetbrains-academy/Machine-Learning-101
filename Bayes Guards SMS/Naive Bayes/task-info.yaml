@@ -3,34 +3,34 @@ files:
   - name: bayes.py
     visible: true
     placeholders:
-      - offset: 622
+      - offset: 640
         length: 52
         placeholder_text: "# TODO"
-      - offset: 710
+      - offset: 728
         length: 52
         placeholder_text: "# TODO"
-      - offset: 789
+      - offset: 807
         length: 76
         placeholder_text: "# TODO"
-      - offset: 1033
+      - offset: 1052
         length: 10
         placeholder_text: "# TODO"
-      - offset: 1200
+      - offset: 1219
         length: 16
         placeholder_text: "# TODO"
-      - offset: 1327
+      - offset: 1346
         length: 16
         placeholder_text: "# TODO"
-      - offset: 1440
+      - offset: 1459
         length: 19
         placeholder_text: "# TODO"
-      - offset: 1651
+      - offset: 1670
         length: 22
         placeholder_text: "# TODO"
-      - offset: 1839
+      - offset: 1858
         length: 27
         placeholder_text: "# TODO"
-      - offset: 1900
+      - offset: 1919
         length: 32
         placeholder_text: "# TODO"
   - name: vectorize.py

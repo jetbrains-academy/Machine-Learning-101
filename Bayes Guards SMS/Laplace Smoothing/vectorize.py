@@ -11,7 +11,7 @@ def split_by_words(X):
 def vectorize(X):
     # Get the number of input messages
     X_len = len(X)
-    # Get a vector of words out of each message
+    # Convert each message into a vector of words
     X_split = split_by_words(X)
 
     # Get a 1D array of unique words
@@ -24,8 +24,8 @@ def vectorize(X):
     # Create an array of zeros with dimensions corresponding
     # to input data size and index_dict length
     vectorization = np.zeros((X_len, len(index_dict)), dtype=np.int64)
-    # Each i'th line of the array contains in the j'th position a number x
-    # which shows how many times the i'th word was encountered in the j'th message
+    # The i-th row and j-th column contains the count
+    # of the j-th word within the i-th message
     for index, message in enumerate(X_split):
         unique, count = np.unique(message, return_counts=True)
         for i, word in enumerate(unique):
