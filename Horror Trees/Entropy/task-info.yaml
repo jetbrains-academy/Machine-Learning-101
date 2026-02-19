@@ -3,15 +3,15 @@ files:
   - name: calculate_entropy.py
     visible: true
     placeholders:
-      - offset: 41
-        length: 44
-        placeholder_text: "# Count the occurrences of each class"
-      - offset: 90
-        length: 19
-        placeholder_text: "# Calculate the proportion of each class"
-      - offset: 121
+      - offset: 126
+        length: 32
+        placeholder_text: "# TODO"
+      - offset: 290
+        length: 15
+        placeholder_text: "# TODO"
+      - offset: 448
         length: 23
-        placeholder_text: "# Calculate the entropy"
+        placeholder_text: "# TODO"
   - name: node.py
     visible: true
   - name: __init__.py

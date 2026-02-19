@@ -14,5 +14,7 @@ class Predicate:
         return X[mask], y[mask], X[~mask], y[~mask]
 
     def information_gain(self, X, y):
-        # TODO
-        return # Return information gain
+        X1, y1, X2, y2 = self.divide(X, y)
+        p = float(len(X1)) / len(X)
+        gain = entropy(y) - p * entropy(y1) - (1 - p) * entropy(y2)
+        return gain

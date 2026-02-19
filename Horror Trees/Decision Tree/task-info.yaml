@@ -2,6 +2,34 @@ type: edu
 files:
   - name: tree.py
     visible: true
+    placeholders:
+      - offset: 1005
+        length: 37
+        placeholder_text: "# TODO"
+      - offset: 1211
+        length: 22
+        placeholder_text: "# TODO"
+      - offset: 1302
+        length: 26
+        placeholder_text: "# TODO"
+      - offset: 1356
+        length: 26
+        placeholder_text: "# TODO"
+      - offset: 1745
+        length: 35
+        placeholder_text: "# TODO"
+      - offset: 2328
+        length: 24
+        placeholder_text: "# TODO"
+      - offset: 2376
+        length: 32
+        placeholder_text: "# TODO"
+      - offset: 2523
+        length: 9
+        placeholder_text: "# TODO"
+      - offset: 2565
+        length: 4
+        placeholder_text: "# TODO"
   - name: divide.py
     visible: true
   - name: calculate_entropy.py
