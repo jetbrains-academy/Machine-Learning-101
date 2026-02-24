@@ -3,16 +3,16 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 258
+      - offset: 249
         length: 22
         placeholder_text: "# TODO"
-      - offset: 373
+      - offset: 365
         length: 22
         placeholder_text: "# TODO"
-      - offset: 497
+      - offset: 489
         length: 22
         placeholder_text: "# TODO"
-      - offset: 612
+      - offset: 605
         length: 22
         placeholder_text: "# TODO"
   - name: wine.csv

@@ -3,19 +3,19 @@ files:
   - name: metrics.py
     visible: true
     placeholders:
-      - offset: 305
+      - offset: 297
         length: 73
         placeholder_text: "# TODO"
-      - offset: 452
+      - offset: 444
         length: 73
         placeholder_text: "# TODO"
-      - offset: 599
+      - offset: 591
         length: 72
         placeholder_text: "# TODO"
-      - offset: 751
+      - offset: 743
         length: 37
         placeholder_text: "# TODO"
-      - offset: 861
+      - offset: 853
         length: 46
         placeholder_text: "# TODO"
   - name: task.py

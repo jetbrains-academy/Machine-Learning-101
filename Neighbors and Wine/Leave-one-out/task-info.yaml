@@ -3,13 +3,13 @@ files:
   - name: crossvalidation.py
     visible: true
     placeholders:
-      - offset: 394
+      - offset: 351
         length: 41
         placeholder_text: "# TODO"
-      - offset: 591
+      - offset: 530
         length: 46
         placeholder_text: "# TODO"
-      - offset: 899
+      - offset: 801
         length: 74
         placeholder_text: "# TODO"
   - name: task.py

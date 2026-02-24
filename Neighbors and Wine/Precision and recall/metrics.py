@@ -3,7 +3,7 @@ import numpy as np
 
 def precision_recall(y_pred, y_test):
     class_precision_recall = []
-    # Here we calculate the precision and recall for each of the unique classes of the
+    # Here, we calculate the precision and recall for each unique class in the
     # testing sample.
     for c in np.unique(y_test):
         # Here we evaluate the number of TP for the class.
@@ -16,7 +16,8 @@ def precision_recall(y_pred, y_test):
         precision =  tp / (tp + fp) if tp + fp > 0 else 0.
         # Here we calculate the recall for the class.
         recall =  recall = tp / (tp + fn) if tp + fn > 0 else 0.
-        # Here we add a tuple containing the class and its precision and recall to the resulting array.
+        # Here, we append a tuple containing the class label and
+        # its corresponding precision and recall scores to the results array.
         class_precision_recall.append((c, precision, recall))
     return class_precision_recall
 
