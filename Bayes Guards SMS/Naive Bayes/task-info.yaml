@@ -2,20 +2,55 @@ type: edu
 files:
   - name: bayes.py
     visible: true
-  - name: task.py
+    placeholders:
+      - offset: 640
+        length: 52
+        placeholder_text: "# TODO"
+      - offset: 728
+        length: 52
+        placeholder_text: "# TODO"
+      - offset: 807
+        length: 76
+        placeholder_text: "# TODO"
+      - offset: 1052
+        length: 10
+        placeholder_text: "# TODO"
+      - offset: 1219
+        length: 16
+        placeholder_text: "# TODO"
+      - offset: 1346
+        length: 16
+        placeholder_text: "# TODO"
+      - offset: 1459
+        length: 19
+        placeholder_text: "# TODO"
+      - offset: 1670
+        length: 22
+        placeholder_text: "# TODO"
+      - offset: 1858
+        length: 27
+        placeholder_text: "# TODO"
+      - offset: 1919
+        length: 32
+        placeholder_text: "# TODO"
+  - name: vectorize.py
     visible: true
   - name: __init__.py
     visible: false
     propagatable: false
   - name: spam.txt
     visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: vectorize.py
-    visible: true
   - name: Thomas_Bayes.png
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Bayes+Guards+SMS+/+Naive+Bayes
+  - name: tests/__init__.py
+    visible: false
+    propagatable: false
+  - name: task.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: smoothed_bayes.py
+    visible: false

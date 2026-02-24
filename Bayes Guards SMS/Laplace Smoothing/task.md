@@ -1,6 +1,6 @@
 One of the problems with the naive approach is the following: if a word has not occurred in the training sample of the 
-`spam` class, its probability is:
-$$P(word|spam)=0$$
+`Spam` class, its probability is:
+$$P(word|Spam)=0$$
 
 It's called the problem of zero occurrences. It leads to the impossibility of classifying a message
 with this word, as it will have a zero probability in all classes. The problem may not be handled by means
@@ -37,8 +37,8 @@ $V$ is the list of all unique words.
 
 
 ### Task
-Update the implementation of the `fit` method so that it uses Laplace smoothing.
-The `alpha` parameter is already initialized in the code.
+In the `smoothed_bayes.py` file, implement the `fit` method using Laplace smoothing.
+Note that the `alpha` parameter is already initialized in the code. Other class methods will be implemented in subsequent steps.
 
 <div class="hint">
 You need to change the initial implementation of the <code>likelihood</code> attribute, as well as the calculation
@@ -48,4 +48,16 @@ of the denominator value. </div>
 Initially, the <code>likelihood</code> array must be filled not with zeros but with $\alpha=1$. </div>
 
 To see how your code works, you can run `task.py`.
-Note the change in probability values compared to the previous step.
+In this task, add the following lines to the `main` block before running
+your code:
+```python
+nb = SmoothedNaiveBayes()
+nb.fit(X_train, y_train)
+print('Total number of words in each class: ', nb.classes_words_count)
+print('Class prior probabilities: ', nb.classes_prior)
+print('Relative word frequencies for each class: ', nb.likelihood)
+```
+Additionally, you must import the module with the required class into `task.py`:
+```python
+from smoothed_bayes import SmoothedNaiveBayes
+```

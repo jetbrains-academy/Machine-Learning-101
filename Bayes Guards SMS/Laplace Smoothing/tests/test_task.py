@@ -2,12 +2,12 @@ import unittest
 
 import numpy as np
 
-from bayes import NaiveBayes
+from smoothed_bayes import SmoothedNaiveBayes
 
 
 class TestCase(unittest.TestCase):
     def test_classes_words_count(self):
-        nb = NaiveBayes()
+        nb = SmoothedNaiveBayes()
         X = np.array(['A great game', 'The election was over', 'Very clean match', 'A clean but forgettable game',
                           'It was a close election'])
         y = np.array(['Sports', 'Not sports', 'Sports', 'Sports', 'Not sports'])
@@ -16,7 +16,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(11 in nb.classes_words_count, msg="Improper values in classes_words_count")
 
     def test_classes_prior(self):
-        nb = NaiveBayes()
+        nb = SmoothedNaiveBayes()
         X = np.array(['A great game', 'The election was over', 'Very clean match', 'A clean but forgettable game',
                           'It was a close election'])
         y = np.array(['Sports', 'Not sports', 'Sports', 'Sports', 'Not sports'])
@@ -25,7 +25,7 @@ class TestCase(unittest.TestCase):
         self.assertTrue(0.6 in nb.classes_prior, msg="Improper values in classes_prior")
 
     def test_zero_likelihood(self):
-        nb = NaiveBayes()
+        nb = SmoothedNaiveBayes()
         X = np.array(['A great game', 'The election was over', 'Very clean match', 'A clean but forgettable game',
                           'It was a close election'])
         y = np.array(['Sports', 'Not sports', 'Sports', 'Sports', 'Not sports'])

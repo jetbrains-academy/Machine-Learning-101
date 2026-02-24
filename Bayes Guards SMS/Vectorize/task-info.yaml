@@ -2,6 +2,25 @@ type: edu
 files:
   - name: vectorize.py
     visible: true
+    placeholders:
+      - offset: 438
+        length: 17
+        placeholder_text: "# TODO"
+      - offset: 508
+        length: 29
+        placeholder_text: "# TODO"
+      - offset: 690
+        length: 24
+        placeholder_text: "# TODO"
+      - offset: 844
+        length: 50
+        placeholder_text: "# TODO"
+      - offset: 1066
+        length: 38
+        placeholder_text: "# TODO"
+      - offset: 1159
+        length: 85
+        placeholder_text: "# TODO"
   - name: task.py
     visible: true
   - name: tests/test_task.py
@@ -22,4 +41,6 @@ files:
     visible: false
     propagatable: false
     is_binary: true
+  - name: smoothed_bayes.py
+    visible: false
 feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Bayes+Guards+SMS+/+Vectorize

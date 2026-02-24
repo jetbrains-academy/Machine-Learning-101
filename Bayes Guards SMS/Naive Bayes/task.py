@@ -1,7 +1,5 @@
-import codecs
 from vectorize import *
 from bayes import NaiveBayes
-
 
 def test_train_split(X, y, ratio=0.8):
     mask = np.random.uniform(size=len(y)) < ratio
@@ -9,8 +7,8 @@ def test_train_split(X, y, ratio=0.8):
 
 
 def read_data(path):
-    file = codecs.open(path, encoding='latin1')
-    text = np.loadtxt(file, dtype=np.bytes_, delimiter='\t', unpack=True)
+    with open(path, encoding='latin1') as file:
+        text = np.loadtxt(file, dtype=np.bytes_, delimiter='\t', unpack=True)
     return np.char.decode(text)
 
 
@@ -20,7 +18,6 @@ if __name__ == '__main__':
 
     index_dict, vectorization = vectorize(X_train)
     print('Last 10 items of your index dictionary: ', dict(list(index_dict.items())[-10:]))
-    #  np.savetxt("vectorization.txt", vectorization)
     print('Vectorization array dimensions: ', vectorization.shape)
     nb = NaiveBayes()
     nb.fit(X_train, y_train)

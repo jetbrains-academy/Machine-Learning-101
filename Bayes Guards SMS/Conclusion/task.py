@@ -1,6 +1,5 @@
-import numpy as np
-import codecs
 from bayes import NaiveBayes
+from smoothed_bayes import SmoothedNaiveBayes
 from vectorize import *
 
 
@@ -10,8 +9,8 @@ def test_train_split(X, y, ratio=0.8):
 
 
 def read_data(path):
-    file = codecs.open(path, encoding='latin1')
-    text = np.loadtxt(file, dtype=np.bytes_, delimiter='\t', unpack=True)
+    with open(path, encoding='latin1') as file:
+        text = np.loadtxt(file, dtype=np.bytes_, delimiter='\t', unpack=True)
     return np.char.decode(text)
 
 
@@ -23,6 +22,12 @@ if __name__ == '__main__':
     print('Last 10 items of your index dictionary: ', dict(list(index_dict.items())[-10:]))
     print('Vectorization array dimensions: ', vectorization.shape)
     nb = NaiveBayes()
+    nb.fit(X_train, y_train)
+    print('Total number of words in each class: ', nb.classes_words_count)
+    print('Class prior probabilities: ', nb.classes_prior)
+    print('Relative word frequencies for each class: ', nb.likelihood)
+
+    nb = SmoothedNaiveBayes()
     nb.fit(X_train, y_train)
     print('Total number of words in each class: ', nb.classes_words_count)
     print('Class prior probabilities: ', nb.classes_prior)
