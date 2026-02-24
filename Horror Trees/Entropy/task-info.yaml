@@ -3,13 +3,13 @@ files:
   - name: calculate_entropy.py
     visible: true
     placeholders:
-      - offset: 126
+      - offset: 137
         length: 32
         placeholder_text: "# TODO"
-      - offset: 290
+      - offset: 293
         length: 15
         placeholder_text: "# TODO"
-      - offset: 448
+      - offset: 446
         length: 23
         placeholder_text: "# TODO"
   - name: node.py

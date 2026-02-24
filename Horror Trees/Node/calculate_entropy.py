@@ -2,11 +2,11 @@ import numpy as np
 
 
 def entropy(y):
-    # use numpy.unique to obtain sorted unique elements and their counts
+    # Use numpy.unique to obtain sorted unique elements and their respective counts
     _, counts = # TODO
-    # calculate the proportion of each class in the whole dataset
-    # the return value should be an array of proportions
+    # Calculate the proportion of each class in the whole dataset,
+    # returning an array of these probabilities
     p = # TODO
-    # calculate and return entropy using the formula from the task
-    # logarithm can be calculated using the numpy.log2 function
+    # Compute the entropy based on the provided formula,
+    # utilizing the numpy.log2 function for logarithmic calculations
     return # TODO

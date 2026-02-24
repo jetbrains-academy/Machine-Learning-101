@@ -17,7 +17,7 @@ nominal and quantitative ones. First, the method needs to check if the character
 quantitative, and if yes, the threshold condition should be an inequality. For nominal characteristics,
 the number of predicates equals the number of unique characteristic values, so the threshold condition for
 sample division is an equality check for the characteristic. The method should return a dataset and class
-labels divided according to this characteristic. The `information_gain` method will be implemented in next task.
+labels divided according to this characteristic. The `information_gain` method will be implemented in the next task.
 
 
 <div class="hint">
@@ -31,8 +31,8 @@ To get the second part of the sample, the one that did not pass the threshold co
 you can apply [bit-wise inversion](https://numpy.org/doc/stable/reference/generated/numpy.invert.html) to the created array
 for data filtering. When working with arrays, the `~` operator may be used instead of np.invert for the sake of brevity.</div>
 
-At this stage, do not mind the other method of the class – you will need to
-implement it in the next task.
+Ignore the remaining class methods for now; you will implement them
+in the next task.
 
 In order to see the results of your code, you can add
 the following lines to `task.py` and run it:
@@ -41,7 +41,7 @@ the following lines to `task.py` and run it:
         import numpy as np
         from divide import Predicate
 ```
-2. A mockup dataset for checking the work of the `divide` method and outputting the results should be added to the block `main`.
+2. Add a sample dataset to the `main` block to verify the `divide` method and display the results.
 ```python
         predicate = Predicate(3, 'clear')           
         X = np.array([[1, 1, 1, 'clear'],

@@ -3,31 +3,31 @@ files:
   - name: tree.py
     visible: true
     placeholders:
-      - offset: 1005
+      - offset: 994
         length: 37
         placeholder_text: "# TODO"
-      - offset: 1211
+      - offset: 1195
         length: 22
         placeholder_text: "# TODO"
-      - offset: 1302
+      - offset: 1286
         length: 26
         placeholder_text: "# TODO"
-      - offset: 1356
+      - offset: 1340
         length: 26
         placeholder_text: "# TODO"
-      - offset: 1745
+      - offset: 1737
         length: 35
         placeholder_text: "# TODO"
-      - offset: 2328
+      - offset: 2352
         length: 24
         placeholder_text: "# TODO"
-      - offset: 2376
+      - offset: 2400
         length: 32
         placeholder_text: "# TODO"
-      - offset: 2523
+      - offset: 2547
         length: 9
         placeholder_text: "# TODO"
-      - offset: 2565
+      - offset: 2589
         length: 4
         placeholder_text: "# TODO"
   - name: divide.py

@@ -23,5 +23,5 @@ to the `main` block in `task.py` and run it:
 ```python
 print(f'Class prediction for object X[0]: {tree.predict(X[0])}\n')
 ```
-Variables required for the correct work of this code were introduced in the previous steps; in case you haven't worked with
-`task.py` yet, pay attention to them.
+The variables required for this code to function were introduced in previous steps. If you haven't worked with
+`task.py` yet, ensure they are properly defined.

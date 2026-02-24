@@ -3,16 +3,16 @@ files:
   - name: divide.py
     visible: true
     placeholders:
-      - offset: 636
+      - offset: 584
         length: 61
         placeholder_text: "# TODO"
-      - offset: 718
+      - offset: 666
         length: 31
         placeholder_text: "# TODO"
-      - offset: 907
+      - offset: 855
         length: 31
         placeholder_text: "# TODO"
-      - offset: 1027
+      - offset: 975
         length: 36
         placeholder_text: "# TODO"
   - name: calculate_entropy.py

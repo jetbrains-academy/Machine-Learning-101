@@ -45,5 +45,5 @@ To see the results of your code, you can add the following line to the
 ```python
     print(f'Information Gain: {predicate.information_gain(X, y)}\n')     
 ```
-Variables required for the correct work of this code were introduced in the previous steps; in case you haven't worked with 
-`task.py` yet, pay attention to them.
+The variables required for this code to function were introduced in previous steps. If you haven't worked with
+`task.py` yet, ensure they are properly defined.
