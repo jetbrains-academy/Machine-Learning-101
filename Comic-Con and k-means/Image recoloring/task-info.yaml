@@ -1,0 +1,33 @@
+type: edu
+files:
+  - name: processing.py
+    visible: true
+    placeholders:
+      - offset: 465
+        length: 61
+        placeholder_text: "# TODO"
+  - name: plotting.py
+    visible: true
+  - name: clustering.py
+    visible: true
+  - name: distances.py
+    visible: true
+  - name: task.py
+    visible: true
+  - name: superman-batman.png
+    visible: true
+    is_binary: true
+  - name: histogram.png
+    visible: false
+    is_binary: true
+  - name: barchart.png
+    visible: false
+    is_binary: true
+  - name: superman-batman-after.png
+    visible: false
+    is_binary: true
+  - name: __init__.py
+    visible: false
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false

@@ -1,5 +1,20 @@
 type: edu
 files:
+  - name: clustering.py
+    visible: true
+    placeholders:
+      - offset: 1367
+        length: 21
+        placeholder_text: "# TODO"
+      - offset: 1581
+        length: 27
+        placeholder_text: "# TODO"
+      - offset: 1734
+        length: 50
+        placeholder_text: "# TODO"
+      - offset: 2618
+        length: 42
+        placeholder_text: "# TODO"
   - name: distances.py
     visible: true
   - name: task.py
@@ -16,8 +31,6 @@ files:
   - name: tests/__init__.py
     visible: false
     propagatable: false
-  - name: clustering.py
-    visible: true
   - name: plotting.py
     visible: false
     propagatable: false

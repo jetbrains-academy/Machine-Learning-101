@@ -4,9 +4,11 @@ from plotting import plot_colors, centroid_histogram
 from clustering import k_means
 from distances import euclidean_distance
 
-
 def read_image(path='superman-batman.png'):
+    # Here, we load the image using PIL's open function.
     image = Image.open(path)
+    # We reshape the image into an (M x N, 3)
+    # array.
     return np.array(image).reshape(-1, 3)
 
 
