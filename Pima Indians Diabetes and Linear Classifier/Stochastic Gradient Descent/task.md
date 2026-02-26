@@ -61,7 +61,7 @@ from utils import plot_classification
 plot_classification(X, y)
 ```
 
-Then, run `task.py`. You will see the visualizations of the algorithm work for different `k` with different `loss` functions in *Course View* on the left.
+Then, run `task.py`. You will see the visualizations of the algorithm's performance for various `k` values and `loss` function in the *Course View* on the left.
 
 Try changing the `n_iter` and `k` parameters and see how it affects the error rate and the working time of the algorithm.
 

@@ -3,50 +3,50 @@ from loss_functions import sigmoid_loss
 
 
 class GradientDescent:
-    # The weighs will be randomly initiated as the first step of the fitting process.
-    # The default loss function is sigmoid, and the default threshold is set to 0.01
+    # Weights are randomly initialized at the start of the fitting process.
+    # The default loss function is sigmoid, and the default threshold is set to 0.01.
     def __init__(self, *, alpha, threshold=1e-2, loss=sigmoid_loss):
         self.weights = []
         self.alpha = alpha
         self.threshold = threshold
         self.loss = loss
 
-    # This method is fitting the weights using the training X sample
+    # This method fits the weights using the training sample X.
     def fit(self, X, y):
-        # Set n to the number of objects in the
+        # Set n to the number of objects in X.
         n = X.shape[1]
-        # Here we use a sample from a uniform distribution:
-        # low boundary of the interval set to  -1 / (2 * n)
-        # high boundary of the interval is set to 1 / (2 * n)
-        # The size of the sample is n
+        # Here we use a sample drawn from a uniform distribution:
+        # the low boundary of the interval is set to -1 / (2 * n),
+        # the high boundary of the interval is set to 1 / (2 * n).
+        # The sample is of size n.
         rng = np.random.default_rng()
         self.weights = rng.uniform(-1 / (2 * n), 1 / (2 * n), size=n)
-        # At the moment there is no errors
+        # At the moment, there are no errors.
         errors = []
 
-        # The algorithm will be interrupted after reaching the threshold
+        # The algorithm stops once the threshold is reached.
         while True:
             M = # Set M to a dot product of X and weights multiplied by y
             loss, derivative = # calculate them using loss function of the instance
 
-            # The gradient is a sum along the 0 axis of the following array:
-            # transposed X multiplied by y (X.T * y)
-            # then multiplied by transposed derivative (derivative.T)
-            # with the product of this multiplication transposed again (.T)
+            # The gradient is the sum along axis 0 of the following array:
+            # the product of transposed X and y (X.T * y)
+            # multiplied by the transposed derivative (derivative.T)
+            # with the final result transposed again (.T).
             grad_q = # write the expression
             new_weights = # update the weights
 
-            # Updating the errors with the loss
+            # Record the total loss.
             errors.append(np.sum(loss))
-            # If the new_weights are close enough to the old ones, the fitting is complete
+            # If the new_weights are close enough to the old ones, the fitting process is complete.
             if np.linalg.norm(self.weights - new_weights) < self.threshold:
                 break
-            # Update the stored weights before the next iteration
+            # Update the stored weights before the next iteration.
             self.weights = # set it to the new ones
-        # The method returns the losses stored along the fitting process
+        # The method returns the loss history recorded during the fitting process.
         return errors
 
     def predict(self, X):
-        # As we have only two normalized classes we can return the np.sign of the
-        # X dot product weights
+        # Since there are only two classes, we can return the np.sign of the
+        # dot product between X and the weights.
         return # return the predicted classes

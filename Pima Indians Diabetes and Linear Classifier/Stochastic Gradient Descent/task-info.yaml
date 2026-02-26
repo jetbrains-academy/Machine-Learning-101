@@ -3,14 +3,14 @@ files:
   - name: stochastic_gradient_descent.py
     visible: true
     placeholders:
-      - offset: 1113
+      - offset: 1114
         length: 32
         placeholder_text: "# TODO: Generate the batch"
-      - offset: 1171
+      - offset: 1172
         length: 60
         placeholder_text: "# TODO: Calculate the gradient using the current weights, X\
       \ and y batches"
-      - offset: 2171
+      - offset: 2183
         length: 25
         placeholder_text: "# TODO: Initialize it here"
   - name: gradient_descent.py
