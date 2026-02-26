@@ -33,6 +33,7 @@ The function may look as follows:
             
         return class_precision_recall
 
+Ensure you import the implemented function into `task.py` to use it in the `main` block and output the result.
 
 <div class="hint">
 You can calculate the value of <code>n_classes</code> using <code>y_test</code>:
@@ -51,3 +52,8 @@ or
 </div>
 
 Here we use the <a href="https://numpy.org/doc/1.18/reference/generated/numpy.unique.html">numpy.unique</a> function, which returns all unique elements of an array. It helps us get the list of all classes represented in the sample.
+
+To see your code in action, add the following line to the `main` block in `task.py` and run it:
+```python
+print_precision_recall(precision_recall(y_predicted, y_test))
+```

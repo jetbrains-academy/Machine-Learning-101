@@ -41,8 +41,11 @@ The result should comply with the condition:
     len(X_train) / (len(X_test) + len(X_train)) == ratio
     len(y_train) / (len(y_test) + len(y_train)) == ratio
 
-In this course, we will be using the [NumPy](https://numpy.org/doc/2.3/user/index.html#user) package. In this task, we will need the [numpy.random.permutation](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.permutation.html) function, which randomly permutes a sequence. We need it to pick wines from the sample randomly and avoid any data bias caused by the order of wines in the table. We will also need the [numpy.ndarray.shape](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.shape.html) attribute, which contains the array shape. With its help, you can easily find out the length of the feature matrix and, after multiplying it by the ratio, get the corresponding portion of the matrix for the training or the test sample.
-
-
+In this course, we will be using the [NumPy](https://docs.scipy.org/doc/numpy-1.15.1/user/index.html) package. For this task, you'll need the [numpy.random.permutation](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.random.permutation.html) 
+function to shuffle the dataset. This ensures that we select wine samples randomly and avoid bias caused by the original ordering.
+You will also use the [numpy.ndarray.shape](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.shape.html) attribute to determine the dimensions of the feature matrix.
+By multiplying the total length by a given ratio, you can easily calculate the appropriate sizes for your training and test sets.
+<br/>
+<br/>
 ![Wine](wine.jpg)
 

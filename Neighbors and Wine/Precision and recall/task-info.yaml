@@ -2,6 +2,22 @@ type: edu
 files:
   - name: metrics.py
     visible: true
+    placeholders:
+      - offset: 297
+        length: 73
+        placeholder_text: "# TODO"
+      - offset: 444
+        length: 73
+        placeholder_text: "# TODO"
+      - offset: 591
+        length: 73
+        placeholder_text: "# TODO"
+      - offset: 743
+        length: 37
+        placeholder_text: "# TODO"
+      - offset: 853
+        length: 46
+        placeholder_text: "# TODO"
   - name: task.py
     visible: true
   - name: wine.csv

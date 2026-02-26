@@ -2,15 +2,14 @@ import numpy as np
 
 
 def knn(X_train, y_train, X_test, k, dist):
-    # The function will return the class for x based on its neighbours from the X_train
+    # The function predicts the class for x based on its neighbors in the X_train
     # sample.
     def classify_single(x):
-        # Here we create an array of distances from x to each of the X_train objects.
+        # Here, we create an array of distances between x and every object in X_train.
         dists = #TODO
-        # This array will contain the indices of k nearest to the x objects. NumPy.argpartition
-        # might be useful here.
+        # This array will contain the indices of the k nearest objects to x.
         indices = #TODO
-        # The function returns the most frequent class among those in y_train represented
+        # The function returns the most frequent class among the labels in y_train identified
         # by the indices.
         return #TODO
 

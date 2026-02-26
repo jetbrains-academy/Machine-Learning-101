@@ -3,12 +3,21 @@ import numpy as np
 
 def precision_recall(y_pred, y_test):
     class_precision_recall = []
+    # Here, we calculate the precision and recall for each unique class in the
+    # testing sample.
     for c in np.unique(y_test):
-        tp = len([i for i in range(len(y_pred)) if y_pred[i] == c and y_test[i] == c])
-        fp = len([i for i in range(len(y_pred)) if y_pred[i] == c and y_test[i] != c])
-        fn = len([i for i in range(len(y_test)) if y_pred[i] != c and y_test[i] == c])
-        precision = tp / (tp + fp) if tp + fp > 0 else 0.
-        recall = tp / (tp + fn) if tp + fn > 0 else 0.
+        # Here we evaluate the number of TP for the class.
+        tp =  len([i for i in range(len(y_pred)) if y_pred[i] == c and y_test[i] == c])
+        # Here we evaluate the number of FP for the class.
+        fp =  len([i for i in range(len(y_pred)) if y_pred[i] == c and y_test[i] != c])
+        # Here we evaluate the number of FN for the class.
+        fn =  len([i for i in range(len(y_test)) if y_pred[i] != c and y_test[i] == c])
+        # Here we calculate the precision for the class.
+        precision =  tp / (tp + fp) if tp + fp > 0 else 0.
+        # Here we calculate the recall for the class.
+        recall =  recall = tp / (tp + fn) if tp + fn > 0 else 0.
+        # Here, we append a tuple containing the class label and
+        # its corresponding precision and recall scores to the results array.
         class_precision_recall.append((c, precision, recall))
     return class_precision_recall
 
