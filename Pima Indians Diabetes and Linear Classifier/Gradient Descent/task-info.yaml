@@ -2,26 +2,31 @@ type: edu
 files:
   - name: gradient_descent.py
     visible: true
-  - name: __init__.py
-    visible: false
-    propagatable: false
-  - name: pima-indians-diabetes.csv
+    placeholders:
+      - offset: 1095
+        length: 23
+        placeholder_text: "# TODO: Set M to the dot product of X and weights, multiplied\
+      \ by y"
+      - offset: 1151
+        length: 12
+        placeholder_text: "# TODO: Calculate values using the instance's loss function"
+      - offset: 1448
+        length: 44
+        placeholder_text: "# TODO: Write the expression"
+      - offset: 1519
+        length: 34
+        placeholder_text: "# TODO: Update the weights"
+      - offset: 1925
+        length: 11
+        placeholder_text: "# TODO: Set it to the new ones"
+      - offset: 2210
+        length: 28
+        placeholder_text: "# Return the predicted classes"
+  - name: loss_functions.py
     visible: true
   - name: task.py
     visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: loss_functions.py
-    visible: true
-  - name: precision_recall.py
-    visible: true
-  - name: utils.py
-    visible: true
-  - name: stochastic_gradient_descent.py
-    visible: false
-    propagatable: false
-  - name: gradient-descent.png
+  - name: pima.png
     visible: false
     propagatable: false
     is_binary: true
@@ -29,8 +34,24 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-  - name: pima.png
+  - name: stochastic_gradient_descent.py
+    visible: false
+    propagatable: false
+  - name: gradient-descent.png
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScQIQGOPF_e3hQMM-nK5CEvJYufaCWpIbESFFSAOmkI55M_7Q/viewform?usp=pp_url&entry.2103429047=Pima+Indians+and+Linear+Classifier+/+Gradient+Descent
+  - name: __init__.py
+    visible: false
+  - name: pima-indians-diabetes.csv
+    visible: true
+  - name: precision_recall.py
+    visible: true
+  - name: utils.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: tests/__init__.py
+    visible: false
+    propagatable: false

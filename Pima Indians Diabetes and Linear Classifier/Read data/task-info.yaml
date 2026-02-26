@@ -2,6 +2,19 @@ type: edu
 files:
   - name: task.py
     visible: true
+    placeholders:
+      - offset: 314
+        length: 35
+        placeholder_text: "# TODO"
+      - offset: 802
+        length: 36
+        placeholder_text: "# Standardize the dataset"
+      - offset: 1000
+        length: 60
+        placeholder_text: "# Add a column of -1 to the left of X"
+      - offset: 1145
+        length: 12
+        placeholder_text: "# {0, 1} -> {1, -1}"
   - name: tests/test_task.py
     visible: false
     propagatable: false
