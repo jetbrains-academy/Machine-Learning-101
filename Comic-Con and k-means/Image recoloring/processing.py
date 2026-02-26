@@ -9,9 +9,9 @@ IMAGE_HEIGHT = 1024
 
 
 def recolor(image, n_colors):
-    # Here we bring everything together by calling the k_means function on the image
-    # and providing the number of colors in which it needs to be recolored.
-    # Note that the image array is better unified by calling .astype(np.int64) on it.
+    # Here, we bring everything together by applying the k_means function to the image
+    # to reduce its palette to the specified number of colors.
+    # Note that it is better to cast the image array to a consistent type by calling .astype(np.int64).
     (labels, centroids) = k_means(image.astype(np.int64), n_colors, euclidean_distance)
     return centroids[labels]
 

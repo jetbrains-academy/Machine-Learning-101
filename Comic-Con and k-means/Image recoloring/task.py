@@ -7,10 +7,10 @@ IMAGE_HEIGHT = 1024
 
 
 def read_image(path='superman-batman.png'):
-    # Here we need to read the image using the PIL function open.
+    # Here, we load the image using PIL's open function.
     image = Image.open(path)
-    # We reshape the image array into one with the (M x N, 3)
-    # shape.
+    # We reshape the image into an (M x N, 3)
+    # array.
     return np.array(image).reshape(-1, 3)
 
 

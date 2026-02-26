@@ -11,7 +11,7 @@ To change the color scheme, we will use the [k-means](https://en.wikipedia.org/w
 
 ### Task
 
-First, we need to implement a function that reads a file and transforms it into a two-dimensional matrix ($M \times N$, 3). Here, $M$ и $N$ represent the image height and width in pixels, and 3 is the number of R, G and B components for each pixel.
+First, we need to implement a function that reads a file and transforms it into a two-dimensional matrix ($M \times N$, 3). Here, $M$ and $N$ represent the image height and width in pixels, and 3 is the number of R, G, and B components for each pixel.
 
 The function signature is the following:
 

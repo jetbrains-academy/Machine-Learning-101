@@ -3,16 +3,16 @@ files:
   - name: clustering.py
     visible: true
     placeholders:
-      - offset: 1382
+      - offset: 1367
         length: 21
         placeholder_text: "# TODO"
-      - offset: 1640
+      - offset: 1581
         length: 27
         placeholder_text: "# TODO"
-      - offset: 1815
+      - offset: 1734
         length: 50
         placeholder_text: "# TODO"
-      - offset: 2773
+      - offset: 2618
         length: 42
         placeholder_text: "# TODO"
   - name: distances.py

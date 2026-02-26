@@ -3,13 +3,13 @@ files:
   - name: plotting.py
     visible: true
     placeholders:
-      - offset: 278
+      - offset: 250
         length: 37
         placeholder_text: "# TODO"
-      - offset: 1285
+      - offset: 1227
         length: 34
         placeholder_text: "# TODO"
-      - offset: 1636
+      - offset: 1581
         length: 5
         placeholder_text: "# TODO"
   - name: clustering.py

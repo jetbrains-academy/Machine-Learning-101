@@ -17,12 +17,12 @@ A histogram example:
 To complete the task, you will need the <a href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html#numpy.unique">np.unique</a> function, which takes an array as input and returns only its unique elements (as an array). If you pass the <code>return_counts=true</code> flag to the function, it will also calculate the number of occurrences for each unique element.
 </div>
 
-To see the results of your code, add the following lines in `task.py` and run it:
+To see the results of your code, add the following lines to `task.py` and run it:
 1. Necessary import:
  ```python
 from plotting import plot_colors, centroid_histogram
 ```
-2. Add the lines for getting the result in the `main` block **instead** of those added in the previous step:
+2. Add the following lines to the `main` block to generate the output, **replacing** the code from the previous step:
 ```python
 (pixel_labels, centroids) = k_means(image, 4, euclidean_distance)
 print(pixel_labels)

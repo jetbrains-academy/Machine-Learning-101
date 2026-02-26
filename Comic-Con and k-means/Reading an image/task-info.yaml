@@ -3,10 +3,10 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 165
+      - offset: 156
         length: 16
         placeholder_text: "# TODO"
-      - offset: 268
+      - offset: 243
         length: 30
         placeholder_text: "# Reshape the image"
   - name: tests/test_task.py
