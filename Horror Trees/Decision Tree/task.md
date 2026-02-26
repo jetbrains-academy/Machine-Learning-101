@@ -30,5 +30,20 @@ In the `tree.py` file, implement a recursive algorithm for building a decision t
    method returns an instance of the `Node` class in case the best predicate was found.
    If not, the method returns the most frequently occurring class label.
 5. The `build` method returns `self`.
+ 
+Ignore the remaining class methods for now; you will implement them
+in the next task. 
 
-To see the results of your code, run `task.py`.
+To see the results of your code, add the following lines
+to `task.py` and run it:
+1. Required import:
+ ```python
+from tree import DecisionTree  
+```
+2. Add these lines to the `main` block to display the result:
+```python
+tree = DecisionTree().build(X, y) 
+print(f'{tree}\n')
+```
+The variables required for this code to function were introduced in previous steps. If you haven't worked with
+`task.py` yet, ensure they are properly defined.

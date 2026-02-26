@@ -2,29 +2,52 @@ type: edu
 files:
   - name: tree.py
     visible: true
-  - name: task.py
+    placeholders:
+      - offset: 994
+        length: 37
+        placeholder_text: "# TODO"
+      - offset: 1195
+        length: 22
+        placeholder_text: "# TODO"
+      - offset: 1286
+        length: 26
+        placeholder_text: "# TODO"
+      - offset: 1340
+        length: 26
+        placeholder_text: "# TODO"
+      - offset: 1737
+        length: 35
+        placeholder_text: "# TODO"
+      - offset: 2352
+        length: 24
+        placeholder_text: "# TODO"
+      - offset: 2400
+        length: 32
+        placeholder_text: "# TODO"
+      - offset: 2547
+        length: 9
+        placeholder_text: "# TODO"
+      - offset: 2589
+        length: 4
+        placeholder_text: "# TODO"
+  - name: divide.py
+    visible: true
+  - name: calculate_entropy.py
+    visible: true
+  - name: node.py
     visible: true
   - name: __init__.py
     visible: false
     propagatable: false
   - name: halloween.csv
     visible: true
-  - name: tests/test_task.py
-    visible: false
-    propagatable: false
-  - name: calculate_entropy.py
-    visible: true
-  - name: divide.py
-    visible: true
-  - name: halloween.py
-    visible: false
-    propagatable: false
-  - name: node.py
-    visible: true
   - name: boo.jpg
     visible: false
     propagatable: false
     is_binary: true
+  - name: halloween.py
+    visible: false
+    propagatable: false
   - name: RNA_tree.png
     visible: false
     propagatable: false
@@ -33,4 +56,8 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Horror+Trees+/+Decision+Tree
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
+  - name: task.py
+    visible: true

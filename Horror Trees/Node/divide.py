@@ -1,9 +1,9 @@
 from calculate_entropy import entropy
 
-# Here we defined the Predicate class to store predicates – values in
-# particular columns that are used to split our dataset. The class
-# includes the divide method, which splits the dataset by the given predicate,
-# and the information_gain method, which calculates the information gain for a given split.
+# Here we define the Predicate class to store predicates – values in
+# specific columns used to split the dataset. The class
+# includes a divide method to partition the data
+# and an information_gain method to calculate the gain achieved by a given split.
 class Predicate:
     def __init__(self, column, value):
         self.column = column
@@ -31,4 +31,4 @@ class Predicate:
         # Use the entropy function you wrote earlier and the formula
         # from the task to calculate the information gain.
         # gain = # TODO
-        # return gain
+        # Return the gain

@@ -9,7 +9,6 @@ class DecisionTree:
 
     def build_subtree(self, X, y):
         predicate = DecisionTree.get_best_predicate(X, y)
-
         if predicate:
             X1, y1, X2, y2 = predicate.divide(X, y)
             true_branch = self.build_subtree(X1, y1)

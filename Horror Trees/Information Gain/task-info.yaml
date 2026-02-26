@@ -2,30 +2,25 @@ type: edu
 files:
   - name: divide.py
     visible: true
-  - name: task.py
+  - name: calculate_entropy.py
+    visible: true
+  - name: node.py
     visible: true
   - name: __init__.py
     visible: false
     propagatable: false
   - name: halloween.csv
     visible: true
-  - name: tests/test_task.py
+  - name: boo.jpg
     visible: false
     propagatable: false
-  - name: calculate_entropy.py
-    visible: true
+    is_binary: true
   - name: tree.py
     visible: false
     propagatable: false
   - name: halloween.py
     visible: false
     propagatable: false
-  - name: node.py
-    visible: true
-  - name: boo.jpg
-    visible: false
-    propagatable: false
-    is_binary: true
   - name: RNA_tree.png
     visible: false
     propagatable: false
@@ -34,4 +29,8 @@ files:
     visible: false
     propagatable: false
     is_binary: true
-feedback_link: https://docs.google.com/forms/d/e/1FAIpQLScqAfU990a9LiNolBdSrMVInejEmaMmyagLTJmhwUwjUysffg/viewform?usp=pp_url&entry.2103429047=Horror+Trees+/+Information+Gain
+  - name: task.py
+    visible: true
+  - name: tests/test_task.py
+    visible: false
+    propagatable: false
