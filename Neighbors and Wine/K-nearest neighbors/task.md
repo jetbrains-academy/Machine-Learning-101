@@ -57,6 +57,7 @@ In this task, you may use the following functions from the **NumPy** library:
 To see your code in action, add the following line to the `main` block in `task.py` and run it:
 ```python
 y_predicted = knn(X_train, y_train, X_test, 5, euclidean_dist)
+print(y_predicted)
 ```
 Ensure you've imported all necessary functions.
 
