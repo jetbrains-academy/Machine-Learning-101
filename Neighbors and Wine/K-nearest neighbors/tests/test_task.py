@@ -1,7 +1,7 @@
 import numpy as np
 import unittest
 
-from numpy.ma.testutils import assert_array_equal
+from safe_assert import safe_assert_array_equal
 
 from metric_classification import knn
 from distances import euclidean_dist
@@ -63,7 +63,7 @@ class TestCase(unittest.TestCase):
         ])
         y_test = np.array([4, 3, 5, 2, 1, 2, 1, 0, 1, 5, 5, 2])
         y_predicted = knn(X_train, y_train, X_test, 1, euclidean_dist)
-        assert_array_equal(y_predicted, y_test)
+        safe_assert_array_equal(y_predicted, y_test, "Incorrect predictions for knn with k=1")
 
     def test_knn_4_neighbor(self):
         X_train = np.array([
@@ -92,4 +92,4 @@ class TestCase(unittest.TestCase):
         ])
         y_test = np.array([0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0])
         y_predicted = knn(X_train, y_train, X_test, 4, euclidean_dist)
-        assert_array_equal(y_predicted, y_test)
+        safe_assert_array_equal(y_predicted, y_test, "Incorrect predictions for knn with k=4")
