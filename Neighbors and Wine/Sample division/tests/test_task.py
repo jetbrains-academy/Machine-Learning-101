@@ -50,10 +50,10 @@ class TestCase(unittest.TestCase):
         ratio = .8
         X_train, y_train, X_test, y_test = train_test_split(X, y, ratio=ratio)
         X_train1, y_train1, X_test1, y_test1 = train_test_split(X, y, ratio=ratio)
-        fail_if_array_equal(X_train, X_train1, "train_test_split should split arrays into random train and test subsets")
-        fail_if_array_equal(X_test, X_test1, "train_test_split should split arrays into random train and test subsets")
-        fail_if_array_equal(y_train, y_train1, "train_test_split should split arrays into random train and test subsets")
-        fail_if_array_equal(y_test, y_test1, "train_test_split should split arrays into random train and test subsets")
+        fail_if_array_equal(X_train, X_train1, "train_test_split should split arrays into random train and test subsets. Use numpy.random.permutation")
+        fail_if_array_equal(X_test, X_test1, "train_test_split should split arrays into random train and test subsets. Use numpy.random.permutation")
+        fail_if_array_equal(y_train, y_train1, "train_test_split should split arrays into random train and test subsets. Use numpy.random.permutation")
+        fail_if_array_equal(y_test, y_test1, "train_test_split should split arrays into random train and test subsets. Use numpy.random.permutation")
 
     def test_no_randomize_initial_arrays(self):
         X = np.arange(100).reshape((10, 10))
