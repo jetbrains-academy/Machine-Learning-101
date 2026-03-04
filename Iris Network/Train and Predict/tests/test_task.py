@@ -1,7 +1,7 @@
 import unittest
 
 import numpy as np
-from numpy.ma.testutils import assert_array_equal
+from safe_assert import safe_assert_array_equal
 
 from network import NN
 
@@ -18,11 +18,11 @@ class TestCase(unittest.TestCase):
 
         for i in range(11):
             if i == 10:
-                self.fail()
+                self.fail("train method failed: the network could not learn the training data after 10 attempts")
             try:
                 nn.train(X_train, y_train)
                 nn_y = nn.predict(X_train)
-                assert_array_equal((nn_y > 0.5).astype(int), y_train)
+                safe_assert_array_equal((nn_y > 0.5).astype(int), y_train, "Incorrect predictions after training")
                 break
             except:
                 continue

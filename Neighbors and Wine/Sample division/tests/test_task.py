@@ -1,4 +1,4 @@
-from numpy.ma.testutils import assert_array_equal, fail_if_array_equal
+from safe_assert import safe_assert_array_equal, safe_fail_if_array_equal
 
 from task import train_test_split
 import unittest
@@ -23,16 +23,16 @@ class TestCase(unittest.TestCase):
         y = np.arange(10)
         X_train, y_train, X_test, y_test = train_test_split(X, y, ratio=.5)
 
-        assert_array_equal(X_train[:, 0], y_train * 10, "X_train doesn't match y_train values")
-        assert_array_equal(X_test[:, 0], y_test * 10, "X_test doesn't match y_test values")
+        safe_assert_array_equal(X_train[:, 0], y_train * 10, "X_train doesn't match y_train values")
+        safe_assert_array_equal(X_test[:, 0], y_test * 10, "X_test doesn't match y_test values")
 
     def test_arrays_lengths(self):
         X = np.arange(100).reshape((10, 10))
         y = np.arange(10)
         X_train, y_train, X_test, y_test = train_test_split(X, y, ratio=.7)
 
-        assert_array_equal(X_train.shape[0], len(y_train), "X_train length doesn't match y_train length")
-        assert_array_equal(X_test.shape[0], len(y_test), "X_test length doesn't match y_test length")
+        safe_assert_array_equal(X_train.shape[0], len(y_train), "X_train length doesn't match y_train length")
+        safe_assert_array_equal(X_test.shape[0], len(y_test), "X_test length doesn't match y_test length")
 
     def test_ratio(self):
         X = np.arange(100).reshape((10, 10))
@@ -50,15 +50,15 @@ class TestCase(unittest.TestCase):
         ratio = .8
         X_train, y_train, X_test, y_test = train_test_split(X, y, ratio=ratio)
         X_train1, y_train1, X_test1, y_test1 = train_test_split(X, y, ratio=ratio)
-        fail_if_array_equal(X_train, X_train1, "train_test_split should split arrays into random train and test subsets")
-        fail_if_array_equal(X_test, X_test1, "train_test_split should split arrays into random train and test subsets")
-        fail_if_array_equal(y_train, y_train1, "train_test_split should split arrays into random train and test subsets")
-        fail_if_array_equal(y_test, y_test1, "train_test_split should split arrays into random train and test subsets")
+        safe_fail_if_array_equal(X_train, X_train1, "train_test_split should split arrays into random train and test subsets")
+        safe_fail_if_array_equal(X_test, X_test1, "train_test_split should split arrays into random train and test subsets")
+        safe_fail_if_array_equal(y_train, y_train1, "train_test_split should split arrays into random train and test subsets")
+        safe_fail_if_array_equal(y_test, y_test1, "train_test_split should split arrays into random train and test subsets")
 
     def test_no_randomize_initial_arrays(self):
         X = np.arange(100).reshape((10, 10))
         y = np.arange(10)
         ratio = .8
         train_test_split(X, y, ratio=ratio)
-        assert_array_equal(X, np.arange(100).reshape((10, 10)), "Do not reorder initial X array")
-        assert_array_equal(y, np.arange(10), "Do not reorder initial y array")
+        safe_assert_array_equal(X, np.arange(100).reshape((10, 10)), "Do not reorder initial X array")
+        safe_assert_array_equal(y, np.arange(10), "Do not reorder initial y array")
