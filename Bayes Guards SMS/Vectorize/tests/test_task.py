@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from numpy.ma.testutils import assert_array_equal
+from safe_assert import safe_assert_array_equal
 
 from vectorize import vectorize
 
@@ -17,6 +17,6 @@ class TestCase(unittest.TestCase):
     def test_vectorization(self):
         X = np.array(["Who let the dogs out?", " Who, who, who, who?"])
         dictionary, result = vectorize(X)
-        assert_array_equal(np.array([1, 1, 1, 1, 1]), result[0])
+        safe_assert_array_equal(np.array([1, 1, 1, 1, 1]), result[0], "Incorrect vectorization: each word in the first test document should have a count of 1")
         self.assertTrue(4 in result[1], msg="Something wrong with the output matrix! "
-                                            "If a word is repeated its occurrences need to be counted!")
+                                            "If a word is repeated, its occurrences need to be counted!")

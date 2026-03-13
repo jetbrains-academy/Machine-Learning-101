@@ -21,4 +21,5 @@ content:
   - Iris Network
 additional_files:
   - name: requirements.txt
+  - name: safe_assert.py
 yaml_version: 5
