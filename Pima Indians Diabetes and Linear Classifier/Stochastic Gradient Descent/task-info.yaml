@@ -5,14 +5,14 @@ files:
     placeholders:
       - offset: 1114
         length: 32
-        placeholder_text: "# TODO: Generate the batch"
+        placeholder_text: "# TODO"
       - offset: 1172
         length: 60
         placeholder_text: "# TODO: Calculate the gradient using the current weights, X\
       \ and y batches"
       - offset: 2183
         length: 25
-        placeholder_text: "# TODO: Initialize it here"
+        placeholder_text: "# TODO"
   - name: gradient_descent.py
     visible: true
   - name: loss_functions.py
