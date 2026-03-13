@@ -3,18 +3,18 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 314
+      - offset: 256
         length: 35
         placeholder_text: "# TODO"
-      - offset: 802
+      - offset: 530
         length: 36
-        placeholder_text: "# Standardize the dataset"
-      - offset: 1000
+        placeholder_text: "# TODO"
+      - offset: 709
         length: 60
-        placeholder_text: "# Add a column of -1 to the left of X"
-      - offset: 1145
+        placeholder_text: "# TODO"
+      - offset: 822
         length: 12
-        placeholder_text: "# {0, 1} -> {1, -1}"
+        placeholder_text: "# TODO"
   - name: tests/test_task.py
     visible: false
     propagatable: false

@@ -4,6 +4,8 @@
 # the true and false branches.
 class Node:
     def __init__(self, column=-1, value=None, true_branch=None, false_branch=None):
+        # Implement the four attributes of the Node class:
+        # column, value, true_branch, false_branch
         self.column = column
         self.value = value
         self.true_branch = true_branch

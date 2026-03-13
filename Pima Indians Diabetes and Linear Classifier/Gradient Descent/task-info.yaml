@@ -21,7 +21,7 @@ files:
         placeholder_text: "# TODO: Set it to the new ones"
       - offset: 2210
         length: 28
-        placeholder_text: "# Return the predicted classes"
+        placeholder_text: "# TODO"
   - name: loss_functions.py
     visible: true
   - name: task.py

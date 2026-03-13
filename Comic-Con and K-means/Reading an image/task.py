@@ -3,10 +3,9 @@ import numpy as np
 
 
 def read_image(path='superman-batman.png'):
-    # Here, we load the image using PIL's open function.
+    # Here, load the image using PIL's open function.
     image = Image.open(path)
-    # We reshape the image into an (M x N, 3)
-    # array.
+    # Reshape the image into an (M x N, 3) array.
     return np.array(image).reshape(-1, 3)
 
 

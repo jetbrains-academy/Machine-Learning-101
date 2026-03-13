@@ -59,6 +59,108 @@ one is the largest among them and choose a class corresponding to it from <code>
 you may use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">numpy.argmax</a> function.
 </div>
 
+<div class="hint">
+For every message, you need to convert its words into dictionary indices.
+Create an array that will store the index of each unique word.
+
+```python
+index_array = np.zeros(unique.shape, dtype=np.int64)
+```
+
+</div>
+
+<div class="hint">
+
+Each word must be mapped to its index in `self.dictionary.`
+
+If the word exists in the dictionary, use its stored index.
+If it does not exist, use the special index for unknown words: `self.dict_size` (length of the dictionary).
+
+```python
+for i, word in enumerate(unique):
+    word_index = self.dictionary[word] if word in self.dictionary else self.dict_size
+```
+**Why do this?**
+
+Because `self.likelihood` stores word probabilities by index, not by the word itself.
+
+</div>
+
+<div class="hint">
+
+`self.likelihood` stores the probabilities of words for each class.
+
+Its shape is:
+`number_of_classes * (dictionary_size + 1)`
+
+
+- each **row** corresponds to a class  
+- each **column** corresponds to a word index in the dictionary
+
+For example, `self.likelihood[c, w]` represents the probability of word `w`
+appearing in class `c`.
+
+To compute the likelihood of the current message, select only the columns
+that correspond to the words in the message and apply the logarithm:
+
+```python
+log_likelihood = np.log(self.likelihood[:, index_array])
+```
+</div>
+
+<div class="hint">
+
+At this point, `log_likelihood` already contains the log-probabilities of the words from the current message for **each class**.
+
+Now you need to get one final score for every class.
+
+To do this you need to combine two things:
+<ul>
+<li>how typical the words of the message are for that class</li>
+<li>how common that class is in the training data</li>
+</ul>
+
+The first part is obtained from <code>log_likelihood</code>.  
+The second part is the logarithm of the prior probability of the class stored in <code>classes_prior</code>.
+
+Therefore, add the log prior probability to the summed log-likelihood values:
+
+```python
+posterior = np.log(self.classes_prior) + np.sum(log_likelihood, axis=1)
+```
+</div>
+
+<div class="hint">
+At this point, <code>posterior</code> contains one score for each class.  
+These scores represent how likely the message belongs to each class.
+
+Your task is to select the class with the highest score.
+
+First, find the index of the largest value in the <code>posterior</code> array.  
+You can use <code>numpy.argmax</code> for this — it returns the position of the maximum element.
+
+Then use this index to retrieve the corresponding class label from <code>self.unique_classes</code>.
+
+<pre><code>predicted = self.unique_classes[np.argmax(posterior)]</code></pre>
+
+This selects the class with the highest posterior score.
+</div>
+
+<div class="hint">
+The classifier already knows how to predict class labels using the <code>predict</code> method.  
+However, we also need a simple way to check how well the model performs.
+
+The <code>score</code> method does this by comparing the predicted labels with the true labels and computing the fraction of matches.
+
+You can obtain the predicted labels by calling <code>predict</code>.
+
+When two arrays are compared with <code>==</code>, NumPy produces a boolean array where each position shows whether the prediction is correct.
+Summing this array gives the number of correct predictions.  
+To obtain the required value, divide this number by the total number of objects.
+
+<pre><code>return np.sum(self.predict(X) == y) / len(y)</code></pre>
+</div>
+
 To see the results of your code, you can add the following
 lines to the `main` block in `task.py` and then run it:
 
