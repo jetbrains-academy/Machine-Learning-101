@@ -26,4 +26,4 @@ class TestCase(unittest.TestCase):
             else:
                 break
         safe_assert_array_equal(classification, expected_labels, "The classification array does not match the expected labels")
-        safe_assert_array_equal(clusters, expected_centers, "The cluster centers array do not match the expected centers")
+        safe_assert_array_equal(clusters, expected_centers, "The cluster centers array does not match the expected centers")

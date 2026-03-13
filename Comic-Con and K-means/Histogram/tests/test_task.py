@@ -10,4 +10,4 @@ class TestCase(unittest.TestCase):
         labels = np.array([1, 2, 3, 4, 5, 1, 2, 3, 4, 1, 2, 3, 1, 2, 1])
         expected = np.array([5, 4, 3, 2, 1])
         histogram = centroid_histogram(labels)
-        safe_assert_array_equal(expected, histogram, "Wrong histogram computed")
+        safe_assert_array_equal(expected, histogram, "Incorrect histogram computed")
