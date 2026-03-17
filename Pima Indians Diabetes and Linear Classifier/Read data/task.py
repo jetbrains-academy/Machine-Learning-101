@@ -11,14 +11,14 @@ def read_data(fname):
     # The data is split into X (all columns but the last) and
     # y (the last column).
     X, y = data[:, :-1], data[:, -1]
-    # Normalize features: for each column subtract its mean
-    # and divide by its standard deviation.
+    # Standardize features: subtract the mean
+    # and divide by the standard deviation for each column.
     X = (X - X.mean(axis=0)) / X.std(axis=0)
-    # Add a column of -1s to the left of X.
+    # Prepend a column of -1s to X.
     # It acts as a pseudo-feature that simplifies our vector
     # calculations later on.
     X = np.concatenate((-np.ones(len(X)).reshape(-1, 1), X), axis=1)
-    # Convert labels from {0,1} to {1,-1}.
+    # Map labels from {0,1} to {1,-1}.
     y =  -(y * 2 - 1)
     return X, y
 

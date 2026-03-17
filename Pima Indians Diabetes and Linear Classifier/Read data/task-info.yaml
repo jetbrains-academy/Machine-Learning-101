@@ -6,13 +6,13 @@ files:
       - offset: 256
         length: 35
         placeholder_text: "# TODO"
-      - offset: 530
+      - offset: 532
         length: 36
         placeholder_text: "# TODO"
-      - offset: 709
+      - offset: 703
         length: 60
         placeholder_text: "# TODO"
-      - offset: 822
+      - offset: 812
         length: 12
         placeholder_text: "# TODO"
   - name: tests/test_task.py
