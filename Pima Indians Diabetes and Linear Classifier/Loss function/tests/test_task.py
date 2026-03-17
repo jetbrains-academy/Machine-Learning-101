@@ -1,7 +1,7 @@
 import unittest
 
 import numpy as np
-from numpy.ma.testutils import assert_array_almost_equal
+from safe_assert import safe_assert_array_almost_equal
 
 from loss_functions import log_loss, sigmoid_loss
 
@@ -23,7 +23,7 @@ class TestCase(unittest.TestCase):
                                  [-0.41701172, -0.68531017],
                                  [-0.4628473 , -0.63164579],
                                  [-0.72098685, -0.38828417]]])
-        assert_array_almost_equal(y_loss, y_predicted)
+        safe_assert_array_almost_equal(y_loss, y_predicted, err_msg="Incorrect values returned by log_loss: check the loss formula and its derivative")
 
     def test_sigmoid_loss(self):
         y = np.array([[0.5, 0.5], [0.1, 0.9], [0.01, 0.99],
@@ -41,4 +41,4 @@ class TestCase(unittest.TestCase):
                                  [-0.41100061, -0.49875208],
                                  [-0.43578999, -0.49226817],
                                  [-0.49999988, -0.39340555]]])
-        assert_array_almost_equal(y_loss, y_predicted)
+        safe_assert_array_almost_equal(y_loss, y_predicted, err_msg="Incorrect values returned by sigmoid_loss: check the loss formula and its derivative")

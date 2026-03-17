@@ -1,5 +1,6 @@
 import unittest
 import numpy as np
+from safe_assert import safe_assert_array_equal
 
 from processing import recolor
 
@@ -16,7 +17,7 @@ class TestCase(unittest.TestCase):
                 recolored_image = recolor(image, 2)
                 expected_image = np.array([[255, 255, 254], [0, 1, 0], [0, 1, 0], [255, 255, 254]])
                 self.assertEqual(2, len(np.unique(recolored_image, axis=0)))
-                np.testing.assert_array_equal(recolored_image, expected_image)
+                safe_assert_array_equal(recolored_image, expected_image, "The recolored image does not match the expected image")
                 break
             except IndexError:
                 continue

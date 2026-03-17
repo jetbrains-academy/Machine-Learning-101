@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from numpy.testing import assert_array_equal
+from safe_assert import safe_assert_array_equal
 
 from clustering import k_means, init_clusters
 from distances import euclidean_distance
@@ -25,5 +25,5 @@ class TestCase(unittest.TestCase):
                 continue
             else:
                 break
-        assert_array_equal(classification, expected_labels)
-        assert_array_equal(clusters, expected_centers)
+        safe_assert_array_equal(classification, expected_labels, "The classification array does not match the expected labels")
+        safe_assert_array_equal(clusters, expected_centers, "The cluster centers array does not match the expected centers")
