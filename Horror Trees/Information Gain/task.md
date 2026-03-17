@@ -15,15 +15,29 @@ We subtract entropy `Y` for the condition `X` from entropy `Y` to calculate the 
 `Y`, provided that there is some additional knowledge `X` about `Y`.
 
 
-
 ### Task
 
 Implement the `information_gain` method, which 
 takes a sample, divides it into two independent sub-samples, and calculates the information gain.
 To divide the sample, use the `divide` method written
-in the previous step. 
+in the previous step.
 
-<div class="hint">
+<div class="hint" title="Division into two subsets">
+
+Just use `divide` method of the `Predicate` class to divide the sample into two subsets.
+
+`X1, y1, X2, y2 = self.divide(X, y)`
+
+</div>
+
+<div class="hint" title="p value">
+Each subset contributes to entropy proportionally to its size, so we compute the fraction of samples in the first subset:
+
+`p = float(len(X1)) / len(X)`
+
+</div>
+
+<div class="hint" title="Information gain formula">
 
 To calculate information gain, you can use the above formula in the following way:
 
@@ -44,21 +58,3 @@ To see the results of your code, you can add the following line to the
 ```
 The variables required for this code to function were introduced in previous steps. If you haven't worked with
 `task.py` yet, ensure they are properly defined.
-
-<div class="hint">
-
-Just use `divide` method of the `Predicate` class to divide the sample into two subsets.
-
-`X1, y1, X2, y2 = self.divide(X, y)`
-
-</div>
-
-<div class="hint">
-After the split, each subset contributes to the final entropy proportionally to its size. Therefore we compute the fraction of 
-samples that went to the first subset.
-
-Use `float(...)` to ensure that the division produces a floating-point number (a probability between 0 and 1) rather than an integer.
-
-`p = float(len(X1)) / len(X)`
-
-</div>
