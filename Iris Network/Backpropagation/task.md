@@ -70,9 +70,40 @@ In the `network.py` file, implement only the `backward` method of the `NN` class
 
 <ul>
 <li>Calculate the error for the output layer (<code>delta_l2</code>) as the difference between the network results (<code>output</code>) and the real class labels (<code>y</code>) multiplied elementwise by the derivative of the activation function for output ($\delta_{o}$ formula).</li>
-<li>Calculate the error for the hidden layer (<code>delta_l1</code>) as the product of input layer error matrices and the weights <code>w2</code> multiplied elementwise by the derivative of the activation function wrt the output data of the hidden layer (<code>layer1</code>) ($\delta_{h}$ formula).</li>
+
+<div class="hint" title="Result">
+
+```python
+delta_l2 = (y - output) * sigmoid_derivative(output)
+```
+</div>
+
+<li>Calculate the error for the hidden layer (<code>delta_l1</code>) as the product of output layer error matrices and the weights <code>w2</code> multiplied elementwise by the derivative of the activation function wrt the output data of the hidden layer (<code>layer1</code>) ($\delta_{h}$ formula).</li>
+
+<div class="hint" title="Result">
+
+```python
+delta_l1 = np.dot(delta_l2, self.w2.T) * sigmoid_derivative(self.layer1)
+```
+</div>
+
 <li>Adjust the weight coefficients of the output layer (<code>w2</code>) by calculating the vector product of the hidden layer (<code>layer1</code>) and the output layer error (<code>delta_l2</code>) multiplied elementwise by the learning rate (formula 3).</li>
+
+<div class="hint" title="Result">
+
+```python
+self.w2 += (np.dot(self.layer1.T, delta_l2) * learning_rate)
+```
+</div>
+
 <li>Adjust the weight coefficients of the hidden layer (<code>w1</code>) by calculating the vector product of the input layer (<code>X</code>) and the hidden layer error (<code>delta_l1</code>), multiplied elementwise by the learning rate (formula 3).</li>
+
+<div class="hint" title="Result">
+
+```python
+self.w1 += (np.dot(X.T, delta_l1) * learning_rate)
+```
+</div>
 </ul>
 
 Before you start, delete the `pass` operator and uncomment all lines that are not task commentaries.
