@@ -11,4 +11,4 @@
 If you have questions about the course or the tasks, or if you find any errors, feel free to ask questions and participate in discussions within the repository [issues](https://github.com/jetbrains-academy/Machine-Learning-101/issues).
 
 ## Contribution
-Please be sure to review the [project's contributing guidelines](./contributing.md) to learn how to help the project.
+Please be sure to review the [project's contributing guidelines](https://github.com/jetbrains-academy/.github/blob/main/contributing_guidelines.md) to learn how to help the project.
