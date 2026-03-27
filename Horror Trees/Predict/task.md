@@ -16,7 +16,7 @@ In `classify_subtree`, you need to:
     
 <div class="hint">
 
-If sub_tree is not a Node, return it — it already represents the class label.
+If `sub_tree` is not a `Node`, return it; it already represents the class label.
 
 ```python
 if not isinstance(sub_tree, Node):
@@ -28,8 +28,8 @@ if not isinstance(sub_tree, Node):
 
 <div class="hint">
 
-Each node checks one feature of the object being classified. The node stores which feature to check in `sub_tree.column`.
-You need to take that value from `x`.
+Each node evaluates a specific feature of the object being classified. The index of the feature to check is stored in `sub_tree.column`.
+You need to extract the corresponding value from `x`.
 
 ```python
 v = x[sub_tree.column]
@@ -41,7 +41,8 @@ v = x[sub_tree.column]
 
 <div class="hint" title="Compare numeric features">
 
-For numeric features, the node applies a threshold (e.g., `age >= 30`), so compare the value with the threshold to choose the branch.
+For numeric features, the node evaluates a threshold (e.g., `age >= 30`). 
+Compare the feature value against this threshold to determine which branch to follow.
 
 ```python
 if isinstance(v, int) or isinstance(v, float):
@@ -55,8 +56,8 @@ if isinstance(v, int) or isinstance(v, float):
 
 <div class="hint" title="Compare categorical features">
 
-For categorical features, the node checks equality (e.g., `color == "red"`).
-Choose the branch based on whether the value matches.
+For categorical features, the node evaluates an equality condition (e.g., `color == "red"`).
+Determine the next branch based on whether the feature value matches this criterion.
 
 ```python
 else:
@@ -72,8 +73,8 @@ else:
 
 <div class="hint">
 
-After choosing a branch, you are not done — there may still be another node.
-Apply the same logic again by calling the function on the new branch until you reach a leaf (class label).
+Choosing a branch is only the first step – you may encounter another node.
+Apply the same logic again by calling the function on the selected branch until you reach a leaf (the final class label).
 
 ```python
 return self.classify_subtree(x, branch)

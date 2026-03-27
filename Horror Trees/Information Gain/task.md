@@ -24,14 +24,14 @@ in the previous step.
 
 <div class="hint" title="Division into two subsets">
 
-Just use `divide` method of the `Predicate` class to divide the sample into two subsets.
+Use the divide `method` from the `Predicate` class to split the sample into two subsets:
 
 `X1, y1, X2, y2 = self.divide(X, y)`
 
 </div>
 
 <div class="hint" title="p value">
-Each subset contributes to entropy proportionally to its size, so we compute the fraction of samples in the first subset:
+Each subset contributes to the total entropy proportionally to its size. Compute the fraction of samples in the first subset as follows:
 
 `p = float(len(X1)) / len(X)`
 

@@ -35,7 +35,7 @@ delete the `pass` operator.
   the same size.
 
 <div class="hint">
-Create a zero-initialized array to store the indices of each unique word.
+Create a zero-initialized array to store the index of each unique word.
 
 ```python
 index_array = np.zeros(unique.shape, dtype=np.int64)
@@ -49,7 +49,7 @@ index_array = np.zeros(unique.shape, dtype=np.int64)
 
 <div class="hint">
 
-For each word, assign its dictionary index to `word_index`; if it’s not found, set `word_index = dict_size`
+For each word, assign its dictionary index to `word_index`; if the word is not found, set `word_index` to `dict_size`.
 
 ```python
     word_index = self.dictionary[word] if word in self.dictionary else self.dict_size
@@ -57,7 +57,7 @@ For each word, assign its dictionary index to `word_index`; if it’s not found,
 
 **Why do this?**
 
-Because `self.likelihood` stores word probabilities by index, not by the word itself.
+Because `self.likelihood` stores word probabilities by index rather than the string itself.
 
 </div>
 
@@ -67,8 +67,8 @@ Because `self.likelihood` stores word probabilities by index, not by the word it
 
 <div class="hint">
 
-`self.likelihood[c, w]` is the probability of word `w` in class `c`.
-Select probabilities for message words and take log:
+`self.likelihood[c, w]` represents the probability of word `w` for class `c`.
+Select the probabilities for the message words and calculate their logs:
 
 ```python
 log_likelihood = np.log(self.likelihood[:, index_array])
@@ -78,8 +78,8 @@ log_likelihood = np.log(self.likelihood[:, index_array])
 - Compute the posterior score for each class.
 
 <div class="hint" title="Posterior meaning">
-Posterior score shows how likely each class is for the given message.
-Compute it using the formula above in log form: sum log-probabilities of words (axis=1) and add the log prior.
+The posterior score indicates the probability of each class given the message.
+Compute it by summing the log-probabilities of the words (across <code>axis=1</code>) and adding the log prior.
 </div>
 
 <div class="hint" title="Posterior formula">
@@ -89,7 +89,7 @@ posterior = np.log(self.classes_prior) + np.sum(log_likelihood, axis=1)
 ```
 </div>
 
-- Select the class with the highest score for each message.
+- Identify the class with the highest score for each message.
 
 <div class="hint" title="Find the best class">
 After finding the posterior probabilities for classes, you need to determine which 
@@ -104,11 +104,11 @@ predicted = self.unique_classes[np.argmax(posterior)]
 ```
 </div>
 
-Then, implement the `score` method, which passes the testing sample through the algorithm, compares the received
-class labels with the real ones and returns the proportion of correctly classified objects.
+Then, implement the `score` method, which passes the test samples through the algorithm, compares the predicted
+class labels with the true labels, and returns the proportion of correctly classified objects.
 
 <div class="hint">
-Use <code>predict</code> to get labels, compare them with true labels <code>y</code>, and return the fraction of matches:
+Use <code>predict</code> to generate labels, compare them with the true labels <code>y</code>, and return the fraction of matches:
 
 <pre><code>return np.sum(self.predict(X) == y) / len(y)</code></pre>
 </div>

@@ -6,7 +6,7 @@ In the `network.py` file, implement the `train` method of the `NN` class. Beside
 the necessary number of iterations. The method should call two other (previously implemented) methods in the right order. It does not return anything.
 
 <div class="hint">
-On each iteration, compute predictions with <code>feedforward</code> and update the model using <code>backward</code>.
+On each iteration, generate predictions via <code>feedforward</code> and update the model's parameters using <code>backward</code> propagation.
 
 ```python
         for itr in range(n_iter):
@@ -17,16 +17,17 @@ On each iteration, compute predictions with <code>feedforward</code> and update 
 
 Augment the implementation by the `predict` method, which passes all objects from the `X` matrix through the trained neural network.
 
-<div class="hint"> The <code>predict</code> method is a part of the interface of a program the neural network is expected to include, 
-so we will implement it despite the fact that it just calls the <code>feedforward</code> method. 
+<div class="hint"> 
+The <code>predict</code> method is a required part of the neural network's interface.
+We will implement it here, even though it simply acts as a wrapper for the <code>feedforward</code> method. 
 
 ```python
 return self.feedforward(X)
 ```
-It's a lucky coincidence – in other cases, there might be something more complex.
+While this case is straightforward, other scenarios may require a more complex implementation.
 </div>
 
-Before you start, delete the `pass` operator and uncomment all lines that are not task commentaries.
+Before you begin, delete the `pass` statement and uncomment all lines that are not task-related comments.
 
 To see the results of your code in this step, add the following lines to the `main` block in `task.py`:
 

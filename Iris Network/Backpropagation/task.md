@@ -78,7 +78,9 @@ delta_l2 = (y - output) * sigmoid_derivative(output)
 ```
 </div>
 
-<li>Calculate the error for the hidden layer (<code>delta_l1</code>) as the product of output layer error matrices and the weights <code>w2</code> multiplied elementwise by the derivative of the activation function wrt the output data of the hidden layer (<code>layer1</code>) ($\delta_{h}$ formula).</li>
+<li>Calculate the error for the hidden layer (<code>delta_l1</code>) by taking the product of the output layer error 
+and the transpose of the weight matrix <code>w2</code>, then multiplying element-wise by the derivative 
+of the activation function with respect to the hidden layer's output (<code>layer1</code>) ($\delta_{h}$ formula).</li>
 
 <div class="hint" title="Result">
 
