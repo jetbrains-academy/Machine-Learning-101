@@ -33,30 +33,84 @@ delete the `pass` operator.
   help of the `split_by_words()` function.
 - In each message, find a set of unique words and create a vector of zeros of
   the same size.
+
+<div class="hint">
+Create a zero-initialized array to store the index of each unique word.
+
+```python
+index_array = np.zeros(unique.shape, dtype=np.int64)
+```
+</div>
+
 - For each unique word from the list, find a correspondence in the dictionary; if you find it,
   write its index to the vector created in the previous step, if not – write an index
   equal to the dictionary length. All such words have the same
   probability.
+
+<div class="hint">
+
+For each word, assign its dictionary index to `word_index`; if the word is not found, set `word_index` to `dict_size`.
+
+```python
+    word_index = self.dictionary[word] if word in self.dictionary else self.dict_size
+```
+
+**Why do this?**
+
+Because `self.likelihood` stores word probabilities by index rather than the string itself.
+
+</div>
+
 - Calculate `log_likelihood` by applying the `np.log()` function to the slice of the `likelihood` array
   obtained with the help of `index_array`; thus, the array will contain the probabilities of only
   those words that occur in our sentence. 
-- Use the above formula to calculate the most probable class for this message.
-- Return the list of most probable classes of all messages in the input array.
-
-
-Then, implement the `score` method, which passes the testing sample through the algorithm, compares the received
-class labels with the real ons and returns the proportion of correctly classified objects.
 
 <div class="hint">
-Posterior probabilities for each class are calculated as the sum of the prior probability logarithm and the summarized logarithms of probabilities for the words from 
-<code>log_likelihood</code> 
-positioned along one axis, i.e., separately for each class.
+
+`self.likelihood[c, w]` represents the probability of word `w` for class `c`.
+Select the probabilities for the message words and calculate their logs:
+
+```python
+log_likelihood = np.log(self.likelihood[:, index_array])
+```
 </div>
 
-<div class="hint">
+- Compute the posterior score for each class.
+
+<div class="hint" title="Posterior meaning">
+The posterior score indicates the probability of each class given the message.
+Compute it by summing the log-probabilities of the words (across <code>axis=1</code>) and adding the log prior.
+</div>
+
+<div class="hint" title="Posterior formula">
+
+```python
+posterior = np.log(self.classes_prior) + np.sum(log_likelihood, axis=1)
+```
+</div>
+
+- Identify the class with the highest score for each message.
+
+<div class="hint" title="Find the best class">
 After finding the posterior probabilities for classes, you need to determine which 
 one is the largest among them and choose a class corresponding to it from <code>unique_classes</code>. Here, 
 you may use the <a href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">numpy.argmax</a> function.
+</div>
+
+<div class="hint" title="Prediction formula">
+
+```python
+predicted = self.unique_classes[np.argmax(posterior)]
+```
+</div>
+
+Then, implement the `score` method, which passes the test samples through the algorithm, compares the predicted
+class labels with the true labels, and returns the proportion of correctly classified objects.
+
+<div class="hint">
+Use <code>predict</code> to generate labels, compare them with the true labels <code>y</code>, and return the fraction of matches:
+
+<pre><code>return np.sum(self.predict(X) == y) / len(y)</code></pre>
 </div>
 
 To see the results of your code, you can add the following

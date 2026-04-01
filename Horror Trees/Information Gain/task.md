@@ -15,18 +15,29 @@ We subtract entropy `Y` for the condition `X` from entropy `Y` to calculate the 
 `Y`, provided that there is some additional knowledge `X` about `Y`.
 
 
-
 ### Task
 
 Implement the `information_gain` method, which 
 takes a sample, divides it into two independent sub-samples, and calculates the information gain.
 To divide the sample, use the `divide` method written
-in the previous step. 
+in the previous step.
 
+<div class="hint" title="Division into two subsets">
 
+Use the divide `method` from the `Predicate` class to split the sample into two subsets:
 
+`X1, y1, X2, y2 = self.divide(X, y)`
 
-<div class="hint">
+</div>
+
+<div class="hint" title="p value">
+Each subset contributes to the total entropy proportionally to its size. Compute the fraction of samples in the first subset as follows:
+
+`p = float(len(X1)) / len(X)`
+
+</div>
+
+<div class="hint" title="Information gain formula">
 
 To calculate information gain, you can use the above formula in the following way:
 
