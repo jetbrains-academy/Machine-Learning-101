@@ -5,7 +5,7 @@ summary: "<p>Train your brain to train machines. Build your first ML models from
   \ – from simple classifiers to neural networks – with hands-on coding, a bit of\
   \ Python, and a guided IDE built for learners.</p>"
 vendor:
-  name: JetBrains
+  name: JetBrains s.r.o.
   email: support@jetbrains.com
   url: https://www.jetbrains.com/
 programming_language: Python
