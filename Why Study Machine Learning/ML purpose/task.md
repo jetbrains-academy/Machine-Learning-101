@@ -1,5 +1,3 @@
-## Purpose of ML
-
 ### Application
 There are two different branches of [machine learning](https://en.wikipedia.org/wiki/Machine_learning) (ML):
 - academic — studying the possibilities and application areas of ML algorithms;

@@ -1,5 +1,3 @@
-## Fields of Application
-
 ### [Computer vision](https://en.wikipedia.org/wiki/Computer_vision)
 
 Search of similar images, face and object recognition – these are examples of machine learning tasks. They are used in various spheres: from entertainment to medical diagnostics.

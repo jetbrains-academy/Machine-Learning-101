@@ -1,5 +1,3 @@
-## Working with data
-
 ### Defining the problem
 Before you start using machine learning methods, it is crucial to decide what type of problems your analytical task represents and thus choose the right solution algorithm. It depends on the research goals and available data.
 

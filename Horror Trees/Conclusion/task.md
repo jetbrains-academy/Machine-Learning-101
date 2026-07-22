@@ -1,5 +1,3 @@
-### ID3 application and limitations
-
 ID3 (Iterative Dichotomiser 3) discussed in this course is an algorithm [designed](https://link.springer.com/content/pdf/10.1007%2FBF00116251.pdf) by Ross Quinlan for training decision trees.
 It is used for building decision trees on the basis of a certain dataset. 
 ID3 is a predecessor of the [C4.5 algorithm](https://en.wikipedia.org/wiki/C4.5_algorithm); it is commonly used in machine learning and in natural language processing, but it also has

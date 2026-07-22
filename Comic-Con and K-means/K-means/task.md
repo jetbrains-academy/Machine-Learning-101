@@ -1,5 +1,3 @@
-### K-means
-
 In this lesson, we will discuss the clustering task – breaking the sample into non-overlapping sets of objects that are similar to each other but different from the objects of other sets. In our task, the objects will be the image pixels, and their characteristics – the values of color components. The set centers will be defined by the colors we've substituted for the original colors. For example, different shades of red – from bright red to burgundy – may be combined into one averaged red, which will be the center of the cluster.
 
 

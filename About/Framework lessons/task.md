@@ -1,5 +1,3 @@
-## Framework lessons
-
 This course features one or more framework lessons. Framework lessons aim to emulate the experience of 
 working on a real coding project. In such a lesson, as opposed to a regular lesson, you will work with 
 code step by step instead of solving separate unconnected tasks.

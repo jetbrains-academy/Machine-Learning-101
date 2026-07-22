@@ -1,5 +1,3 @@
-## Choosing an Algorithm
-
 There are several types of machine learning tasks:
 
 ### [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning)

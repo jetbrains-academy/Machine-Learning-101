@@ -1,5 +1,3 @@
-### Predicate
-
 
 To build a decision tree, in each step, we will need to divide the sample from a tree node
 into two independent sub-samples and calculate the entropy of each of them. 
